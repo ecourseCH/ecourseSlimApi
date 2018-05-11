@@ -40,4 +40,11 @@ $app->post('/notice/{id}', function (Request $request, Response $response, array
     $newResponse = $response->withJson($insertedNotice);
     return $newResponse;
 });
+
+$app->get('/noticetag', function (Request $request, Response $response, array $args) {
+    $repository = new NoticeTagRepository($this->db);
+    $noticeTags = $repository->getNoticeTags();
+    $newResponse = $response->withJson($noticeTags);
+    return $newResponse;
+});
 ?>
