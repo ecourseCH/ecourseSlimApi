@@ -41,3 +41,22 @@ CREATE TABLE IF NOT EXISTS `course` (
 
 
 ALTER TABLE course ADD CONSTRAINT fk_user_id FOREIGN KEY (ownerUserId) REFERENCES user(userId);
+
+-- USER
+
+-- DELETE FROM mysql.user WHERE User = 'ecourse';
+
+drop user ecourse@localhost;
+
+flush privileges;
+
+CREATE USER ecourse@localhost IDENTIFIED BY  '123456';
+
+GRANT SELECT ON ecourse.* TO ecourse@localhost;
+GRANT INSERT ON ecourse.* TO ecourse@localhost;
+GRANT DELETE ON ecourse.* TO ecourse@localhost;
+GRANT UPDATE ON ecourse.* TO ecourse@localhost;
+
+-- TODO maybe move courses to other db such that create and drop would not be done on ecourse db level
+-- GRANT DROP ON ecourse.* TO 'ecourse'@'localhost';
+-- GRANT CREATE ON ecourse.* TO 'ecourse'@'localhost';
