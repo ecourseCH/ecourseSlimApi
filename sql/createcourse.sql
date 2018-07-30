@@ -5,12 +5,15 @@ SET time_zone = "+00:00";
 -- TODO create a new course - a random dbname needs to be picked, created and used
 -- tables to be created in new db
 
+use ecourse;
 
-
+DROP TABLE IF EXISTS `obs_obsTag`;
+DROP TABLE IF EXISTS `part_partTag`;
+DROP TABLE IF EXISTS `leader_partTag`;
+DROP TABLE IF EXISTS `observation`;
 DROP TABLE IF EXISTS `participant`;
 DROP TABLE IF EXISTS `participantTag`;
 DROP TABLE IF EXISTS `observationTag`;
-DROP TABLE IF EXISTS `observation`;
 DROP TABLE IF EXISTS `activity`;
 DROP TABLE IF EXISTS `codeMapping`;
 DROP TABLE IF EXISTS `leader`;
@@ -18,7 +21,7 @@ DROP TABLE IF EXISTS `leader`;
 
 CREATE TABLE IF NOT EXISTS `leader` (
 `leaderId` int(11) NOT NULL,
-`userId` int(11) NOT NULL,
+`userId` int(11)  NULL,
   `leaderName` varchar(255) COLLATE utf8_bin NOT NULL,
     `leaderSurname` varchar(255) COLLATE utf8_bin NOT NULL,
     `leaderScoutname` varchar(255) COLLATE utf8_bin NOT NULL,
@@ -51,10 +54,31 @@ CREATE TABLE IF NOT EXISTS `participantTag` (
        PRIMARY KEY (`participantTagId`)
 ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
+ALTER TABLE participantTag ADD CONSTRAINT fk_parentParticipantTagId FOREIGN KEY (parentParticipantTagId) REFERENCES participantTag(participantTagId);
 
--- TODO intersection leader - participantTag
+CREATE TABLE IF NOT EXISTS `leader_partTag` (
+`leaderId` int(11) NOT NULL,
+`participantTagId` int(11) NOT NULL,
+     UNIQUE KEY (`leaderId`,`participantTagId`)
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- TODO intersection participant Tag - participant
+ALTER TABLE leader_partTag ADD CONSTRAINT fk_participantTagId_2 FOREIGN KEY (participantTagId) REFERENCES participantTag(participantTagId);
+
+ALTER TABLE leader_partTag ADD CONSTRAINT fk_leaderId FOREIGN KEY (leaderId) REFERENCES leader(leaderId);
+
+
+
+
+CREATE TABLE IF NOT EXISTS `part_partTag` (
+`participantId` int(11) NOT NULL,
+`participantTagId` int(11) NOT NULL,
+     UNIQUE KEY (`participantId`,`participantTagId`)
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+ALTER TABLE part_partTag ADD CONSTRAINT fk_participantTagId FOREIGN KEY (participantTagId) REFERENCES participantTag(participantTagId);
+
+ALTER TABLE part_partTag ADD CONSTRAINT fk_participantId FOREIGN KEY (participantId) REFERENCES participant(participantId);
+
 
 CREATE TABLE IF NOT EXISTS `activity` (
 `activityId` int(11) NOT NULL,
@@ -93,8 +117,19 @@ CREATE TABLE IF NOT EXISTS `observationTag` (
        PRIMARY KEY (`observationTagId`)
 ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- TODO intersection observation - observation Tag
+ALTER TABLE observationTag ADD CONSTRAINT fk_parentObservationTagId FOREIGN KEY (parentObservationTagId) REFERENCES observationTag(observationTagId);
 
+
+CREATE TABLE IF NOT EXISTS `obs_obsTag` (
+`observationId` int(11) NOT NULL,
+`observationTagId` int(11) NOT NULL,
+--       PRIMARY KEY (`observationTagId`)
+ UNIQUE KEY (`observationId`,observationTagId)
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+ALTER TABLE obs_obsTag ADD CONSTRAINT fk_observationId FOREIGN KEY (observationId) REFERENCES observation(observationId);
+
+ALTER TABLE obs_obsTag ADD CONSTRAINT fk_observationTagId FOREIGN KEY (observationTagId) REFERENCES observationTag(observationTagId);
 
 
 
