@@ -20,14 +20,14 @@ DROP TABLE IF EXISTS `leader`;
 
 
 CREATE TABLE IF NOT EXISTS `leader` (
-`leaderId` int(11) NOT NULL,
+`leaderId` int(11) NOT NULL AUTO_INCREMENT,
 `userId` int(11)  NULL,
   `leaderName` varchar(255) COLLATE utf8_bin NOT NULL,
     `leaderSurname` varchar(255) COLLATE utf8_bin NOT NULL,
     `leaderScoutname` varchar(255) COLLATE utf8_bin NOT NULL,
      PRIMARY KEY (`leaderId`),
      UNIQUE KEY (`userId`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- TODO might not work accross db's
 ALTER TABLE leader ADD CONSTRAINT fk2_user_id FOREIGN KEY (userId) REFERENCES user(userId);
@@ -35,7 +35,7 @@ ALTER TABLE leader ADD CONSTRAINT fk2_user_id FOREIGN KEY (userId) REFERENCES us
 
 
 CREATE TABLE IF NOT EXISTS `participant` (
-`participantId` int(11) NOT NULL,
+`participantId` int(11) NOT NULL AUTO_INCREMENT,
   `participantName` varchar(255) COLLATE utf8_bin NOT NULL,
     `participantSurname` varchar(255) COLLATE utf8_bin NOT NULL,
     `participantScoutname` varchar(255) COLLATE utf8_bin NOT NULL,
@@ -44,15 +44,15 @@ CREATE TABLE IF NOT EXISTS `participant` (
 -- Group
 -- information from Recommender
      PRIMARY KEY (`participantId`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- TODO maybe needs to be linked to observation /activity for purpose of observation requests
 CREATE TABLE IF NOT EXISTS `participantTag` (
-`participantTagId` int(11) NOT NULL,
+`participantTagId` int(11) NOT NULL AUTO_INCREMENT,
 `parentParticipantTagId` int(11) NULL,
   `participantTagName` varchar(255) COLLATE utf8_bin NOT NULL,
        PRIMARY KEY (`participantTagId`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 ALTER TABLE participantTag ADD CONSTRAINT fk_parentParticipantTagId FOREIGN KEY (parentParticipantTagId) REFERENCES participantTag(participantTagId);
 
@@ -60,7 +60,7 @@ CREATE TABLE IF NOT EXISTS `leader_partTag` (
 `leaderId` int(11) NOT NULL,
 `participantTagId` int(11) NOT NULL,
      UNIQUE KEY (`leaderId`,`participantTagId`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 ALTER TABLE leader_partTag ADD CONSTRAINT fk_participantTagId_2 FOREIGN KEY (participantTagId) REFERENCES participantTag(participantTagId);
 
@@ -73,7 +73,7 @@ CREATE TABLE IF NOT EXISTS `part_partTag` (
 `participantId` int(11) NOT NULL,
 `participantTagId` int(11) NOT NULL,
      UNIQUE KEY (`participantId`,`participantTagId`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 ALTER TABLE part_partTag ADD CONSTRAINT fk_participantTagId FOREIGN KEY (participantTagId) REFERENCES participantTag(participantTagId);
 
@@ -81,25 +81,25 @@ ALTER TABLE part_partTag ADD CONSTRAINT fk_participantId FOREIGN KEY (participan
 
 
 CREATE TABLE IF NOT EXISTS `activity` (
-`activityId` int(11) NOT NULL,
+`activityId` int(11) NOT NULL AUTO_INCREMENT,
   `activityName` varchar(255) COLLATE utf8_bin NOT NULL,
   `activityNumber` varchar(255) COLLATE utf8_bin NOT NULL,
   `activityDate` DATETIME NOT NULL,
        PRIMARY KEY (`activityId`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 
 
 
 CREATE TABLE IF NOT EXISTS `observation` (
-`observationId` int(11) NOT NULL,
+`observationId` int(11) NOT NULL AUTO_INCREMENT,
   `observationText` varchar(4096) COLLATE utf8_bin NOT NULL,
   `activityId` int(11)  NULL,
   `observationDate` DATETIME NULL,
   `leaderId` int(11) NOT NULL,
   `participantId` int(11) NOT NULL,
        PRIMARY KEY (`observationId`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 ALTER TABLE observation ADD CONSTRAINT fk_activity_id FOREIGN KEY (activityId) REFERENCES activity(activityId);
 
@@ -111,11 +111,11 @@ ALTER TABLE observation ADD CONSTRAINT fk_participant_id FOREIGN KEY (participan
 
 
 CREATE TABLE IF NOT EXISTS `observationTag` (
-`observationTagId` int(11) NOT NULL,
+`observationTagId` int(11) NOT NULL AUTO_INCREMENT,
 `parentObservationTagId` int(11) NULL,
   `observationTagName` int(11) NOT NULL,
        PRIMARY KEY (`observationTagId`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 ALTER TABLE observationTag ADD CONSTRAINT fk_parentObservationTagId FOREIGN KEY (parentObservationTagId) REFERENCES observationTag(observationTagId);
 
@@ -125,7 +125,7 @@ CREATE TABLE IF NOT EXISTS `obs_obsTag` (
 `observationTagId` int(11) NOT NULL,
 --       PRIMARY KEY (`observationTagId`)
  UNIQUE KEY (`observationId`,observationTagId)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 ALTER TABLE obs_obsTag ADD CONSTRAINT fk_observationId FOREIGN KEY (observationId) REFERENCES observation(observationId);
 
@@ -134,14 +134,14 @@ ALTER TABLE obs_obsTag ADD CONSTRAINT fk_observationTagId FOREIGN KEY (observati
 
 
 CREATE TABLE IF NOT EXISTS `codeMapping` (
-`codeMappingId` int(11) NOT NULL,
+`codeMappingId` int(11) NOT NULL AUTO_INCREMENT,
   `codeMappingName` varchar(255) COLLATE utf8_bin NOT NULL,
   `Key1` int(11)  NULL,
   `Value1` varchar(255) COLLATE utf8_bin  NULL,
    PRIMARY KEY (`codeMappingId`),
      UNIQUE KEY (`codeMappingName`)
 
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 
 

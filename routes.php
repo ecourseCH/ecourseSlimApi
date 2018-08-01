@@ -9,6 +9,50 @@ $app->get('/hello/{name}', function (Request $request, Response $response, array
     return $response;
 });
 
+$app->get('/course', function (Request $request, Response $response, array $args) {
+    $repository = new CourseRepository($this->db);
+    $courses = $repository->getCourses();
+    $newResponse = $response->withJson($courses);
+    return $newResponse;
+});
+
+$app->get('/course/{id}', function (Request $request, Response $response, array $args) {
+    $courseId = (int)$args['id'];
+    $repository = new CourseRepository($this->db);
+    $course = $repository->getCourse($courseId);
+    $newResponse = $response->withJson($course);
+    return $newResponse;
+});
+
+$app->post('/course/{id}', function (Request $request, Response $response, array $args) {
+    $userId = (int)$args['id'];
+
+    $data = $request->getParsedBody();
+
+   
+    $repository = new CourseRepository($this->db);
+    $insertedCourse =  $repository->addCourse($userId, $data);
+    
+    $newResponse = $response->withJson($insertedCourse);
+    return $newResponse;
+});
+
+$app->get('/user', function (Request $request, Response $response, array $args) {
+    $repository = new UserRepository($this->db);
+    $users = $repository->getUsers();
+    $newResponse = $response->withJson($users);
+    return $newResponse;
+});
+
+$app->get('/user/{id}', function (Request $request, Response $response, array $args) {
+    $userId = (int)$args['id'];
+    $repository = new UserRepository($this->db);
+    $user = $repository->getUser($userId);
+    $newResponse = $response->withJson($user);
+    return $newResponse;
+});
+
+
 $app->get('/participant', function (Request $request, Response $response, array $args) {
     $repository = new ParticipantRepository($this->db);
     $participants = $repository->getParticipants();

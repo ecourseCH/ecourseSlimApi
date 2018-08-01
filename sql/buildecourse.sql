@@ -15,14 +15,14 @@ USE ecourse;
 -- DROP TABLE IF EXISTS `user`;
 
 CREATE TABLE IF NOT EXISTS `user` (
-`userId` int(11) NOT NULL,
+`userId` int(11) NOT NULL AUTO_INCREMENT,
   `userName` varchar(255) COLLATE utf8_bin NOT NULL,
   `userMail` varchar(255) COLLATE utf8_bin NOT NULL,
   `password` varchar(255) COLLATE utf8_bin NOT NULL,
       `language` varchar(8) COLLATE utf8_bin NOT NULL,
         PRIMARY KEY (`userId`),
   UNIQUE KEY `userMail` (`userMail`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 
 INSERT INTO `user` (`userId`, `userName`, `userMail`, `password`, `language`) values
@@ -30,14 +30,14 @@ INSERT INTO `user` (`userId`, `userName`, `userMail`, `password`, `language`) va
 
 
 CREATE TABLE IF NOT EXISTS `course` (
-`courseId` int(11) NOT NULL,
-  `courseName` int(11) NOT NULL,
+`courseId` int(11) NOT NULL AUTO_INCREMENT,
+  `courseName` varchar(255) NOT NULL,
   `ownerUserId` int(11) NOT NULL,
-  `dbScheme` varchar(255) COLLATE utf8_bin NOT NULL,
+  `dbScheme` varchar(255) COLLATE utf8_bin  NULL, -- TODO should not be nullable, only for testing
     -- start date
   -- end date
           PRIMARY KEY (`courseId`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 
 ALTER TABLE course ADD CONSTRAINT fk_user_id FOREIGN KEY (ownerUserId) REFERENCES user(userId);
