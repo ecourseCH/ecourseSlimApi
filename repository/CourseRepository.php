@@ -27,16 +27,17 @@ class CourseRepository extends Repository
         public function addCourse($userId, array $courseData){
         $sql = "INSERT INTO course ( courseName, ownerUserId) VALUES (:courseName,:ownerUserId)";
         $stmt = $this->db->prepare($sql);
-    // 
         $stmt->bindParam('courseName', $courseData['courseName']); 
+         print_r ($userId);
         $stmt->bindParam('ownerUserId', $userId);
+        print_r ($userId);
         $stmt->execute();
 
         $sqlSelect = "SELECT c.courseId, c.courseName, c.ownerUserId, c.dbScheme
             FROM course c
             WHERE c.ownerUserId = :userId ORDER By c.courseId DESC LIMIT 1";
         $stmtSelect = $this->db->prepare($sqlSelect);
-        $stmtSelect->bindParam('ownerUserId', $userId);
+        $stmtSelect->bindParam('userId', $userId);
         $stmtSelect->execute();
         $insertedUser = $stmtSelect->fetch();
 

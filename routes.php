@@ -25,16 +25,18 @@ $app->get('/course/{id}', function (Request $request, Response $response, array 
 });
 
 $app->post('/course/{id}', function (Request $request, Response $response, array $args) {
-    $userId = (int)$args['id'];
-
+  $userId = (int)$args['id'];
+print_r ($userId);
     $data = $request->getParsedBody();
 
-   
+   print_r($data);
     $repository = new CourseRepository($this->db);
     $insertedCourse =  $repository->addCourse($userId, $data);
     
     $newResponse = $response->withJson($insertedCourse);
     return $newResponse;
+    
+
 });
 
 $app->get('/user', function (Request $request, Response $response, array $args) {
