@@ -21,6 +21,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `password` varchar(255) COLLATE utf8_bin NOT NULL,
       `language` varchar(8) COLLATE utf8_bin NOT NULL,
         PRIMARY KEY (`userId`),
+  UNIQUE KEY `userName` (`userName`),
   UNIQUE KEY `userMail` (`userMail`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
@@ -43,6 +44,9 @@ CREATE TABLE IF NOT EXISTS `course` (
 ALTER TABLE course ADD CONSTRAINT fk_user_id FOREIGN KEY (ownerUserId) REFERENCES user(userId);
 
 -- USER
+
+-- TODO intersection table which user is in which course
+
 
 -- DELETE FROM mysql.user WHERE User = 'ecourse';
 
