@@ -43,10 +43,16 @@ CREATE TABLE IF NOT EXISTS `course` (
 
 ALTER TABLE course ADD CONSTRAINT fk_user_id FOREIGN KEY (ownerUserId) REFERENCES user(userId);
 
+CREATE TABLE IF NOT EXISTS `user_course` (
+`userId` int(11) NOT NULL,
+`courseId` int(11) NOT NULL,
+  UNIQUE KEY (`userId`, `courseId`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+ALTER TABLE user_course ADD CONSTRAINT fk_user_id2 FOREIGN KEY (userId) REFERENCES user(userId);
+ALTER TABLE user_course ADD CONSTRAINT fk_course_id2 FOREIGN KEY (courseId) REFERENCES course(courseId);
+
 -- USER
-
--- TODO intersection table which user is in which course
-
 
 -- DELETE FROM mysql.user WHERE User = 'ecourse';
 

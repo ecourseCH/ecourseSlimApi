@@ -44,4 +44,14 @@ class CourseRepository extends Repository
         return $insertedUser;
     }
     
+    public function addUserToCourse($userId, array $courseUserData){
+    # TODO check if user exisits
+    # TODO check if owner has rights on course
+    
+    
+    
+    }
+    
+    #remove user from course
+    
 }
