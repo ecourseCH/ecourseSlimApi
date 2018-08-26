@@ -42,6 +42,30 @@ class UserRepository extends Repository
         return $insertedUser;
     }
     
-    # delete user todo
-    # change user todo
+    public function getUserLanguages(){
+    $sql = "SELECT value1 FROM codeMapping WHERE codeMappingName = 'Locales'";
+        $stmt = $this->db->prepare($sql);    
+    $stmt->execute();
+    $availableLanguages = $stmtSelect->fetch();
+    }
+    public function updateUser($userId, array $userData){
+    $sql = "UPDATE user SET userName = :userName, userMail = :userMail, language = :userLanguage where userId = :userId ";
+          $stmt = $this->db->prepare($sql); 
+                  $stmt->bindParam('userId', $userId);
+            $stmt->bindParam('userName', $userData['userName']); 
+        $stmt->bindParam('userMail', $userData['userMail']); 
+        $stmt->bindParam('language', $userData['language']);  //todo check that language is part of codes
+        $stmt->execute();
+            
+
+        return getUser($userId);
+    }
+    
+    public function deleteUser($userId){
+         $sql = "DELETE FROM user WHERE userId = :userId  ";
+     $stmt = $this->db->prepare($sql);
+    $stmt->bindParam('userId', $userId);
+        $stmtSelect->execute();
+    }
+    
 }

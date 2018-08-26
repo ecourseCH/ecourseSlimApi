@@ -31,7 +31,7 @@ INSERT INTO `user` (`userId`, `userName`, `userMail`, `password`, `language`) va
 
 
 CREATE TABLE IF NOT EXISTS `course` (
-`courseId` int(11) NOT NULL AUTO_INCREMENT,
+`courseId` varchar(11) NOT NULL,
   `courseName` varchar(255) NOT NULL,
   `ownerUserId` int(11) NOT NULL,
   `dbScheme` varchar(255) COLLATE utf8_bin  NULL, -- TODO should not be nullable, only for testing
@@ -45,12 +45,23 @@ ALTER TABLE course ADD CONSTRAINT fk_user_id FOREIGN KEY (ownerUserId) REFERENCE
 
 CREATE TABLE IF NOT EXISTS `user_course` (
 `userId` int(11) NOT NULL,
-`courseId` int(11) NOT NULL,
+`courseId` varchar(11) NOT NULL,
   UNIQUE KEY (`userId`, `courseId`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 ALTER TABLE user_course ADD CONSTRAINT fk_user_id2 FOREIGN KEY (userId) REFERENCES user(userId);
+
 ALTER TABLE user_course ADD CONSTRAINT fk_course_id2 FOREIGN KEY (courseId) REFERENCES course(courseId);
+
+CREATE TABLE IF NOT EXISTS `codeMapping` (
+`codeMappingId` int(11) NOT NULL AUTO_INCREMENT,
+  `codeMappingName` varchar(255) COLLATE utf8_bin NOT NULL,
+  `Key1` int(11)  NULL,
+  `Value1` varchar(255) COLLATE utf8_bin  NULL,
+   PRIMARY KEY (`codeMappingId`),
+     UNIQUE KEY (`codeMappingName`)
+
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- USER
 

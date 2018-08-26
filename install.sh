@@ -1,16 +1,16 @@
 #!/bin/bash
-# installation script for linux for eCourse
+# installation script for linux for eCourseSlimApi
 # Author Luxus
 
 # parameters 
 # 1 mysql pwd
-# 2 install dir of files default /var/www/html/ecourse
+# 2 install dir of files default /var/www/html/eCourseSlimApi
 
 #check input parameters
 
 if [ -z "$2" ]
   then
-   DIR="/var/www/html/ecourse";
+   DIR="/var/www/html/eCourseSlimApi";
 echo "Directory set to " $DIR ;
 
 else
@@ -110,3 +110,5 @@ cd $DIR;
 
 # start webservice
 # php -S localhost:3000
+
+# cd ~/ecourseSlimApi/; ./install.sh pwd ; cd /var/www/html/eCourseSlimApi ; php -S localhost:3000 

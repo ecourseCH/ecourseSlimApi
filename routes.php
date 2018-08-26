@@ -16,6 +16,13 @@ $app->get('/course', function (Request $request, Response $response, array $args
     return $newResponse;
 });
 
+$app->get('/courseId', function (Request $request, Response $response, array $args) {
+    $repository = new CourseRepository($this->db);
+    $courses = $repository->getNewCourseId();
+    $newResponse = $response->withJson($courses);
+    return $newResponse;
+});
+
 $app->get('/course/{id}', function (Request $request, Response $response, array $args) {
     $courseId = (int)$args['id'];
     $repository = new CourseRepository($this->db);
@@ -25,10 +32,10 @@ $app->get('/course/{id}', function (Request $request, Response $response, array 
 });
 
 $app->post('/course', function (Request $request, Response $response, array $args) {
-  $userId = (int)$request['userId'];
-//print_r ($userId);
+      
     $data = $request->getParsedBody();
-
+  $userId = $data['userId'];
+print_r ($userId);
   // print_r($data);
     $repository = new CourseRepository($this->db);
     $insertedCourse =  $repository->addCourse($userId, $data);
@@ -45,6 +52,8 @@ $app->get('/user', function (Request $request, Response $response, array $args) 
     $newResponse = $response->withJson($users);
     return $newResponse;
 });
+
+
 
 $app->get('/user/{id}', function (Request $request, Response $response, array $args) {
     $userId = (int)$args['id'];

@@ -109,6 +109,7 @@ ALTER TABLE observation ADD CONSTRAINT fk_leader_id FOREIGN KEY (leaderId) REFER
 -- TODO check might be 1..n - 0..n
 ALTER TABLE observation ADD CONSTRAINT fk_participant_id FOREIGN KEY (participantId) REFERENCES participant(participantId);
 
+-- TODO discuss about group observation
 
 CREATE TABLE IF NOT EXISTS `observationTag` (
 `observationTagId` int(11) NOT NULL AUTO_INCREMENT,
@@ -133,15 +134,7 @@ ALTER TABLE obs_obsTag ADD CONSTRAINT fk_observationTagId FOREIGN KEY (observati
 
 
 
-CREATE TABLE IF NOT EXISTS `codeMapping` (
-`codeMappingId` int(11) NOT NULL AUTO_INCREMENT,
-  `codeMappingName` varchar(255) COLLATE utf8_bin NOT NULL,
-  `Key1` int(11)  NULL,
-  `Value1` varchar(255) COLLATE utf8_bin  NULL,
-   PRIMARY KEY (`codeMappingId`),
-     UNIQUE KEY (`codeMappingName`)
 
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 
 
