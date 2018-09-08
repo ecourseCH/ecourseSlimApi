@@ -6,6 +6,7 @@ class OberservationRepository extends Repository
         o.leaderId, o.participantId
             FROM observation o";
         $stmt = $this->db->query($sql);
+                   $stmt->execute();
         $results = [];
         while($row = $stmt->fetch()) {
             $results[] = $row;
@@ -56,12 +57,42 @@ class OberservationRepository extends Repository
     }
     
     public function deleteObservation($observationId) {
-    $sql = "DELETE FROM observation WHERE observationId = :observationID";
+    $sql = "DELETE FROM observation WHERE observationId = :observationId";
      $stmt = $this->db->query($sql);
-     $stmt->bindParam('observationId', $observation["observationId"]); 
+     $stmt->bindParam('observationId', $observationId); 
        $stmt->execute(); 
     
     }
 
- 
+   
+      public function getObservationTagbyObservationId($observationId){
+  $sql = "SELECT observationTagId from obs_obsTag WHERE observationId = :observationId";
+   $stmt = $this->db->query($sql);
+          $stmt->bindParam('observationId', $observationId); 
+            $stmt->execute();
+
+   $results = [];
+        while($row = $stmt->fetch()) {
+          
+            $results[] = getObservationTag($row['observationTagId'])
+        }
+        
+        
+     
+        return $results;
+  }
+   public function addObservationToObservationTag($observationId, $observationTagId){
+   $sql = "INSERT INTO part_partTag (observationId, observationTagId) VALUES (:observationId, :observationTagId)";
+     $stmt = $this->db->query($sql);
+         $stmt->bindParam('observationId', $observationId); 
+         $stmt->bindParam('observationTagId', $observationTagId); 
+            $stmt->execute();
+   }
+     public function deleteObservationToObservationTag($observationId, $observationTagId){
+   $sql = "DELETE FROM part_partTag WHERE observationId = :observationId AND observationTagId = :observationTagId";
+     $stmt = $this->db->query($sql);
+         $stmt->bindParam('observationId', $observationId); 
+         $stmt->bindParam('observationTagId', $observationTagId); 
+            $stmt->execute();
+   }  
 }

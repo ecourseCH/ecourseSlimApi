@@ -1,11 +1,10 @@
 <?php
 class ObservationTagRepository extends Repository
-{  // TODO all
+{  
 
-    public function getObservations() {
-        $sql = "SELECT o.observationId, o.observationText, o.activityId, o.observationDate, 
-        o.leaderId, o.participantId
-            FROM observation o";
+    public function getObservationTags() {
+        $sql = "SELECT ot.observationTagId,ot.partentObservationTagId, ot.observationTagName
+        FROM observationTag ot";
         $stmt = $this->db->query($sql);
         $results = [];
         while($row = $stmt->fetch()) {
@@ -13,53 +12,44 @@ class ObservationTagRepository extends Repository
         }
         return $results;
     }
-     public function getObservation($observationId) {
-        $sql = "SELECT o.observationId, o.observationText, o.activityId, o.observationDate, 
-        o.leaderId, o.participantId
-            FROM observation o WHERE observationId = :observationId";
+     public function getObservationTag($observationTagId) {
+        $sql = "SELECT ot.observationTagId,ot.partentObservationTagId, ot.observationTagName
+        FROM observationTag ot WHERE ot.observationTagId = :observationTagId";
         $stmt = $this->db->query($sql);
-         $stmt->bindParam('observationId', $observationId); 
+         $stmt->bindParam('observationTagId', $observationTagId); 
            $stmt->execute();
         $result = $stmt->fetch();
         return $result;
     }
        
-    public function addObservation($observation){
-    $sql = "INSERT INTO observation (observationText, activityId, observationDate, leaderId
-    ,participantId ) VALUES (:observationText, :activityId, :observationDate, :leaderId
-    , :participantId ) ";
+    public function addObservationTag($observationTag){
+    $sql = "INSERT INTO observationTag (parentObservationTagId, observationTagName ) VALUES 
+    (:parentObservationTagId, :observationTagName ) ";
         $stmt = $this->db->query($sql);
-    $stmt->bindParam('observationText', $observation['observationText']); 
-      $stmt->bindParam('activityId', $observation['activityId']); 
-        $stmt->bindParam('observationDate', $observation['observationDate']); 
-          $stmt->bindParam('leaderId', $observation['leaderId']); 
-          $stmt->bindParam('participantId', $observation['participantId']); 
+    $stmt->bindParam('parentObservationTagId', $observationTag['parentObservationTagId']); 
+      $stmt->bindParam('observationTagName', $observationTag['observationTagName']); 
               $stmt->execute();
     
     // tbd return value
     
     }
     
-    publicn function updateObservation($observation){
-    $sql = "UPDATE observation SET observationText = :observationText, activityId =:activityId,
-    observationDate = :observationDate, leaderId = :leaderId
-    ,participantId = :participantId
-    WHERE observationId = :observationId":
+    publicn function updateObservationTag($observationTag){
+    $sql = "UPDATE observationTag SET parentObservationTagId = :parentObservationTagId, observationTagName = :observationTagName
+    WHERE observationTagId = :observationTagId":
            $stmt = $this->db->query($sql);
-     $stmt->bindParam('observationId', $observation['observationId']); 
- $stmt->bindParam('observationText', $observation['observationText']); 
-      $stmt->bindParam('activityId', $observation['activityId']); 
-        $stmt->bindParam('observationDate', $observation['observationDate']); 
-          $stmt->bindParam('leaderId', $observation['leaderId']); 
-          $stmt->bindParam('participantId', $observation['participantId']); 
+     $stmt->bindParam('parentObservationTagId', $observationTag['parentObservationTagId']); 
+ $stmt->bindParam('observationTagName', $observationTag['observationTagName']); 
+      $stmt->bindParam('observationTagId', $observationTag['observationTagId']); 
+       
               $stmt->execute(); 
-    return getObservation($observation['observationId']);
+    return getObservation($observationTag['observationTagId']);
     }
     
-    public function deleteObservation($observationId) {
-    $sql = "DELETE FROM observation WHERE observationId = :observationID";
+    public function deleteObservationTag($observationTagId) {
+    $sql = "DELETE FROM observationTag WHERE observationTagId = :observationTagId";
      $stmt = $this->db->query($sql);
-     $stmt->bindParam('observationId', $observation['observationId']); 
+     $stmt->bindParam('observationTagId', $observationTagId); 
        $stmt->execute(); 
     
     }

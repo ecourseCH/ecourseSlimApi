@@ -70,13 +70,17 @@ course c WHERE  c.courseId = :courseId ";
         
         // read script
         $courseTemplateFile = fopen(__DIR__ . "/../sql/createcourse.sql","r") or die("Unable to open course sql file");
-        $courseFile = fopen(__DIR__ . "/../sql/". $newCourseId . "_createcourse.sql","x") or die ("Unable to create new course sql file " . $newCourseId );
+        $courseFile = fopen(__DIR__ . "/../sql/". $newCourseId . "_createcourse.sql","x+") or die ("Unable to create new course sql file " . $newCourseId );
         // do regex
         $courseTemplate = fread($courseTemplateFile, filesize(__DIR__ . "/../sql/createcourse.sql"));
-        $courseTemplate = str_replace("********",$newCourseId,$courseTemplate);
+        $courseTemplate = str_replace("**********",$newCourseId,$courseTemplate);
         // write script
         fwrite($courseFile, $courseTemplate);
-        // execute script
+        
+        // execute script //TODO this does not work
+        $coursestmt = $this->db->exec($courseTemplate);
+        
+        
         fclose($courseFile);
         fclose($courseTemplateFile);
         
@@ -93,6 +97,9 @@ course c WHERE  c.courseId = :courseId ";
         
         return $insertedUser;
     }
+    //TODO update course is missing
+    public function updateCourse(){
+    }
     
    public function deleteCourse($userId, array $courseData){
        $sql = "DELETE FROM course c where courseId = :courseId and ownerUserId = :ownerUserId ";
@@ -101,6 +108,32 @@ course c WHERE  c.courseId = :courseId ";
     $stmt->bindParam('courseId', $courseData['courseId']);
     $stmt->execute();
     }
+    
+      public function delAllCourses(){
+           $sql = "SELECT table_name FROM information_schema.tables WHERE table_schema = 'ecourse' 
+           and table_name not in ('codeMapping','course','user','user_course') ";
+     $stmt = $this->db->prepare($sql);
+    $stmt->execute();
+     $tables = "";
+        while($row = $stmt->fetch()) {
+            $tables .= ", " . $row;
+        }
+    $tables = ltrim($tables, ', ');
+
+    // TODO cleanup of tables
+    //    print($tables);
+ //      $sql = "DROP TABLE :dropTables ";
+ //    $stmt = $this->db->prepare($sql);
+  //   $stmt->bindParam('dropTables', $tables);
+ //   $stmt->execute();
+          $sql = "DELETE FROM user_course";
+     $stmt = $this->db->prepare($sql);
+    $stmt->execute(); 
+            $sql = "DELETE FROM course";
+     $stmt = $this->db->prepare($sql);
+    $stmt->execute();   
+    }
+    
     
     public function addUserToCourse($userId, array $courseUserData){
      $sql = "INSERT INTO user_course ( userId, courseId) VALUES (:userId,:courseId) ";

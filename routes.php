@@ -1,14 +1,53 @@
 <?php
 use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
+//// USER
+// add user
+$app->post('/user', function (Request $request, Response $response, array $args) {
 
-$app->get('/hello/{name}', function (Request $request, Response $response, array $args) {
-    $name = $args['name'];
-    $response->getBody()->write("Hello, $name");
-
-    return $response;
+    $data = $request->getParsedBody();
+    $repository = new UserRepository($this->db);
+    $insertedUser =  $repository->addUser($data); 
+    $newResponse = $response->withJson($insertedUser);
+    return $newResponse;
+   
+});
+// update user
+$app->post('/user/{id}', function (Request $request, Response $response, array $args) {
+   $userId = (int)$args['id'];
+    $data = $request->getParsedBody();
+    $repository = new UserRepository($this->db);
+    $insertedUser =  $repository->updateUser($userId, $data); 
+    $newResponse = $response->withJson($insertedUser);
+    return $newResponse;
+   
+});
+// delete user
+$app->post('/user/del/{id}', function (Request $request, Response $response, array $args) {
+   $userId = (int)$args['id'];
+    $repository = new UserRepository($this->db);
+  return  $repository->deleteUser($userId); 
+   ;
+   
+});
+// get all users //TODO is this needed?
+$app->get('/user', function (Request $request, Response $response, array $args) {
+    $repository = new UserRepository($this->db);
+    $users = $repository->getUsers();
+    $newResponse = $response->withJson($users);
+    return $newResponse;
+});
+// get user
+$app->get('/user/{id}', function (Request $request, Response $response, array $args) {
+    $userId = (int)$args['id'];
+    $repository = new UserRepository($this->db);
+    $user = $repository->getUser($userId);
+    $newResponse = $response->withJson($user);
+    return $newResponse;
 });
 
+//// COURSE
+// get all courses //TODO is this needed?
 $app->get('/course', function (Request $request, Response $response, array $args) {
     $repository = new CourseRepository($this->db);
     $courses = $repository->getCourses();
@@ -16,12 +55,6 @@ $app->get('/course', function (Request $request, Response $response, array $args
     return $newResponse;
 });
 
-$app->get('/courseId', function (Request $request, Response $response, array $args) {
-    $repository = new CourseRepository($this->db);
-    $courses = $repository->getNewCourseId();
-    $newResponse = $response->withJson($courses);
-    return $newResponse;
-});
 
 $app->get('/course/{id}', function (Request $request, Response $response, array $args) {
     $courseId = (int)$args['id'];
@@ -35,46 +68,48 @@ $app->post('/course', function (Request $request, Response $response, array $arg
       
     $data = $request->getParsedBody();
   $userId = $data['userId'];
-print_r ($userId);
-  // print_r($data);
     $repository = new CourseRepository($this->db);
     $insertedCourse =  $repository->addCourse($userId, $data);
     
     $newResponse = $response->withJson($insertedCourse);
     return $newResponse;
     
-
 });
 
-$app->get('/user', function (Request $request, Response $response, array $args) {
-    $repository = new UserRepository($this->db);
-    $users = $repository->getUsers();
-    $newResponse = $response->withJson($users);
+
+
+// for testing purposes only:
+// delete all users
+$app->get('/deluser', function (Request $request, Response $response, array $args) {
+
+$repository = new UserRepository($this->db);
+ 
+    return $repository->delAllUsers(); ;
+});
+// create new course id
+$app->get('/courseId', function (Request $request, Response $response, array $args) {
+    $repository = new CourseRepository($this->db);
+    $courses = $repository->getNewCourseId();
+    $newResponse = $response->withJson($courses);
     return $newResponse;
 });
 
+// delete all courses
+$app->get('/delcourse', function (Request $request, Response $response, array $args) {
 
+$repository = new CourseRepository($this->db);
+ 
+    return $repository->delAllCourses(); ;
+});
+// all old routes below this comment
 
-$app->get('/user/{id}', function (Request $request, Response $response, array $args) {
-    $userId = (int)$args['id'];
-    $repository = new UserRepository($this->db);
-    $user = $repository->getUser($userId);
-    $newResponse = $response->withJson($user);
-    return $newResponse;
+$app->get('/hello/{name}', function (Request $request, Response $response, array $args) {
+    $name = $args['name'];
+    $response->getBody()->write("Hello, $name");
+
+    return $response;
 });
 
-$app->post('/user', function (Request $request, Response $response, array $args) {
-
-
-    $data = $request->getParsedBody();
-    $repository = new UserRepository($this->db);
-    $insertedUser =  $repository->addUser( $data);
-    
-    $newResponse = $response->withJson($insertedUser);
-    return $newResponse;
-    
-
-});
 
 $app->get('/participant', function (Request $request, Response $response, array $args) {
     $repository = new ParticipantRepository($this->db);

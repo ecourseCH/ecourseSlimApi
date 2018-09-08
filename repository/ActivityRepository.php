@@ -1,68 +1,64 @@
 <?php
 class ActivityRepository extends Repository
-{  // TODO all
+{  
 
-    public function getObservations() {
-        $sql = "SELECT o.observationId, o.observationText, o.activityId, o.observationDate, 
-        o.leaderId, o.participantId
-            FROM observation o";
-        $stmt = $this->db->query($sql);
-        $results = [];
+    public function getActivitys() {
+    $sql = "SELECT a.activityId, a.activityName, a.activityNumber, a.activityDate from activity a";
+    $stmt = $this->db->query($sql);
+    $stmt->execute();
+  $results = [];
         while($row = $stmt->fetch()) {
             $results[] = $row;
         }
         return $results;
-    }
-     public function getObservation($observationId) {
-        $sql = "SELECT o.observationId, o.observationText, o.activityId, o.observationDate, 
-        o.leaderId, o.participantId
-            FROM observation o WHERE observationId = :observationId";
-        $stmt = $this->db->query($sql);
-         $stmt->bindParam('observationId', $observationId); 
+        }
+
+        
+        public function getActivity($activityId){
+            $sql = "SELECT a.activityId, a.activityName, a.activityNumber, a.activityDate 
+            from activity a WHERE activityID = :activityID";
+
+               $stmt = $this->db->query($sql);
+         $stmt->bindParam('activityId', $activityId); 
            $stmt->execute();
         $result = $stmt->fetch();
         return $result;
+        }
+        
+        
+    public function addActivity($activity){
+    $sql = "INSERT INTO activity (activityName, activityNumber, activityDate ) VALUES
+    (:activityName, :activityNumber, :activityDate )";
+      $stmt = $this->db->query($sql);
+         $stmt->bindParam('activityName', $activity['activityName']); 
+         $stmt->bindParam('activityNumber', $activity['activityNumber']); 
+         $stmt->bindParam('activityDate', $activity['activityDate']); 
+           $stmt->execute();
+           
+           //TODO return value
+    
     }
-       
-    public function addObservation($observation){
-    $sql = "INSERT INTO observation (observationText, activityId, observationDate, leaderId
-    ,participantId ) VALUES (:observationText, :activityId, :observationDate, :leaderId
-    , :participantId ) ";
+    
+    
+    public function updateActivity($activity){
+    $sql= "UPDATE activity SET activityName =:activityName, activityNumber = :activityNumber,
+    activityDate = :activityDate WHERE activityId = :activityID";
+      $stmt = $this->db->query($sql);
+         $stmt->bindParam('activityName', $activity['activityName']); 
+         $stmt->bindParam('activityId', $activity['activityId']); 
+         $stmt->bindParam('activityNumber', $activity['activityNumber']); 
+         $stmt->bindParam('activityDate', $activity['activityDate']); 
+           $stmt->execute();
+    return getActivity($activity['activityId']);
+    }
+    
+   public function deleteActivity($activityId) {
+   $sql = "DELETE FROM activity WHERE activityId = :activityId";
         $stmt = $this->db->query($sql);
-    $stmt->bindParam('observationText', $observation["observationText"]); 
-      $stmt->bindParam('activityId', $observation["activityId"]); 
-        $stmt->bindParam('observationDate', $observation["observationDate"]); 
-          $stmt->bindParam('leaderId', $observation["leaderId"]); 
-          $stmt->bindParam('participantId', $observation["participantId"]); 
-              $stmt->execute();
-    
-    // tbd return value
-    
-    }
-    
-    publicn function updateObservation($observation){
-    $sql = "UPDATE observation SET observationText = :observationText, activityId =:activityId,
-    observationDate = :observationDate, leaderId = :leaderId
-    ,participantId = :participantId
-    WHERE observationId = :observationId":
-           $stmt = $this->db->query($sql);
-     $stmt->bindParam('observationId', $observation["observationId"]); 
- $stmt->bindParam('observationText', $observation["observationText"]); 
-      $stmt->bindParam('activityId', $observation["activityId"]); 
-        $stmt->bindParam('observationDate', $observation["observationDate"]); 
-          $stmt->bindParam('leaderId', $observation["leaderId"]); 
-          $stmt->bindParam('participantId', $observation["participantId"]); 
-              $stmt->execute(); 
-    return getObservation($observation["observationId"]);
-    }
-    
-    public function deleteObservation($observationId) {
-    $sql = "DELETE FROM observation WHERE observationId = :observationID";
-     $stmt = $this->db->query($sql);
-     $stmt->bindParam('observationId', $observation["observationId"]); 
+         $stmt->bindParam('activityId', $activity['activityId']); 
        $stmt->execute(); 
-    
-    }
+   }
+  
 
  
 }

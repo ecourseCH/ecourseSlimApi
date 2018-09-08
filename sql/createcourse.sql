@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS `**********_leader` (
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- TODO might not work accross db's
-ALTER TABLE **********_leader ADD CONSTRAINT **********_fk2_user_id FOREIGN KEY (userId) REFERENCES **********_user(userId);
+ALTER TABLE **********_leader ADD CONSTRAINT **********_fk2_user_id FOREIGN KEY (userId) REFERENCES user(userId);
 
 
 

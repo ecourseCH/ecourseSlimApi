@@ -1,0 +1,1067 @@
+{
+	"info": {
+		"_postman_id": "37a26e30-5b0e-4003-baf3-bd73c18ac044",
+		"name": "eCourseSlimApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"_postman_id": "18e59bb1-505c-4aa7-8053-fb353e30d79b",
+			"name": "del user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "25efe386-9a5f-468c-84e2-70266a1cf97e",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userName",
+							"value": "Test user name1",
+							"sessionValue": "testmyc",
+							"type": "text"
+						},
+						{
+							"key": "userMail",
+							"value": "test1@test.ch",
+							"sessionValue": "0",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "testpwd",
+							"sessionValue": "testpwd",
+							"type": "text"
+						},
+						{
+							"key": "language",
+							"value": "DE_CH",
+							"sessionValue": "DE_CH",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/deluser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"deluser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "35f673bf-daf2-4208-9b79-e1dfde248461",
+			"name": "create user 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f6eca716-3cc1-4053-904f-2143984c86e2",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							"",
+							"pm.test(\"set userId variable\", function() {",
+							"        var jsonData = pm.response.json();",
+							"    pm.environment.set(\"userId1\",jsonData.userId)",
+							"    ",
+							"})",
+							"/*",
+							"pm.test(\"user id present\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.userId).to.be.below(10);",
+							"});",
+							"",
+							"*/"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userName",
+							"value": "Test user name1",
+							"sessionValue": "testmyc",
+							"type": "text"
+						},
+						{
+							"key": "userMail",
+							"value": "test1@test.ch",
+							"sessionValue": "0",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "testpwd",
+							"sessionValue": "testpwd",
+							"type": "text"
+						},
+						{
+							"key": "language",
+							"value": "DE_CH",
+							"sessionValue": "DE_CH",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "1dc3bf13-09e5-4265-9d55-5c7c9d77318e",
+			"name": "create user 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bf431e5e-9ffe-41e0-8a6c-631874986ae6",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							"pm.test(\"set userId variable\", function() {",
+							"        var jsonData = pm.response.json();",
+							"    pm.environment.set(\"userId2\",jsonData.userId)",
+							"    ",
+							"})",
+							"/*",
+							"pm.test(\"user id present\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.userId).to.be.below(10);",
+							"});",
+							"",
+							"*/"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userName",
+							"value": "Test user name2",
+							"sessionValue": "testmyc",
+							"type": "text"
+						},
+						{
+							"key": "userMail",
+							"value": "test2@test.ch",
+							"sessionValue": "0",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "testpwd",
+							"sessionValue": "testpwd",
+							"type": "text"
+						},
+						{
+							"key": "language",
+							"value": "DE_CH",
+							"sessionValue": "DE_CH",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "76182879-830c-473f-be82-18b40737985a",
+			"name": "get users",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "25efe386-9a5f-468c-84e2-70266a1cf97e",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userName",
+							"value": "Test user name1",
+							"sessionValue": "testmyc",
+							"type": "text"
+						},
+						{
+							"key": "userMail",
+							"value": "test1@test.ch",
+							"sessionValue": "0",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "testpwd",
+							"sessionValue": "testpwd",
+							"type": "text"
+						},
+						{
+							"key": "language",
+							"value": "DE_CH",
+							"sessionValue": "DE_CH",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "c107dfba-9ebc-41e3-ba38-e243a2414aa2",
+			"name": "get user 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "25efe386-9a5f-468c-84e2-70266a1cf97e",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userName",
+							"value": "Test user name1",
+							"sessionValue": "testmyc",
+							"type": "text"
+						},
+						{
+							"key": "userMail",
+							"value": "test1@test.ch",
+							"sessionValue": "0",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "testpwd",
+							"sessionValue": "testpwd",
+							"type": "text"
+						},
+						{
+							"key": "language",
+							"value": "DE_CH",
+							"sessionValue": "DE_CH",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/{{userId2}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"{{userId2}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "909bb192-a692-45ba-bc17-14cea086c68c",
+			"name": "get user 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "25efe386-9a5f-468c-84e2-70266a1cf97e",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userName",
+							"value": "Test user name1",
+							"sessionValue": "testmyc",
+							"type": "text"
+						},
+						{
+							"key": "userMail",
+							"value": "test1@test.ch",
+							"sessionValue": "0",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "testpwd",
+							"sessionValue": "testpwd",
+							"type": "text"
+						},
+						{
+							"key": "language",
+							"value": "DE_CH",
+							"sessionValue": "DE_CH",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/{{userId1}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"{{userId1}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "65d79794-5846-4a55-ae16-cbb5340ca0f1",
+			"name": "update user 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bf431e5e-9ffe-41e0-8a6c-631874986ae6",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							"pm.test(\"set userId variable\", function() {",
+							"        var jsonData = pm.response.json();",
+							"    pm.environment.set(\"userId2\",jsonData.userId)",
+							"    ",
+							"})",
+							"/*",
+							"pm.test(\"user id present\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.userId).to.be.below(10);",
+							"});",
+							"",
+							"*/"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userName",
+							"value": "Test user name2_2",
+							"sessionValue": "testmyc",
+							"type": "text"
+						},
+						{
+							"key": "userMail",
+							"value": "test2_2@test.ch",
+							"sessionValue": "0",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "testpwd",
+							"sessionValue": "testpwd",
+							"type": "text"
+						},
+						{
+							"key": "language",
+							"value": "DE_CH_2",
+							"sessionValue": "DE_CH",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/{{userId2}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"{{userId2}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "9af442ac-c282-4340-a967-b69fabccf61b",
+			"name": "delete user 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1d30ac36-554f-47bd-8827-59ddd4c68c7b",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"/*",
+							"pm.test(\"set userId variable\", function() {",
+							"        var jsonData = pm.response.json();",
+							"    pm.environment.set(\"userId2\",jsonData.userId)",
+							"    ",
+							"})",
+							"",
+							"pm.test(\"user id present\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.userId).to.be.below(10);",
+							"});",
+							"",
+							"*/"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3000/user/del/{{userId2}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"del",
+						"{{userId2}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "21fd9b50-d0b3-46a4-961c-bfb50e159a18",
+			"name": "get course id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "25efe386-9a5f-468c-84e2-70266a1cf97e",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userName",
+							"value": "Test user name1",
+							"sessionValue": "testmyc",
+							"type": "text"
+						},
+						{
+							"key": "userMail",
+							"value": "test1@test.ch",
+							"sessionValue": "0",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "testpwd",
+							"sessionValue": "testpwd",
+							"type": "text"
+						},
+						{
+							"key": "language",
+							"value": "DE_CH",
+							"sessionValue": "DE_CH",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/courseId",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"courseId"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "6a09bdfe-87ff-4e70-99c8-a8b7e50ccaea",
+			"name": "get courses",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "25efe386-9a5f-468c-84e2-70266a1cf97e",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userName",
+							"value": "Test user name1",
+							"sessionValue": "testmyc",
+							"type": "text"
+						},
+						{
+							"key": "userMail",
+							"value": "test1@test.ch",
+							"sessionValue": "0",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "testpwd",
+							"sessionValue": "testpwd",
+							"type": "text"
+						},
+						{
+							"key": "language",
+							"value": "DE_CH",
+							"sessionValue": "DE_CH",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/course",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"course"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "a6731a83-db48-4e97-8538-2b00d29ccd84",
+			"name": "add course 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "479048f4-f158-4e1c-80b8-663fae6273c4",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							"pm.test(\"set courseId1 variable\", function() {",
+							"        var jsonData = pm.response.json();",
+							"    pm.environment.set(\"courseId1\",jsonData.courseId)",
+							"    ",
+							"})"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userId",
+							"value": "{{userId1}}",
+							"sessionValue": "{{userId1}}",
+							"type": "text"
+						},
+						{
+							"key": "courseName",
+							"value": "test course1",
+							"sessionValue": "test course1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/course",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"course"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "2f03207f-61d1-4b3e-8dc4-f088e839c43a",
+			"name": "del course",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "25efe386-9a5f-468c-84e2-70266a1cf97e",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userName",
+							"value": "Test user name1",
+							"sessionValue": "testmyc",
+							"type": "text"
+						},
+						{
+							"key": "userMail",
+							"value": "test1@test.ch",
+							"sessionValue": "0",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "testpwd",
+							"sessionValue": "testpwd",
+							"type": "text"
+						},
+						{
+							"key": "language",
+							"value": "DE_CH",
+							"sessionValue": "DE_CH",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/delcourse",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"delcourse"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
