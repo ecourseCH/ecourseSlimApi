@@ -5,7 +5,7 @@ class OberservationRepository extends Repository
         $sql = "SELECT o.observationId, o.observationText, o.activityId, o.observationDate, 
         o.leaderId, o.participantId
             FROM observation o";
-        $stmt = $this->db->query($sql);
+        $stmt = $this->db->prepare($sql);
                    $stmt->execute();
         $results = [];
         while($row = $stmt->fetch()) {
@@ -17,18 +17,18 @@ class OberservationRepository extends Repository
         $sql = "SELECT o.observationId, o.observationText, o.activityId, o.observationDate, 
         o.leaderId, o.participantId
             FROM observation o WHERE observationId = :observationId";
-        $stmt = $this->db->query($sql);
+        $stmt = $this->db->prepare($sql);
          $stmt->bindParam('observationId', $observationId); 
            $stmt->execute();
         $result = $stmt->fetch();
         return $result;
     }
        
-    public function addObservation($observation){
+    public function addObservation(array $observation){
     $sql = "INSERT INTO observation (observationText, activityId, observationDate, leaderId
     ,participantId ) VALUES (:observationText, :activityId, :observationDate, :leaderId
     , :participantId ) ";
-        $stmt = $this->db->query($sql);
+        $stmt = $this->db->prepare($sql);
     $stmt->bindParam('observationText', $observation["observationText"]); 
       $stmt->bindParam('activityId', $observation["activityId"]); 
         $stmt->bindParam('observationDate', $observation["observationDate"]); 
@@ -40,12 +40,12 @@ class OberservationRepository extends Repository
     
     }
     
-    publicn function updateObservation($observation){
+    publicn function updateObservation(array $observation){
     $sql = "UPDATE observation SET observationText = :observationText, activityId =:activityId,
     observationDate = :observationDate, leaderId = :leaderId
     ,participantId = :participantId
     WHERE observationId = :observationId":
-           $stmt = $this->db->query($sql);
+           $stmt = $this->db->prepare($sql);
      $stmt->bindParam('observationId', $observation["observationId"]); 
  $stmt->bindParam('observationText', $observation["observationText"]); 
       $stmt->bindParam('activityId', $observation["activityId"]); 
@@ -58,7 +58,7 @@ class OberservationRepository extends Repository
     
     public function deleteObservation($observationId) {
     $sql = "DELETE FROM observation WHERE observationId = :observationId";
-     $stmt = $this->db->query($sql);
+     $stmt = $this->db->prepare($sql);
      $stmt->bindParam('observationId', $observationId); 
        $stmt->execute(); 
     
@@ -67,7 +67,7 @@ class OberservationRepository extends Repository
    
       public function getObservationTagbyObservationId($observationId){
   $sql = "SELECT observationTagId from obs_obsTag WHERE observationId = :observationId";
-   $stmt = $this->db->query($sql);
+   $stmt = $this->db->prepare($sql);
           $stmt->bindParam('observationId', $observationId); 
             $stmt->execute();
 
@@ -83,14 +83,14 @@ class OberservationRepository extends Repository
   }
    public function addObservationToObservationTag($observationId, $observationTagId){
    $sql = "INSERT INTO part_partTag (observationId, observationTagId) VALUES (:observationId, :observationTagId)";
-     $stmt = $this->db->query($sql);
+     $stmt = $this->db->prepare($sql);
          $stmt->bindParam('observationId', $observationId); 
          $stmt->bindParam('observationTagId', $observationTagId); 
             $stmt->execute();
    }
      public function deleteObservationToObservationTag($observationId, $observationTagId){
    $sql = "DELETE FROM part_partTag WHERE observationId = :observationId AND observationTagId = :observationTagId";
-     $stmt = $this->db->query($sql);
+     $stmt = $this->db->prepare($sql);
          $stmt->bindParam('observationId', $observationId); 
          $stmt->bindParam('observationTagId', $observationTagId); 
             $stmt->execute();

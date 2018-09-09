@@ -4,13 +4,13 @@ class UserRepository extends Repository
 
  public function delAllUsers(){
  $sql = "DELETE FROM user";
-         $stmt = $this->db->query($sql);
+         $stmt = $this->db->prepare($sql);
               $stmt->execute();
  }
     public function getUsers() {
         $sql = "SELECT u.userId, u.userName, u.userMail, u.language
             FROM user u";
-        $stmt = $this->db->query($sql);
+        $stmt = $this->db->prepare($sql);
               $stmt->execute();
         $results = [];
         while($row = $stmt->fetch()) {

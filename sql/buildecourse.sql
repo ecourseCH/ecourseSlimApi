@@ -78,6 +78,10 @@ GRANT INSERT ON ecourse.* TO ecourse@localhost;
 GRANT DELETE ON ecourse.* TO ecourse@localhost;
 GRANT UPDATE ON ecourse.* TO ecourse@localhost;
 
--- TODO maybe move courses to other db such that create and drop would not be done on ecourse db level
--- GRANT DROP ON ecourse.* TO 'ecourse'@'localhost';
--- GRANT CREATE ON ecourse.* TO 'ecourse'@'localhost';
+-- //TODO maybe move courses to other db such that create and drop would not be done on ecourse db level
+ GRANT DROP ON ecourse.* TO ecourse@localhost;
+  GRANT ALTER ON ecourse.* TO ecourse@localhost;
+ GRANT CREATE ON ecourse.* TO ecourse@localhost;
+ GRANT REFERENCES ON ecourse.* TO ecourse@localhost;
+ 
+ 

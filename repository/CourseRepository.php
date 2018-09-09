@@ -6,7 +6,7 @@ class CourseRepository extends Repository
     public function getCourses() {
         $sql = "SELECT c.courseId, c.courseName, c.ownerUserId
             FROM course c";
-        $stmt = $this->db->query($sql);
+        $stmt = $this->db->prepare($sql);
         $results = [];
         while($row = $stmt->fetch()) {
             $results[] = $row;
@@ -54,6 +54,31 @@ course c WHERE  c.courseId = :courseId ";
     
     return $checkStr;
     }
+    public function addTestCourse(){
+            $courseTestFile = fopen(__DIR__ . "/../sql/test_createcourse.sql","r") or die("Unable to open course sql file");
+$courseTest = fread($courseTestFile, filesize(__DIR__ . "/../sql/test_createcourse.sql"));
+
+        // execute script 
+      //  $coursestmt = $this->db->exec($courseTemplate);      
+        $this->db->setAttribute(PDO::ATTR_EMULATE_PREPARES, 0);
+
+  try {
+  $this->db->exec($courseTest);
+  }
+catch (PDOException $e)
+{
+    echo $e->getMessage();
+    die();
+} 
+$this->db->setAttribute(PDO::ATTR_EMULATE_PREPARES, 1);
+
+
+        
+        
+        fclose($courseTestFile);
+return NULL;
+
+    }
     
         public function addCourse($userId, array $courseData){
 
@@ -76,9 +101,21 @@ course c WHERE  c.courseId = :courseId ";
         $courseTemplate = str_replace("**********",$newCourseId,$courseTemplate);
         // write script
         fwrite($courseFile, $courseTemplate);
-        
-        // execute script //TODO this does not work
-        $coursestmt = $this->db->exec($courseTemplate);
+          // execute script 
+      //  $coursestmt = $this->db->exec($courseTemplate);      
+        $this->db->setAttribute(PDO::ATTR_EMULATE_PREPARES, 0);
+
+  try {
+  $this->db->exec($courseTemplate);
+  }
+catch (PDOException $e)
+{
+    echo $e->getMessage();
+    die();
+} 
+$this->db->setAttribute(PDO::ATTR_EMULATE_PREPARES, 1);
+
+
         
         
         fclose($courseFile);
@@ -114,18 +151,24 @@ course c WHERE  c.courseId = :courseId ";
            and table_name not in ('codeMapping','course','user','user_course') ";
      $stmt = $this->db->prepare($sql);
     $stmt->execute();
-     $tables = "";
+     $tables = "SET FOREIGN_KEY_CHECKS=0;";
         while($row = $stmt->fetch()) {
-            $tables .= ", " . $row;
+            $tables .= "DROP TABLE IF EXISTS " . $row['table_name'] . " ;";
         }
-    $tables = ltrim($tables, ', ');
+            $tables .= "SET FOREIGN_KEY_CHECKS=1;";
 
-    // TODO cleanup of tables
-    //    print($tables);
- //      $sql = "DROP TABLE :dropTables ";
- //    $stmt = $this->db->prepare($sql);
-  //   $stmt->bindParam('dropTables', $tables);
- //   $stmt->execute();
+$this->db->setAttribute(PDO::ATTR_EMULATE_PREPARES, 0);
+
+  try {
+  $this->db->exec($tables);
+  }
+catch (PDOException $e)
+{
+    echo $e->getMessage();
+    die();
+} 
+//$this->db->setAttribute(PDO::ATTR_EMULATE_PREPARES, 1);
+
           $sql = "DELETE FROM user_course";
      $stmt = $this->db->prepare($sql);
     $stmt->execute(); 

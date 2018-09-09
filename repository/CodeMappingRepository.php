@@ -4,7 +4,7 @@ class CodeMappingRepository extends Repository
     public function getCodeMappingById($codeMappingId) {
         $sql = "SELECT cm.codeMappingId, cm.codeMappingName, cm.Key1, cm.Value1
             FROM codeMapping cm where cm.codeMappingId = :codeMappingId";
-        $stmt = $this->db->query($sql);
+        $stmt = $this->db->prepare($sql);
          $stmt->bindParam('codeMappingId', $codeMappingId); 
             $stmt->execute();
          $results = $stmt->fetch();
@@ -13,16 +13,16 @@ class CodeMappingRepository extends Repository
     public function getCodeMappingByName($codeMappingName) {
         $sql = "SELECT cm.codeMappingId, cm.codeMappingName, cm.Key1, cm.Value1
             FROM codeMapping cm where cm.codeMappingName = :codeMappingName";
-        $stmt = $this->db->query($sql);
+        $stmt = $this->db->prepare($sql);
          $stmt->bindParam('codeMappingName', $codeMappingName); 
             $stmt->execute();
          $results = $stmt->fetch();
         return $result;
     }
     
-    public function addCodeMapping($codeMapping){
+    public function addCodeMapping(array $codeMapping){
          $sql = "INSERT INTO codeMapping (codeMappingName, Key1, Value1) VALUES (:codeMappingName, :Key1, :Value1)";
-        $stmt = $this->db->query($sql);
+        $stmt = $this->db->prepare($sql);
          $stmt->bindParam('codeMappingName', $codeMapping["codeMappingName"]); 
          $stmt->bindParam('Key1', $codeMapping["Key1"]); 
                   $stmt->bindParam('Value1', $codeMapping["Value1"]); 
@@ -31,7 +31,7 @@ class CodeMappingRepository extends Repository
         return $result;
     return $codeMapping
     }
-        public function updateCodeMapping($codeMapping){
+        public function updateCodeMapping(array $codeMapping){
      $sql = "UPDATE codeMapping SET codeMappingName = :codeMappingName, Key1 = :Key1, Value1 = :Value1 
      where codeMappingId = :codeMappingId ";
           $stmt = $this->db->prepare($sql); 
@@ -61,7 +61,7 @@ class CodeMappingRepository extends Repository
 
         return getUser($userId);
     }
-    public function deleteCodeMappingByName($codeMapping) {
+    public function deleteCodeMappingByName(array $codeMapping) {
             
                  $sql = "DELETE FROM codeMapping cm where cm.codeMappingName = :codeMappingName ";
      $stmt = $this->db->prepare($sql);
@@ -70,7 +70,7 @@ class CodeMappingRepository extends Repository
     
     }
     
-        public function deleteCodeMappingById($codeMapping) {
+        public function deleteCodeMappingById($codeMappingId) {
             
                  $sql = "DELETE FROM codeMapping cm where cm.codeMappingId = :codeMappingId ";
      $stmt = $this->db->prepare($sql);

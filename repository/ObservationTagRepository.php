@@ -5,7 +5,7 @@ class ObservationTagRepository extends Repository
     public function getObservationTags() {
         $sql = "SELECT ot.observationTagId,ot.partentObservationTagId, ot.observationTagName
         FROM observationTag ot";
-        $stmt = $this->db->query($sql);
+        $stmt = $this->db->prepare($sql);
         $results = [];
         while($row = $stmt->fetch()) {
             $results[] = $row;
@@ -15,17 +15,17 @@ class ObservationTagRepository extends Repository
      public function getObservationTag($observationTagId) {
         $sql = "SELECT ot.observationTagId,ot.partentObservationTagId, ot.observationTagName
         FROM observationTag ot WHERE ot.observationTagId = :observationTagId";
-        $stmt = $this->db->query($sql);
+        $stmt = $this->db->prepare($sql);
          $stmt->bindParam('observationTagId', $observationTagId); 
            $stmt->execute();
         $result = $stmt->fetch();
         return $result;
     }
        
-    public function addObservationTag($observationTag){
+    public function addObservationTag(array $observationTag){
     $sql = "INSERT INTO observationTag (parentObservationTagId, observationTagName ) VALUES 
     (:parentObservationTagId, :observationTagName ) ";
-        $stmt = $this->db->query($sql);
+        $stmt = $this->db->prepare($sql);
     $stmt->bindParam('parentObservationTagId', $observationTag['parentObservationTagId']); 
       $stmt->bindParam('observationTagName', $observationTag['observationTagName']); 
               $stmt->execute();
@@ -34,10 +34,10 @@ class ObservationTagRepository extends Repository
     
     }
     
-    publicn function updateObservationTag($observationTag){
+    publicn function updateObservationTag(array $observationTag){
     $sql = "UPDATE observationTag SET parentObservationTagId = :parentObservationTagId, observationTagName = :observationTagName
     WHERE observationTagId = :observationTagId":
-           $stmt = $this->db->query($sql);
+           $stmt = $this->db->prepare($sql);
      $stmt->bindParam('parentObservationTagId', $observationTag['parentObservationTagId']); 
  $stmt->bindParam('observationTagName', $observationTag['observationTagName']); 
       $stmt->bindParam('observationTagId', $observationTag['observationTagId']); 
@@ -48,7 +48,7 @@ class ObservationTagRepository extends Repository
     
     public function deleteObservationTag($observationTagId) {
     $sql = "DELETE FROM observationTag WHERE observationTagId = :observationTagId";
-     $stmt = $this->db->query($sql);
+     $stmt = $this->db->prepare($sql);
      $stmt->bindParam('observationTagId', $observationTagId); 
        $stmt->execute(); 
     
