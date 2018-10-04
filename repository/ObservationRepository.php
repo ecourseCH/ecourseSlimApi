@@ -1,5 +1,5 @@
 <?php
-class OberservationRepository extends Repository
+class ObservationRepository extends Repository
 {
     public function getObservations() {
         $sql = "SELECT o.observationId, o.observationText, o.activityId, o.observationDate, 
@@ -36,15 +36,30 @@ class OberservationRepository extends Repository
           $stmt->bindParam('participantId', $observation["participantId"]); 
               $stmt->execute();
     
-    // tbd return value
+          $sql = "SELECT o.observationId, o.observationText, o.activityId, o.observationDate, 
+        o.leaderId, o.participantId
+            FROM observation o WHERE o.observationText = :observationText
+         "//   AND o.activityId = :activityId 
+          //  AND o.observationDate = :observationDate 
+         . "   AND o.leaderId = :leaderId
+    AND o.participantId = :participantId";
+        $stmt = $this->db->prepare($sql);
+   $stmt->bindParam('observationText', $observation["observationText"]); 
+    //  $stmt->bindParam('activityId', $observation["activityId"]); 
+      //  $stmt->bindParam('observationDate', $observation["observationDate"]); 
+          $stmt->bindParam('leaderId', $observation["leaderId"]); 
+          $stmt->bindParam('participantId', $observation["participantId"]); 
+            $stmt->execute();
+        $result = $stmt->fetch();
+        return $result;
     
     }
     
-    publicn function updateObservation(array $observation){
+    public function updateObservation(array $observation){
     $sql = "UPDATE observation SET observationText = :observationText, activityId =:activityId,
     observationDate = :observationDate, leaderId = :leaderId
     ,participantId = :participantId
-    WHERE observationId = :observationId":
+    WHERE observationId = :observationId";
            $stmt = $this->db->prepare($sql);
      $stmt->bindParam('observationId', $observation["observationId"]); 
  $stmt->bindParam('observationText', $observation["observationText"]); 
@@ -74,7 +89,7 @@ class OberservationRepository extends Repository
    $results = [];
         while($row = $stmt->fetch()) {
           
-            $results[] = getObservationTag($row['observationTagId'])
+            $results[] = getObservationTag($row['observationTagId']);
         }
         
         

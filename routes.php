@@ -23,7 +23,7 @@ $app->post('/user/{id}', function (Request $request, Response $response, array $
    
 });
 // delete user
-$app->post('/user/del/{id}', function (Request $request, Response $response, array $args) {
+$app->delete('/user/{id}', function (Request $request, Response $response, array $args) {
    $userId = (int)$args['id'];
     $repository = new UserRepository($this->db);
   return  $repository->deleteUser($userId); 
@@ -108,7 +108,7 @@ $app->post('/leader', function (Request $request, Response $response, array $arg
 });
 // delete leader
 // TODO does not work
-$app->post('/leader/del/{id}', function (Request $request, Response $response, array $args) {
+$app->delete('/leader/{id}', function (Request $request, Response $response, array $args) {
    $leaderId = (int)$args['id'];
     $repository = new LeaderRepository($this->db);
   return  $repository->deleteLeader($leaderId); 
@@ -138,7 +138,7 @@ $app->post('/activity/{id}', function (Request $request, Response $response, arr
    
 });
 // delete activity
-$app->post('/activity/del/{id}', function (Request $request, Response $response, array $args) {
+$app->delete('/activity/{id}', function (Request $request, Response $response, array $args) {
    $activityId = (int)$args['id'];
     $repository = new ActivityRepository($this->db);
   return  $repository->deleteActivity($activityId); 
@@ -162,9 +162,114 @@ $app->get('/activity/{id}', function (Request $request, Response $response, arra
 });
 
 
+// CodeMapping
+// TODO
+
+// Observation
+// add observation
+$app->post('/observation', function (Request $request, Response $response, array $args) {
+
+    $data = $request->getParsedBody();
+    $repository = new ObservationRepository($this->db);
+    $insertedObservation =  $repository->addObservation($data); 
+    $newResponse = $response->withJson($insertedObservation);
+    return $newResponse;
+   
+});
+// update observation
+$app->post('/observation/{id}', function (Request $request, Response $response, array $args) {
+   $observationId = (int)$args['id'];
+    $data = $request->getParsedBody();
+    $repository = new ObservationRepository($this->db);
+    $insertedObservation =  $repository->updateObservation($observationId, $data); 
+    $newResponse = $response->withJson($insertedObservation);
+    return $newResponse;
+   
+});
+// delete observation
+$app->delete('/observation/{id}', function (Request $request, Response $response, array $args) {
+   $observationId = (int)$args['id'];
+    $repository = new ObservationRepository($this->db);
+  return  $repository->deleteObservation($observationId); 
+   ;
+   
+});
+// get all observations //TODO is this needed?
+$app->get('/observation', function (Request $request, Response $response, array $args) {
+    $repository = new ObservationRepository($this->db);
+    $observations = $repository->getObservations();
+    $newResponse = $response->withJson($observations);
+    return $newResponse;
+});
+// get observation
+$app->get('/observation/{id}', function (Request $request, Response $response, array $args) {
+    $observationId = (int)$args['id'];
+    $repository = new ObservationRepository($this->db);
+    $observation = $repository->getObservation($observationId);
+    $newResponse = $response->withJson($observation);
+    return $newResponse;
+});
+
+
+// ObservationTag
+
+// Participant
+// add participant
+$app->post('/participant', function (Request $request, Response $response, array $args) {
+
+    $data = $request->getParsedBody();
+    $repository = new ParticipantRepository($this->db);
+    $insertedParticipant =  $repository->addParticipant($data); 
+    $newResponse = $response->withJson($insertedParticipant);
+    return $newResponse;
+   
+});
+// update participant
+$app->post('/participant/{id}', function (Request $request, Response $response, array $args) {
+   $participantId = (int)$args['id'];
+    $data = $request->getParsedBody();
+    $repository = new ParticipantRepository($this->db);
+    $insertedParticipant =  $repository->updateParticipant($participantId, $data); 
+    $newResponse = $response->withJson($insertedParticipant);
+    return $newResponse;
+   
+});
+// delete participant
+$app->delete('/participant/{id}', function (Request $request, Response $response, array $args) {
+   $participantId = (int)$args['id'];
+    $repository = new ParticipantRepository($this->db);
+  return  $repository->deleteParticipant($participantId); 
+   ;
+   
+});
+// get all participants 
+$app->get('/participant', function (Request $request, Response $response, array $args) {
+//print_r("im here1");
+    $repository = new ParticipantRepository($this->db);
+   // print_r("im here2");
+    
+    $participants = $repository->getParticipants();
+  //  print_r("im 3");
+    $newResponse = $response->withJson($participants);
+ //   print_r("im here4");
+    return $newResponse;
+});
+// get participant
+$app->get('/participant/{id}', function (Request $request, Response $response, array $args) {
+    $participantId = (int)$args['id'];
+    $repository = new ParticipantRepository($this->db);
+    $participant = $repository->getParticipant($participantId);
+    $newResponse = $response->withJson($participant);
+    return $newResponse;
+});
+
+
+
+// ParticipantTag
+
 // for testing purposes only:
 // delete all users
-$app->get('/deluser', function (Request $request, Response $response, array $args) {
+$app->delete('/user', function (Request $request, Response $response, array $args) {
 
 $repository = new UserRepository($this->db);
  
@@ -179,7 +284,7 @@ $app->get('/courseId', function (Request $request, Response $response, array $ar
 });
 
 // delete all courses
-$app->get('/delcourse', function (Request $request, Response $response, array $args) {
+$app->delete('/course', function (Request $request, Response $response, array $args) {
 
 $repository = new CourseRepository($this->db);
  
@@ -204,7 +309,7 @@ $app->get('/hello/{name}', function (Request $request, Response $response, array
     return $response;
 });
 
-
+/*
 $app->get('/participant', function (Request $request, Response $response, array $args) {
     $repository = new ParticipantRepository($this->db);
     $participants = $repository->getParticipants();
@@ -243,4 +348,6 @@ $app->get('/noticetag', function (Request $request, Response $response, array $a
     $newResponse = $response->withJson($noticeTags);
     return $newResponse;
 });
+
+*/
 ?>

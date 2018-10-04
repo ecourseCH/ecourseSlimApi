@@ -2,9 +2,10 @@
 class ParticipantRepository extends Repository
 {
     public function getParticipants() {
-        $sql = "SELECT p.participantId, p.scoutName, p.preName, p.name, p.branch
+        $sql = "SELECT p.participantId, p.participantScoutname, p.participantName, p.participantSurname
             FROM participant p";
         $stmt = $this->db->prepare($sql);
+        $stmt->execute();
         $results = [];
         while($row = $stmt->fetch()) {
             $results[] = $row;
@@ -13,7 +14,7 @@ class ParticipantRepository extends Repository
     }
 
     public function getParticipant($participantId) {
-        $sql = "SELECT p.participantId, p.scoutName, p.preName, p.name, p.branch
+        $sql = "SELECT p.participantId, p.participantScoutname, p.participantName, p.participantSurname
             FROM participant p
             WHERE p.participantId = :participantId";
         $stmt = $this->db->prepare($sql);
@@ -32,11 +33,22 @@ class ParticipantRepository extends Repository
         $stmt->bindParam('participantScoutname', $participant['participantScoutname']);
         $stmt->execute();
         // tbd add return value
+        $sql = "SELECT p.participantId, p.participantScoutname, p.participantName, p.participantSurname
+            FROM participant p
+            WHERE p.participantName = :participantName AND p.participantSurname = :participantSurname AND p.participantScoutname = :participantScoutname";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bindParam('participantName', $participant['participantName']);
+        $stmt->bindParam('participantSurname', $participant['participantSurname']);
+        $stmt->bindParam('participantScoutname', $participant['participantScoutname']);
+        $stmt->execute();
+        
+        $row = $stmt->fetch();
+        return $row;
     }
     public function updateParticipant(array $participant){
     $sql = "UPDATE participant SET participantName =:participantName, 
     participantSurname = :participantSurname, participantScoutname = :participantScoutname 
-    WHERE participantId = :participantId"
+    WHERE participantId = :participantId";
         $stmt = $this->db->prepare($sql);
         $stmt->bindParam('participantId', $participant['participantId']);
         $stmt->bindParam('participantName', $participant['participantName']);
@@ -48,10 +60,10 @@ class ParticipantRepository extends Repository
         
         
     }
-       public function deleteParticipant(array $participant){
+       public function deleteParticipant($participantId){
     $sql = "DELETE FROM participant WHERE participantId = :participantId ";
        $stmt = $this->db->prepare($sql);
-          $stmt->bindParam('participantId', $participant["participantId"]); 
+          $stmt->bindParam('participantId', $participantId); 
             $stmt->execute();
     }
     
@@ -65,7 +77,7 @@ class ParticipantRepository extends Repository
    $results = [];
         while($row = $stmt->fetch()) {
           
-            $results[] = getParticipantTag($row['participantTagId'])
+            $results[] = getParticipantTag($row['participantTagId']);
         }
         
         

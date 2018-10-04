@@ -59,7 +59,7 @@ $stmt = $this->db->prepare($sql);
    public function deleteActivity($activityId) {
    $sql = "DELETE FROM activity WHERE activityId = :activityId";
         $stmt = $this->db->prepare($sql);
-         $stmt->bindParam('activityId', $activity['activityId']); 
+         $stmt->bindParam('activityId', $activityId); 
        $stmt->execute(); 
    }
   
