@@ -56,10 +56,11 @@ ALTER TABLE user_course ADD CONSTRAINT fk_course_id2 FOREIGN KEY (courseId) REFE
 CREATE TABLE IF NOT EXISTS `codeMapping` (
 `codeMappingId` int(11) NOT NULL AUTO_INCREMENT,
   `codeMappingName` varchar(255) COLLATE utf8_bin NOT NULL,
-  `Key1` int(11)  NULL,
+  `Key1_alpha` varchar(255) COLLATE utf8_bin   NULL,
+    `Key1_num` int(11)  NULL,
   `Value1` varchar(255) COLLATE utf8_bin  NULL,
    PRIMARY KEY (`codeMappingId`),
-     UNIQUE KEY (`codeMappingName`)
+     UNIQUE KEY (`codeMappingName`,`Key1_alpha`,`Key1_num`)
 
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 

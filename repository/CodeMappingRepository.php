@@ -1,81 +1,81 @@
 <?php
 class CodeMappingRepository extends Repository
 {
+
+    public function getCodeMappings() {
+        $sql = "SELECT cm.codeMappingId, cm.codeMappingName, cm.Key1_alpha, cm.Key1_num, cm.Value1
+            FROM codeMapping cm ";
+        $stmt = $this->db->prepare($sql);
+            $stmt->execute();
+     $results = [];
+           while($row = $stmt->fetch()) {
+            $results[] = $row;
+        }
+        return $results;
+    }
+    
+     public function getCodeMapping($codeMappingId) {
+     return $this->getCodeMappingById($codeMappingId);
+     }
+     
     public function getCodeMappingById($codeMappingId) {
-        $sql = "SELECT cm.codeMappingId, cm.codeMappingName, cm.Key1, cm.Value1
+        $sql = "SELECT cm.codeMappingId, cm.codeMappingName, cm.Key1_alpha, cm.Key1_num, cm.Value1
             FROM codeMapping cm where cm.codeMappingId = :codeMappingId";
         $stmt = $this->db->prepare($sql);
          $stmt->bindParam('codeMappingId', $codeMappingId); 
             $stmt->execute();
-         $results = $stmt->fetch();
+         $result = $stmt->fetch();
         return $result;
     }
+    
     public function getCodeMappingByName($codeMappingName) {
-        $sql = "SELECT cm.codeMappingId, cm.codeMappingName, cm.Key1, cm.Value1
+        $sql = "SELECT cm.codeMappingId, cm.codeMappingName, cm.Key1_alpha, cm.Key1_num, cm.Value1
             FROM codeMapping cm where cm.codeMappingName = :codeMappingName";
         $stmt = $this->db->prepare($sql);
          $stmt->bindParam('codeMappingName', $codeMappingName); 
             $stmt->execute();
-         $results = $stmt->fetch();
-        return $result;
+      $results = [];
+           while($row = $stmt->fetch()) {
+            $results[] = $row;
+        }
+        return $results;
     }
     
+    //TODO return multiple codeMappings but should return only one
     public function addCodeMapping(array $codeMapping){
-         $sql = "INSERT INTO codeMapping (codeMappingName, Key1, Value1) VALUES (:codeMappingName, :Key1, :Value1)";
+         $sql = "INSERT INTO codeMapping (codeMappingName, Key1_alpha, Key1_num, Value1) VALUES (:codeMappingName, :Key1_alpha, :Key1_num, :Value1)";
         $stmt = $this->db->prepare($sql);
          $stmt->bindParam('codeMappingName', $codeMapping["codeMappingName"]); 
-         $stmt->bindParam('Key1', $codeMapping["Key1"]); 
+         $stmt->bindParam('Key1_alpha', $codeMapping["Key1_alpha"]); 
+         $stmt->bindParam('Key1_num', $codeMapping["Key1_num"]); 
                   $stmt->bindParam('Value1', $codeMapping["Value1"]); 
                   $stmt->execute();
-         $results = $stmt->fetch();
-        return $result;
-    return $codeMapping
+        return $this->getCodeMappingByName($codeMapping["codeMappingName"]);
+    
     }
-        public function updateCodeMapping(array $codeMapping){
-     $sql = "UPDATE codeMapping SET codeMappingName = :codeMappingName, Key1 = :Key1, Value1 = :Value1 
+        public function updateCodeMapping($codeMappingId,array $codeMapping){
+     $sql = "UPDATE codeMapping SET codeMappingName = :codeMappingName, Key1_alpha = :Key1_alpha, Key1_num = :Key1_num, Value1 = :Value1 
      where codeMappingId = :codeMappingId ";
           $stmt = $this->db->prepare($sql); 
-                  $stmt->bindParam('codeMappingId', $codeMapping["codeMappingId"]);
+           $stmt->bindParam('codeMappingId', $codeMappingId);
           $stmt->bindParam('codeMappingName', $codeMapping["codeMappingName"]);
-                    $stmt->bindParam('Key1', $codeMapping["Key1"]);
-                    $stmt->bindParam('Value1', $codeMapping["Value1"]);
+         $stmt->bindParam('Key1_alpha', $codeMapping["Key1_alpha"]); 
+         $stmt->bindParam('Key1_num', $codeMapping["Key1_num"]); 
+         $stmt->bindParam('Value1', $codeMapping["Value1"]);
           
         $stmt->execute();
-            
-
-        return getCodeMappingById($codeMapping["codeMappingId"]);
-    return $codeMapping
+           
+        return $this->getCodeMappingById($codeMappingId);
+  
     }
-    
-    
-    
-      public function updateUser($userId, array $userData){
-    $sql = "UPDATE user SET userName = :userName, userMail = :userMail, language = :userLanguage where userId = :userId ";
-          $stmt = $this->db->prepare($sql); 
-                  $stmt->bindParam('userId', $userId);
-            $stmt->bindParam('userName', $userData['userName']); 
-        $stmt->bindParam('userMail', $userData['userMail']); 
-        $stmt->bindParam('language', $userData['language']);  //todo check that language is part of codes
-        $stmt->execute();
-            
-
-        return getUser($userId);
-    }
-    public function deleteCodeMappingByName(array $codeMapping) {
-            
-                 $sql = "DELETE FROM codeMapping cm where cm.codeMappingName = :codeMappingName ";
-     $stmt = $this->db->prepare($sql);
-    $stmt->bindParam('codeMappingName', $codeMappingName); 
-        $stmtSelect->execute();
-    
-    }
-    
+     public function deleteCodeMapping($codeMappingId) {
+     return $this->deleteCodeMappingById($codeMappingId);
+     }
         public function deleteCodeMappingById($codeMappingId) {
-            
-                 $sql = "DELETE FROM codeMapping cm where cm.codeMappingId = :codeMappingId ";
+          $sql = "DELETE FROM codeMapping  WHERE codeMappingId = :codeMappingId ";
      $stmt = $this->db->prepare($sql);
     $stmt->bindParam('codeMappingId', $codeMappingId); 
-        $stmtSelect->execute();
+        $stmt->execute();
     
     }
    

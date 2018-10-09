@@ -30,7 +30,7 @@ $app->delete('/user/{id}', function (Request $request, Response $response, array
    ;
    
 });
-// get all users //TODO is this needed?
+// get all users 
 $app->get('/user', function (Request $request, Response $response, array $args) {
     $repository = new UserRepository($this->db);
     $users = $repository->getUsers();
@@ -47,7 +47,7 @@ $app->get('/user/{id}', function (Request $request, Response $response, array $a
 });
 
 //// COURSE
-// get all courses //TODO is this needed?
+// get all courses 
 $app->get('/course', function (Request $request, Response $response, array $args) {
     $repository = new CourseRepository($this->db);
     $courses = $repository->getCourses();
@@ -87,7 +87,6 @@ $app->get('/leader', function (Request $request, Response $response, array $args
 });
 
 // get leader
-// TODO does not work
 $app->get('/leader/{id}', function (Request $request, Response $response, array $args) {
     $leaderId = (int)$args['id'];
     $repository = new LeaderRepository($this->db);
@@ -96,7 +95,6 @@ $app->get('/leader/{id}', function (Request $request, Response $response, array 
     return $newResponse;
 });
 // add leader
-// TODO does not work
 $app->post('/leader', function (Request $request, Response $response, array $args) {
     $data = $request->getParsedBody();
   //$userId = $data['userId'];
@@ -107,7 +105,6 @@ $app->post('/leader', function (Request $request, Response $response, array $arg
     
 });
 // delete leader
-// TODO does not work
 $app->delete('/leader/{id}', function (Request $request, Response $response, array $args) {
    $leaderId = (int)$args['id'];
     $repository = new LeaderRepository($this->db);
@@ -145,7 +142,7 @@ $app->delete('/activity/{id}', function (Request $request, Response $response, a
    ;
    
 });
-// get all activitys //TODO is this needed?
+// get all activitys 
 $app->get('/activity', function (Request $request, Response $response, array $args) {
     $repository = new ActivityRepository($this->db);
     $activitys = $repository->getActivitys();
@@ -163,7 +160,49 @@ $app->get('/activity/{id}', function (Request $request, Response $response, arra
 
 
 // CodeMapping
-// TODO
+// add codeMapping
+$app->post('/codeMapping', function (Request $request, Response $response, array $args) {
+
+    $data = $request->getParsedBody();
+    $repository = new CodeMappingRepository($this->db);
+    $insertedCodeMapping =  $repository->addCodeMapping($data); 
+    $newResponse = $response->withJson($insertedCodeMapping);
+    return $newResponse;
+   
+});
+// update codeMapping
+$app->post('/codeMapping/{id}', function (Request $request, Response $response, array $args) {
+   $codeMappingId = (int)$args['id'];
+    $data = $request->getParsedBody();
+    $repository = new CodeMappingRepository($this->db);
+    $insertedCodeMapping =  $repository->updateCodeMapping($codeMappingId, $data); 
+    $newResponse = $response->withJson($insertedCodeMapping);
+    return $newResponse;
+   
+});
+// delete codeMapping
+$app->delete('/codeMapping/{id}', function (Request $request, Response $response, array $args) {
+   $codeMappingId = (int)$args['id'];
+    $repository = new CodeMappingRepository($this->db);
+  return  $repository->deleteCodeMapping($codeMappingId); 
+   ;
+   
+});
+// get all codeMappings 
+$app->get('/codeMapping', function (Request $request, Response $response, array $args) {
+    $repository = new CodeMappingRepository($this->db);
+    $codeMappings = $repository->getCodeMappings();
+    $newResponse = $response->withJson($codeMappings);
+    return $newResponse;
+});
+// get codeMapping
+$app->get('/codeMapping/{id}', function (Request $request, Response $response, array $args) {
+    $codeMappingId = (int)$args['id'];
+    $repository = new CodeMappingRepository($this->db);
+    $codeMapping = $repository->getCodeMapping($codeMappingId);
+    $newResponse = $response->withJson($codeMapping);
+    return $newResponse;
+});
 
 // Observation
 // add observation

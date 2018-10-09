@@ -6,7 +6,7 @@
 	},
 	"item": [
 		{
-			"_postman_id": "8cfcbf0d-60de-403b-b714-5c478cf7a7c4",
+			"_postman_id": "6e9a1625-dac3-4292-948b-dfed5a2a1823",
 			"name": "del user",
 			"event": [
 				{
@@ -93,7 +93,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "79d58a82-8062-4dd5-b93c-542e054f028a",
+			"_postman_id": "7bd50441-f7f6-4629-80bb-6618ab8e19fe",
 			"name": "create user 1",
 			"event": [
 				{
@@ -192,7 +192,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "972423da-1e6f-4718-93f7-701d06d6ffba",
+			"_postman_id": "402a297f-02ee-4f66-97e7-3040299f81db",
 			"name": "create user 2",
 			"event": [
 				{
@@ -290,7 +290,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "b6cd5df3-7ee2-49f5-97f9-43962e8b8f73",
+			"_postman_id": "e49608ea-a673-48f6-b33f-5c5b92ccbf8c",
 			"name": "get users",
 			"event": [
 				{
@@ -377,7 +377,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "307545a7-0d36-4fc6-86ec-3940f79542b9",
+			"_postman_id": "f7fbe274-3fd4-4401-bb5e-f47f49e69207",
 			"name": "get user 2",
 			"event": [
 				{
@@ -465,7 +465,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "95a6bb05-abef-4f94-bbcc-6d1682b0cebf",
+			"_postman_id": "04590421-6582-4a32-b3ca-07ee939a6af7",
 			"name": "get user 1",
 			"event": [
 				{
@@ -553,7 +553,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "72f4a4b6-ed00-4b8e-91e6-ba1089ffb68f",
+			"_postman_id": "f5557165-f550-450d-b938-a779887e19d0",
 			"name": "update user 2",
 			"event": [
 				{
@@ -652,7 +652,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "6b4aa13e-a10f-4697-bf90-3cb388bebe58",
+			"_postman_id": "a52475a8-8ccb-4768-b7f8-c1b26cb21ece",
 			"name": "delete user 2",
 			"event": [
 				{
@@ -723,7 +723,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "dfc4449e-ab33-4d4c-843e-9e16f66f6912",
+			"_postman_id": "0669aa4b-8c0c-4e61-ab91-fb323d7eb046",
 			"name": "get course id",
 			"event": [
 				{
@@ -810,7 +810,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "e62c6389-dda0-4f60-b019-8fe40d5b41b6",
+			"_postman_id": "1e988238-98e9-45db-96b8-331c8c009735",
 			"name": "get courses",
 			"event": [
 				{
@@ -897,7 +897,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "47d9b354-8f94-4ac7-8f5f-891bef6b0ab9",
+			"_postman_id": "8d8dc2c9-abb3-4742-8f0f-fc1b758cdd34",
 			"name": "add course 1",
 			"event": [
 				{
@@ -976,7 +976,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "ef1038bb-c7f0-4dee-8b82-e793ffbba5a3",
+			"_postman_id": "ae956761-f474-4d9b-8c57-0a0d44e0de11",
 			"name": "del course",
 			"event": [
 				{
@@ -1063,7 +1063,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "5d8fd98f-834b-4105-a190-2e1ab07a7b49",
+			"_postman_id": "7653e92a-b7fe-4bfb-93ae-cca935fc76ea",
 			"name": "get test course",
 			"event": [
 				{
@@ -1150,7 +1150,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "7f911468-214c-4f8a-848d-85aa10374fe1",
+			"_postman_id": "b0a54bf1-7b67-468e-bc87-78a0e2adb613",
 			"name": "get leaders",
 			"event": [
 				{
@@ -1237,7 +1237,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "adcae640-c6e2-40dc-9341-51f18b0a96b4",
+			"_postman_id": "73ae034f-d913-4068-96f4-1ccbc8473fc1",
 			"name": "create leader 1",
 			"event": [
 				{
@@ -1336,7 +1336,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "3556d3f9-1547-4eb1-b937-ddba821f9916",
+			"_postman_id": "bcc5c2d9-43c1-4c3b-8b0b-f227196b5d5d",
 			"name": "get leader 1",
 			"event": [
 				{
@@ -1424,7 +1424,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "02649ad3-b4f4-46e2-9e50-a60595dc6361",
+			"_postman_id": "0742ff15-aa0b-4b72-971b-02bd08078c1b",
 			"name": "delete leader 1",
 			"event": [
 				{
@@ -1528,7 +1528,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "10f938fa-94ac-463b-b003-0c83bd2dfac4",
+			"_postman_id": "a0547a13-f319-442a-bef5-b8e83f7aa036",
 			"name": "create leader 2",
 			"event": [
 				{
@@ -1627,7 +1627,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "fa30612c-40e9-4b93-ac03-9abad9c9904e",
+			"_postman_id": "4539d7ed-95de-461d-9476-e6f923476288",
 			"name": "get activities",
 			"event": [
 				{
@@ -1714,7 +1714,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "57db8628-352e-42a5-b0cd-c4c1208afe78",
+			"_postman_id": "56cfe3d3-5540-4ab5-8004-3fee09bc4556",
 			"name": "create activity 1",
 			"event": [
 				{
@@ -1814,7 +1814,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "af0f70be-6ad8-4a5c-a292-60b69705d83d",
+			"_postman_id": "cb8b2454-8343-4a09-be55-90ef10c8ff59",
 			"name": "get activity 1",
 			"event": [
 				{
@@ -1902,7 +1902,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "487280d4-4740-4f77-be1d-dd3c9524a362",
+			"_postman_id": "df340b42-ae22-49a9-b7c1-a105fdddfa48",
 			"name": "delete activity 1",
 			"event": [
 				{
@@ -2006,7 +2006,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "1b4f68ce-5e57-4ad9-abdf-768fe4d3fddf",
+			"_postman_id": "4c285902-98cb-4e12-9ff6-c01de25b3ed4",
 			"name": "get participants",
 			"event": [
 				{
@@ -2093,7 +2093,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "e0c165a4-a988-45bf-8788-5eb6cb540b2f",
+			"_postman_id": "50f669f3-90c6-405e-b3ae-bdcb0c52199a",
 			"name": "create participant 1",
 			"event": [
 				{
@@ -2214,7 +2214,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "f6fad6b8-9f1e-4297-99ba-fdb0773745c8",
+			"_postman_id": "130f17e3-e56d-4b1c-ac62-a65dddf68fda",
 			"name": "get participant1",
 			"event": [
 				{
@@ -2302,7 +2302,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "4996279f-113b-4f67-8d1e-8f0127f539ef",
+			"_postman_id": "dedb4fe6-4084-4f7c-a65d-4bfb2e054a08",
 			"name": "delete participant1",
 			"event": [
 				{
@@ -2406,7 +2406,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "94d9c34b-fee5-4e82-b2f0-2637413d9e65",
+			"_postman_id": "13b0140f-dcb9-4f81-aa29-a247ec40b23c",
 			"name": "create participant 2",
 			"event": [
 				{
@@ -2527,7 +2527,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "09397b25-1c77-4025-90be-a575997db96b",
+			"_postman_id": "11d90a50-b672-4200-9ecf-93d0c2e76bbf",
 			"name": "get observations",
 			"event": [
 				{
@@ -2614,7 +2614,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "fd15316a-e5d6-40a0-951f-affb57e4efad",
+			"_postman_id": "19a1e610-6ef9-4762-85f2-1838fd577a05",
 			"name": "create observation 1",
 			"event": [
 				{
@@ -2729,7 +2729,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "df8c0884-d1d3-4aa0-bdce-5b81fff0523f",
+			"_postman_id": "e9425634-d17f-4f74-ab55-7b1bbda33747",
 			"name": "get observation 1",
 			"event": [
 				{
@@ -2817,7 +2817,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "22675332-c943-4bf8-8cbc-a225bb400059",
+			"_postman_id": "4f3c985e-29c5-47f3-a476-1fba4dea7a1e",
 			"name": "delete observation 1",
 			"event": [
 				{
@@ -2915,6 +2915,427 @@
 					"path": [
 						"observation",
 						"{{observationId1}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "6a257e86-0ed8-487e-acdc-22fee0a85f86",
+			"name": "get codeMappings",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "25efe386-9a5f-468c-84e2-70266a1cf97e",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userName",
+							"value": "Test user name1",
+							"sessionValue": "testmyc",
+							"type": "text"
+						},
+						{
+							"key": "userMail",
+							"value": "test1@test.ch",
+							"sessionValue": "0",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "testpwd",
+							"sessionValue": "testpwd",
+							"type": "text"
+						},
+						{
+							"key": "language",
+							"value": "DE_CH",
+							"sessionValue": "DE_CH",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/codeMapping",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"codeMapping"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "eeb951e8-f34e-486e-8c2a-8a09d2955b2c",
+			"name": "create codeMapping 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3426fe5b-7633-456a-bda8-3a0518d153b0",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							"",
+							"pm.test(\"set codeMappingId variable\", function() {",
+							"        var jsonData = pm.response.json();",
+							"    pm.environment.set(\"codeMappingId1\",jsonData.codeMappingId)",
+							"    ",
+							"})",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "activityName",
+							"value": "Test activity name1",
+							"sessionValue": "testmyc",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "activityNumber",
+							"value": "12",
+							"sessionValue": "0",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "activityDate",
+							"value": "",
+							"sessionValue": "testpwd",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "language",
+							"value": "DE_CH",
+							"sessionValue": "DE_CH",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "observationText",
+							"value": "test",
+							"sessionValue": "test",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "leaderId",
+							"value": "{{leaderId2}}",
+							"sessionValue": "{{leaderId1}}",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "participantId",
+							"value": "{{participantId2}}",
+							"sessionValue": "participantId1}}",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "codeMappingName",
+							"value": "testmapping",
+							"sessionValue": "testmapping",
+							"type": "text"
+						},
+						{
+							"key": "Key1_alpha",
+							"value": "keytest1",
+							"sessionValue": "key",
+							"type": "text"
+						},
+						{
+							"key": "Value1",
+							"value": "value",
+							"sessionValue": "value",
+							"type": "text"
+						},
+						{
+							"key": "Key1_num",
+							"value": "3",
+							"sessionValue": "3",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/codeMapping",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"codeMapping"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "5024bf14-a9d5-42e5-9c5e-71d85dc23c17",
+			"name": "get codeMapping 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "25efe386-9a5f-468c-84e2-70266a1cf97e",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userName",
+							"value": "Test user name1",
+							"sessionValue": "testmyc",
+							"type": "text"
+						},
+						{
+							"key": "userMail",
+							"value": "test1@test.ch",
+							"sessionValue": "0",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "testpwd",
+							"sessionValue": "testpwd",
+							"type": "text"
+						},
+						{
+							"key": "language",
+							"value": "DE_CH",
+							"sessionValue": "DE_CH",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/codeMapping/{{codeMappingId1}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"codeMapping",
+						"{{codeMappingId1}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "1514833c-218c-4795-accc-24305a9ad24f",
+			"name": "delete codeMapping 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "79b4b10c-c8f4-467f-86ba-22e94243a08f",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							"/*",
+							"pm.test(\"set userId variable\", function() {",
+							"        var jsonData = pm.response.json();",
+							"    pm.environment.set(\"leaderId1\",jsonData.leaderId)",
+							"    ",
+							"})",
+							"",
+							"pm.test(\"user id present\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.userId).to.be.below(10);",
+							"});",
+							"",
+							"*/"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userId",
+							"value": "{{userId1}}",
+							"sessionValue": "testmyc",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "leaderName",
+							"value": "test leaderName 1",
+							"sessionValue": "0",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "leaderSurname",
+							"value": "test leaderSurname 1",
+							"sessionValue": "testpwd",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "leaderScoutname",
+							"value": "test leaderScoutname 1",
+							"sessionValue": "DE_CH",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/codeMapping/{{codeMappingId1}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"codeMapping",
+						"{{codeMappingId1}}"
 					]
 				}
 			},
