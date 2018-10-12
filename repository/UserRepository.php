@@ -72,7 +72,7 @@ class UserRepository extends Repository
 
         return $insertedUser;
     }
-    
+    //TODO are we using this?
     public function getUserLanguages(){
     $sql = "SELECT value1 FROM codeMapping WHERE codeMappingName = 'Locales'";
         $stmt = $this->db->prepare($sql);    

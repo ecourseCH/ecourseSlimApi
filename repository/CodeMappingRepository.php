@@ -40,8 +40,19 @@ class CodeMappingRepository extends Repository
         }
         return $results;
     }
-    
-    //TODO return multiple codeMappings but should return only one
+       public function getCodeMappingByKey(array $codeMapping) {
+        $sql = "SELECT cm.codeMappingId, cm.codeMappingName, cm.Key1_alpha, cm.Key1_num, cm.Value1
+            FROM codeMapping cm where cm.codeMappingName = :codeMappingName AND
+            cm.Key1_alpha = :Key1_alpha AND cm.Key1_num = :Key1_num";
+        $stmt = $this->db->prepare($sql);
+         $stmt->bindParam('codeMappingName', $codeMapping["codeMappingName"]); 
+         $stmt->bindParam('Key1_alpha', $codeMapping["Key1_alpha"]); 
+         $stmt->bindParam('Key1_num', $codeMapping["Key1_num"]); 
+            $stmt->execute();
+         $result = $stmt->fetch();
+        return $result;
+    }
+  
     public function addCodeMapping(array $codeMapping){
          $sql = "INSERT INTO codeMapping (codeMappingName, Key1_alpha, Key1_num, Value1) VALUES (:codeMappingName, :Key1_alpha, :Key1_num, :Value1)";
         $stmt = $this->db->prepare($sql);
@@ -50,7 +61,7 @@ class CodeMappingRepository extends Repository
          $stmt->bindParam('Key1_num', $codeMapping["Key1_num"]); 
                   $stmt->bindParam('Value1', $codeMapping["Value1"]); 
                   $stmt->execute();
-        return $this->getCodeMappingByName($codeMapping["codeMappingName"]);
+        return $this->getCodeMappingByKey($codeMapping);
     
     }
         public function updateCodeMapping($codeMappingId,array $codeMapping){

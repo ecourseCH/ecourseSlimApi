@@ -15,7 +15,6 @@ DROP TABLE IF EXISTS `**********_participant`;
 DROP TABLE IF EXISTS `**********_participantTag`;
 DROP TABLE IF EXISTS `**********_observationTag`;
 DROP TABLE IF EXISTS `**********_activity`;
-DROP TABLE IF EXISTS `**********_codeMapping`;
 DROP TABLE IF EXISTS `**********_leader`;
 
 
@@ -105,7 +104,7 @@ ALTER TABLE **********_observation ADD CONSTRAINT **********_fk_participant_id F
 CREATE TABLE IF NOT EXISTS `**********_observationTag` (
 `observationTagId` int(11) NOT NULL AUTO_INCREMENT,
 `parentObservationTagId` int(11) NULL,
-  `observationTagName` int(11) NOT NULL,
+  `observationTagName` varchar(255) COLLATE utf8_bin NOT NULL,
        PRIMARY KEY (`observationTagId`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 

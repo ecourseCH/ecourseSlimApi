@@ -251,6 +251,51 @@ $app->get('/observation/{id}', function (Request $request, Response $response, a
 
 
 // ObservationTag
+// add observationTag
+$app->post('/observationTag', function (Request $request, Response $response, array $args) {
+
+    $data = $request->getParsedBody();
+    $repository = new ObservationTagRepository($this->db);
+    $insertedObservationTag =  $repository->addObservationTag($data); 
+    $newResponse = $response->withJson($insertedObservationTag);
+    return $newResponse;
+   
+});
+// update observationTag
+$app->post('/observationTag/{id}', function (Request $request, Response $response, array $args) {
+   $observationTagId = (int)$args['id'];
+    $data = $request->getParsedBody();
+    $repository = new ObservationTagRepository($this->db);
+    $insertedObservationTag =  $repository->updateObservationTag($observationTagId, $data); 
+    $newResponse = $response->withJson($insertedObservationTag);
+    return $newResponse;
+   
+});
+// delete observationTag
+$app->delete('/observationTag/{id}', function (Request $request, Response $response, array $args) {
+   $observationTagId = (int)$args['id'];
+    $repository = new ObservationTagRepository($this->db);
+  return  $repository->deleteObservationTag($observationTagId); 
+   ;
+   
+});
+// get all observationTags 
+$app->get('/observationTag', function (Request $request, Response $response, array $args) {
+    $repository = new ObservationTagRepository($this->db);
+    $observationTags = $repository->getObservationTags();
+    $newResponse = $response->withJson($observationTags);
+    return $newResponse;
+});
+// get observationTag
+$app->get('/observationTag/{id}', function (Request $request, Response $response, array $args) {
+    $observationTagId = (int)$args['id'];
+    $repository = new ObservationTagRepository($this->db);
+    $observationTag = $repository->getObservationTag($observationTagId);
+    $newResponse = $response->withJson($observationTag);
+    return $newResponse;
+});
+
+
 
 // Participant
 // add participant
@@ -305,6 +350,54 @@ $app->get('/participant/{id}', function (Request $request, Response $response, a
 
 
 // ParticipantTag
+// add participantTag
+$app->post('/participantTag', function (Request $request, Response $response, array $args) {
+
+    $data = $request->getParsedBody();
+    $repository = new ParticipantTagRepository($this->db);
+    $insertedParticipantTag =  $repository->addParticipantTag($data); 
+    $newResponse = $response->withJson($insertedParticipantTag);
+    return $newResponse;
+   
+});
+// update participantTag
+$app->post('/participantTag/{id}', function (Request $request, Response $response, array $args) {
+   $participantTagId = (int)$args['id'];
+    $data = $request->getParsedBody();
+    $repository = new ParticipantTagRepository($this->db);
+    $insertedParticipantTag =  $repository->updateParticipantTag($participantTagId, $data); 
+    $newResponse = $response->withJson($insertedParticipantTag);
+    return $newResponse;
+   
+});
+// delete participantTag
+$app->delete('/participantTag/{id}', function (Request $request, Response $response, array $args) {
+   $participantTagId = (int)$args['id'];
+    $repository = new ParticipantTagRepository($this->db);
+  return  $repository->deleteParticipantTag($participantTagId); 
+   ;
+   
+});
+// get all participantTags 
+$app->get('/participantTag', function (Request $request, Response $response, array $args) {
+//print_r("im here1");
+    $repository = new ParticipantTagRepository($this->db);
+   // print_r("im here2");
+    
+    $participantTags = $repository->getParticipantTags();
+  //  print_r("im 3");
+    $newResponse = $response->withJson($participantTags);
+ //   print_r("im here4");
+    return $newResponse;
+});
+// get participantTag
+$app->get('/participantTag/{id}', function (Request $request, Response $response, array $args) {
+    $participantTagId = (int)$args['id'];
+    $repository = new ParticipantTagRepository($this->db);
+    $participantTag = $repository->getParticipantTag($participantTagId);
+    $newResponse = $response->withJson($participantTag);
+    return $newResponse;
+});
 
 // for testing purposes only:
 // delete all users
@@ -334,6 +427,10 @@ $app->get('/testcourse', function (Request $request, Response $response, array $
     $repository = new CourseRepository($this->db);
     $courses = $repository->addTestCourse();
     $newResponse = $response->withJson($courses);
+    $ParentObservationTag = new ObservationTagRepository($this->db);
+    $ParentObservationTag->createParentObservationTag();
+     $ParentParticipantTag = new ParticipantTagRepository($this->db);
+    $ParentParticipantTag->createParentParticipantTag();
     return $newResponse;
 });
 

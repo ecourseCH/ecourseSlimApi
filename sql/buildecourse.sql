@@ -59,11 +59,11 @@ CREATE TABLE IF NOT EXISTS `codeMapping` (
   `Key1_alpha` varchar(255) COLLATE utf8_bin   NULL,
     `Key1_num` int(11)  NULL,
   `Value1` varchar(255) COLLATE utf8_bin  NULL,
-   PRIMARY KEY (`codeMappingId`),
-     UNIQUE KEY (`codeMappingName`,`Key1_alpha`,`Key1_num`)
+   PRIMARY KEY (`codeMappingId`)
 
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
+ALTER TABLE `codeMapping` ADD UNIQUE `uk_codeMapping`(`codeMappingName`,`Key1_alpha`,`Key1_num`);
 -- USER
 
 -- DELETE FROM mysql.user WHERE User = 'ecourse';
