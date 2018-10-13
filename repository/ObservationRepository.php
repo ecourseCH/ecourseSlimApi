@@ -88,14 +88,31 @@ class ObservationRepository extends Repository
 
    $results = [];
         while($row = $stmt->fetch()) {
-          
-            $results[] = getObservationTag($row['observationTagId']);
+          $repository = new ObservationTagRepository($this->db);
+    $results[] = $repository->getObservationTag($row['observationTagId']);
         }
-        
-        
-     
         return $results;
   }
+  public function addObservationTagtoObservation($observationId, $observationTagId){
+     $sql = "INSERT INTO obs_obsTag ( observationId , observationTagId ) VALUES (:observationId ,  :observationTagId)";
+   $stmt = $this->db->prepare($sql);
+   $stmt->bindParam('observationId', $observationId); 
+   $stmt->bindParam('observationTagId', $observationTagId); 
+
+   $stmt->execute();
+   return $this->getObservationTagbyObservationId($observationId);
+  }
+  
+  public function deleteObservationTagFromObservation($observationId, $observationTagId){
+    $sql = "DELETE FROM obs_obsTag WHERE observationId = :observationId AND  observationTagId = :observationTagId";
+   $stmt = $this->db->prepare($sql);
+   $stmt->bindParam('observationId', $observationId); 
+   $stmt->bindParam('observationTagId', $observationTagId); 
+    $stmt->execute();
+  print_r ('im here del ' . $observationId . ' and '. $observationTagId);
+  }
+  
+  
    public function addObservationToObservationTag($observationId, $observationTagId){
    $sql = "INSERT INTO part_partTag (observationId, observationTagId) VALUES (:observationId, :observationTagId)";
      $stmt = $this->db->prepare($sql);

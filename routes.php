@@ -249,6 +249,34 @@ $app->get('/observation/{id}', function (Request $request, Response $response, a
     return $newResponse;
 });
 
+// get all observationTag per observation
+$app->get('/observation/{id}/observationTag', function (Request $request, Response $response, array $args) {
+    $observationId = (int)$args['id'];
+    $repository = new ObservationRepository($this->db);
+    $observation = $repository->getObservationTagbyObservationId($observationId);
+    $newResponse = $response->withJson($observation);
+    return $newResponse;
+});
+// add observationTag to observation
+$app->post('/observation/{id}/observationTag', function (Request $request, Response $response, array $args) {
+   $observationId = (int)$args['id'];
+    $data = $request->getParsedBody();
+    $repository = new ObservationRepository($this->db);
+    $insertedObservationTags =  $repository->addObservationTagtoObservation($observationId, $data['observationTagId']); 
+    $newResponse = $response->withJson($insertedObservationTags);
+    return $newResponse;
+   
+});
+// delete observationTag to observation
+$app->delete('/observation/{id}/observationTag', function (Request $request, Response $response, array $args) {
+   $observationId = (int)$args['id'];
+    $data = $request->getParsedBody();
+    $repository = new ObservationRepository($this->db);
+    $ObservationTags =  $repository->deleteObservationTagFromObservation($observationId, $data['observationTagId']); 
+    $newResponse = $response->withJson($ObservationTags);
+    return $newResponse;
+   
+});
 
 // ObservationTag
 // add observationTag
