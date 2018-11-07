@@ -21,27 +21,6 @@ class LeaderRepository extends Repository {
         return $results;
     }
 
-    public function updateLeader(array $leader) {
-        $sql = "UPDATE leader SET userId = :userId, leaderName = :leaderName, leaderSurname = :leaderSurname, 
-    leaderScoutname = :leaderScoutname where leaderId = :leaderId";
-        $stmt = $this->db->prepare($sql);
-        $stmt->bindParam('leaderId', $leader['leaderId']);
-        $stmt->bindParam('userId', $leader['userId']);
-        $stmt->bindParam('leaderName', $leader['leaderName']);
-        $stmt->bindParam('leaderSurname', $leader['leaderSurname']);
-        $stmt->bindParam('leaderScoutname', $leader['leaderScoutname']);
-        $stmt->execute();
-        $sql = "SELECT l.leaderId, l.userId, l.leaderName, l.leaderSurname, l.leaderScoutname
-            FROM leader l where l.leaderId = :leaderId";
-        $stmt = $this->db->prepare($sql);
-        $stmt->bindParam('leaderId', $leaderId);
-        $stmt->execute();
-        $result = $stmt->fetch();
-        return $result;
-
-
-    }
-
     public function deleteLeader($leaderId) {
         $sql = "DELETE FROM leader WHERE leaderId = :leaderId ";
         $stmt = $this->db->prepare($sql);
