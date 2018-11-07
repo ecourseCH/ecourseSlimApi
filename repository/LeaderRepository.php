@@ -21,14 +21,6 @@ class LeaderRepository extends Repository {
         return $results;
     }
 
-    public function deleteLeader($leaderId) {
-        $sql = "DELETE FROM leader WHERE leaderId = :leaderId ";
-        $stmt = $this->db->prepare($sql);
-        $stmt->bindParam('leaderId', $leaderId);
-        $stmt->execute();
-        return 0;
-    }
-
     public function getParticipantTagbyLeaderId($leaderId) {
         $sql = "SELECT participantTagId from leader_partTag WHERE leaderId = :leaderId";
         $stmt = $this->db->pepare($sql);

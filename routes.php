@@ -109,7 +109,7 @@ $app->post('/leader', function (Request $request, Response $response, array $arg
 $app->delete('/leader/{id}', function (Request $request, Response $response, array $args) {
     $leaderId = (int)$args['id'];
     $repository = new LeaderRepository($this->db);
-    return $repository->deleteLeader($leaderId);;
+    return $repository->deleteById($leaderId);;
 
 });
 
