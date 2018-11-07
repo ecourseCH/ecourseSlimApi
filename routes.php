@@ -100,7 +100,7 @@ $app->post('/leader', function (Request $request, Response $response, array $arg
     $data = $request->getParsedBody();
     //$userId = $data['userId'];
     $repository = new LeaderRepository($this->db);
-    $insertedLeader = $repository->addLeader($data);
+    $insertedLeader = $repository->add($data);
     $newResponse = $response->withJson($insertedLeader);
     return $newResponse;
 

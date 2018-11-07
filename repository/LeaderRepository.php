@@ -47,20 +47,6 @@ class LeaderRepository extends Repository {
         return $results;
     }
 
-    public function addLeader(array $leader) {
-        $sql = "INSERT INTO leader (userId, leaderName, leaderSurname, leaderScoutname) VALUES
-    (:userId, :leaderName, :leaderSurname, :leaderScoutname)";
-        //         print_r($sql);
-        $stmt = $this->db->prepare($sql);
-        $stmt->bindParam('userId', $leader['userId']);
-        $stmt->bindParam('leaderName', $leader['leaderName']);
-        $stmt->bindParam('leaderSurname', $leader['leaderSurname']);
-        $stmt->bindParam('leaderScoutname', $leader['leaderScoutname']);
-        $stmt->execute();
-        return $this->getLeaderByUserId($leader['userId']);
-
-    }
-
     public function updateLeader(array $leader) {
         $sql = "UPDATE leader SET userId = :userId, leaderName = :leaderName, leaderSurname = :leaderSurname, 
     leaderScoutname = :leaderScoutname where leaderId = :leaderId";
