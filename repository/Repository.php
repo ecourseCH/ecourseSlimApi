@@ -63,14 +63,17 @@ abstract class Repository {
     }
 
     public function getById($id) {
+        return $this->getByUniqueField($this->getIdName(), $id);
+    }
+
+    public function getByUniqueField($fieldName, $fieldValue) {
         $entityName = $this->getEntityName();
         $publicFieldsString = implode(', ', array_map(['self', 'wrapFieldNameInQuotes'], $this->getPublicFields()));
-        $idFieldName = $this->getIdName();
-        $idFieldCondition = self::createEqualsExpression($idFieldName);
+        $fieldCondition = self::createEqualsExpression($fieldName);
 
-        $sql = "SELECT $publicFieldsString FROM $entityName WHERE $idFieldCondition";
+        $sql = "SELECT $publicFieldsString FROM $entityName WHERE $fieldCondition";
         $stmt = $this->db->prepare($sql);
-        $stmt->bindParam($idFieldName, $id);
+        $stmt->bindParam($fieldName, $fieldValue);
         $stmt->execute();
         $row = $stmt->fetch();
 
