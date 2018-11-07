@@ -62,18 +62,6 @@ class CodeMappingRepository extends Repository {
         return $result;
     }
 
-    public function addCodeMapping(array $codeMapping) {
-        $sql = "INSERT INTO codeMapping (codeMappingName, Key1_alpha, Key1_num, Value1) VALUES (:codeMappingName, :Key1_alpha, :Key1_num, :Value1)";
-        $stmt = $this->db->prepare($sql);
-        $stmt->bindParam('codeMappingName', $codeMapping["codeMappingName"]);
-        $stmt->bindParam('Key1_alpha', $codeMapping["Key1_alpha"]);
-        $stmt->bindParam('Key1_num', $codeMapping["Key1_num"]);
-        $stmt->bindParam('Value1', $codeMapping["Value1"]);
-        $stmt->execute();
-        return $this->getCodeMappingByKey($codeMapping);
-
-    }
-
     public function updateCodeMapping($codeMappingId, array $codeMapping) {
         $sql = "UPDATE codeMapping SET codeMappingName = :codeMappingName, Key1_alpha = :Key1_alpha, Key1_num = :Key1_num, Value1 = :Value1 
      where codeMappingId = :codeMappingId ";
