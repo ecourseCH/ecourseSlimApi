@@ -336,7 +336,7 @@ $app->post('/participant/{id}', function (Request $request, Response $response, 
     $participantId = (int)$args['id'];
     $data = $request->getParsedBody();
     $repository = new ParticipantRepository($this->db);
-    $insertedParticipant = $repository->updateParticipant($participantId, $data);
+    $insertedParticipant = $repository->update($participantId, $data);
     $newResponse = $response->withJson($insertedParticipant);
     return $newResponse;
 
