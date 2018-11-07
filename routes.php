@@ -345,7 +345,7 @@ $app->post('/participant/{id}', function (Request $request, Response $response, 
 $app->delete('/participant/{id}', function (Request $request, Response $response, array $args) {
     $participantId = (int)$args['id'];
     $repository = new ParticipantRepository($this->db);
-    return $repository->deleteParticipant($participantId);;
+    return $repository->deleteById($participantId);;
 
 });
 // get all participants

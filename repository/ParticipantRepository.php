@@ -10,14 +10,6 @@ class ParticipantRepository extends Repository {
         return ['participantId', 'participantScoutname', 'participantName', 'participantSurname'];
     }
 
-    public function deleteParticipant($participantId) {
-        $sql = "DELETE FROM participant WHERE participantId = :participantId ";
-        $stmt = $this->db->prepare($sql);
-        $stmt->bindParam('participantId', $participantId);
-        $stmt->execute();
-    }
-
-
     public function getParticipantTagbyParticipantId($participantId) {
         $sql = "SELECT participantTagId from part_partTag WHERE participantId = :participantId";
         $stmt = $this->db->prepare($sql);
