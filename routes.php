@@ -144,7 +144,7 @@ $app->delete('/activity/{id}', function (Request $request, Response $response, a
 // get all activitys
 $app->get('/activity', function (Request $request, Response $response, array $args) {
     $repository = new ActivityRepository($this->db);
-    $activitys = $repository->getActivitys();
+    $activitys = $repository->getAll();
     $newResponse = $response->withJson($activitys);
     return $newResponse;
 });
@@ -152,7 +152,7 @@ $app->get('/activity', function (Request $request, Response $response, array $ar
 $app->get('/activity/{id}', function (Request $request, Response $response, array $args) {
     $activityId = (int)$args['id'];
     $repository = new ActivityRepository($this->db);
-    $activity = $repository->getActivity($activityId);
+    $activity = $repository->getById($activityId);
     $newResponse = $response->withJson($activity);
     return $newResponse;
 });
