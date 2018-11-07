@@ -404,7 +404,7 @@ $app->get('/participantTag', function (Request $request, Response $response, arr
     $repository = new ParticipantTagRepository($this->db);
     // print_r("im here2");
 
-    $participantTags = $repository->getParticipantTags();
+    $participantTags = $repository->getAll();
     //  print_r("im 3");
     $newResponse = $response->withJson($participantTags);
     //   print_r("im here4");

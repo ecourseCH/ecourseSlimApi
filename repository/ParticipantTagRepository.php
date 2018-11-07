@@ -10,28 +10,6 @@ class ParticipantTagRepository extends Repository {
         return ['participantTagId', 'parentParticipantTagId', 'participantTagName'];
     }
 
-    public function getParticipantTags() {
-        $sql = "SELECT ot.participantTagId,ot.parentParticipantTagId, ot.participantTagName
-        FROM participantTag ot";
-        $stmt = $this->db->prepare($sql);
-        $stmt->execute();
-        $results = [];
-        while ($row = $stmt->fetch()) {
-            $results[] = $row;
-        }
-        return $results;
-    }
-
-    public function getParticipantTag($participantTagId) {
-        $sql = "SELECT ot.participantTagId,ot.parentParticipantTagId, ot.participantTagName
-        FROM participantTag ot WHERE ot.participantTagId = :participantTagId";
-        $stmt = $this->db->prepare($sql);
-        $stmt->bindParam('participantTagId', $participantTagId);
-        $stmt->execute();
-        $result = $stmt->fetch();
-        return $result;
-    }
-
     public function getParticipantTagByKey(array $participantTag) {
         IF (ISSET($participantTag['parentParticipantTagId'])) {
             $parentParticipantTagId = $participantTag['parentParticipantTagId'];
@@ -75,7 +53,7 @@ class ParticipantTagRepository extends Repository {
 
         $stmt->execute();
 
-        return $this->getParticipantTag(0);
+        return $this->getById(0);
 
     }
 
