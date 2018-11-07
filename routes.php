@@ -300,7 +300,7 @@ $app->post('/observationTag/{id}', function (Request $request, Response $respons
 $app->delete('/observationTag/{id}', function (Request $request, Response $response, array $args) {
     $observationTagId = (int)$args['id'];
     $repository = new ObservationTagRepository($this->db);
-    return $repository->deleteObservationTag($observationTagId);;
+    return $repository->deleteById($observationTagId);;
 
 });
 // get all observationTags

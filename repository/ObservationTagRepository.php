@@ -57,12 +57,4 @@ class ObservationTagRepository extends Repository {
 
     }
 
-    public function deleteObservationTag($observationTagId) {
-        $sql = "DELETE FROM observationTag WHERE observationTagId = :observationTagId";
-        $stmt = $this->db->prepare($sql);
-        $stmt->bindParam('observationTagId', $observationTagId);
-        $stmt->execute();
-        $this->createParentObservationTag();
-    }
-
 }
