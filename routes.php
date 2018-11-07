@@ -189,7 +189,7 @@ $app->delete('/codeMapping/{id}', function (Request $request, Response $response
 // get all codeMappings
 $app->get('/codeMapping', function (Request $request, Response $response, array $args) {
     $repository = new CodeMappingRepository($this->db);
-    $codeMappings = $repository->getCodeMappings();
+    $codeMappings = $repository->getAll();
     $newResponse = $response->withJson($codeMappings);
     return $newResponse;
 });
@@ -197,7 +197,7 @@ $app->get('/codeMapping', function (Request $request, Response $response, array 
 $app->get('/codeMapping/{id}', function (Request $request, Response $response, array $args) {
     $codeMappingId = (int)$args['id'];
     $repository = new CodeMappingRepository($this->db);
-    $codeMapping = $repository->getCodeMapping($codeMappingId);
+    $codeMapping = $repository->getById($codeMappingId);
     $newResponse = $response->withJson($codeMapping);
     return $newResponse;
 });
