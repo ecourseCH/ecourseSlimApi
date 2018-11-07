@@ -10,19 +10,6 @@ class CodeMappingRepository extends Repository {
         return ['codeMappingId', 'codeMappingName', 'Key1_alpha', 'Key1_num', 'Value1'];
     }
 
-    public function getCodeMappingByName($codeMappingName) {
-        $sql = "SELECT cm.codeMappingId, cm.codeMappingName, cm.Key1_alpha, cm.Key1_num, cm.Value1
-            FROM codeMapping cm where cm.codeMappingName = :codeMappingName";
-        $stmt = $this->db->prepare($sql);
-        $stmt->bindParam('codeMappingName', $codeMappingName);
-        $stmt->execute();
-        $results = [];
-        while ($row = $stmt->fetch()) {
-            $results[] = $row;
-        }
-        return $results;
-    }
-
     public function getCodeMappingByKey(array $codeMapping) {
         $sql = "SELECT cm.codeMappingId, cm.codeMappingName, cm.Key1_alpha, cm.Key1_num, cm.Value1
             FROM codeMapping cm where cm.codeMappingName = :codeMappingName AND
