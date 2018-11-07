@@ -10,17 +10,6 @@ class LeaderRepository extends Repository {
         return ['leaderId', 'userId', 'leaderName', 'leaderSurname', 'leaderScoutname'];
     }
 
-    public function getLeaderByUserId($userId) {
-        $sql = "SELECT l.leaderId, l.userId, l.leaderName, l.leaderSurname, l.leaderScoutname
-            FROM leader l WHERE userId = :userId";
-
-        $stmt = $this->db->prepare($sql);
-        $stmt->bindParam('userId', $userId);
-        $stmt->execute();
-        $results = $stmt->fetch();
-        return $results;
-    }
-
     public function getParticipantTagbyLeaderId($leaderId) {
         $sql = "SELECT participantTagId from leader_partTag WHERE leaderId = :leaderId";
         $stmt = $this->db->pepare($sql);
