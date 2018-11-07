@@ -138,7 +138,7 @@ $app->post('/activity/{id}', function (Request $request, Response $response, arr
 $app->delete('/activity/{id}', function (Request $request, Response $response, array $args) {
     $activityId = (int)$args['id'];
     $repository = new ActivityRepository($this->db);
-    return $repository->deleteActivity($activityId);;
+    return $repository->deleteById($activityId);;
 
 });
 // get all activitys
