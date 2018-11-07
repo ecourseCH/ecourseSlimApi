@@ -36,16 +36,4 @@ class CodeMappingRepository extends Repository {
         return $result;
     }
 
-    public function deleteCodeMapping($codeMappingId) {
-        return $this->deleteCodeMappingById($codeMappingId);
-    }
-
-    public function deleteCodeMappingById($codeMappingId) {
-        $sql = "DELETE FROM codeMapping  WHERE codeMappingId = :codeMappingId ";
-        $stmt = $this->db->prepare($sql);
-        $stmt->bindParam('codeMappingId', $codeMappingId);
-        $stmt->execute();
-
-    }
-
 }

@@ -183,7 +183,7 @@ $app->post('/codeMapping/{id}', function (Request $request, Response $response, 
 $app->delete('/codeMapping/{id}', function (Request $request, Response $response, array $args) {
     $codeMappingId = (int)$args['id'];
     $repository = new CodeMappingRepository($this->db);
-    return $repository->deleteCodeMapping($codeMappingId);;
+    return $repository->deleteById($codeMappingId);;
 
 });
 // get all codeMappings
