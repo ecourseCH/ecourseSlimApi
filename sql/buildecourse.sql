@@ -85,4 +85,4 @@ GRANT UPDATE ON ecourse.* TO ecourse@localhost;
  GRANT CREATE ON ecourse.* TO ecourse@localhost;
  GRANT REFERENCES ON ecourse.* TO ecourse@localhost;
  
- 
+

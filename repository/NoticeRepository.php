@@ -1,6 +1,15 @@
 <?php
-class NoticeRepository extends Repository
-{
+
+class NoticeRepository extends Repository {
+
+    public function getEntityName() {
+        return 'notice';
+    }
+
+    public function getEntityFields() {
+        return ['noticeId', 'noticeText', 'participantId'];
+    }
+
     public function getNotices($participantId) {
         $sql = "SELECT n.noticeId, n.noticeText
             FROM notice n
@@ -9,13 +18,13 @@ class NoticeRepository extends Repository
         $stmt->bindParam('participantId', $participantId);
         $stmt->execute();
         $results = [];
-        while($row = $stmt->fetch()) {
+        while ($row = $stmt->fetch()) {
             $results[] = $row;
         }
         return $results;
     }
 
-    public function addNotice($participantId, array $noticeData){
+    public function addNotice($participantId, array $noticeData) {
         $sql = "INSERT INTO notice (participantId, noticeText) VALUES (:participantId, :noticeText)";
         $stmt = $this->db->prepare($sql);
         $stmt->bindParam('participantId', $participantId);
@@ -33,4 +42,5 @@ class NoticeRepository extends Repository
         return $insertedNote;
     }
 }
+
 ?>

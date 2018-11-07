@@ -1,14 +1,22 @@
 <?php
-class NoticeTagRepository extends Repository
-{
+
+class NoticeTagRepository extends Repository {
+
+    public function getEntityName() {
+        return 'noticeTag';
+    }
+
+    public function getEntityFields() {
+        return ['noticeTagId', 'noticeTagName', 'parentNoticeTagId'];
+    }
+
     public function getNoticeTags() {
         $sql = "SELECT nt.noticeTagId, nt.noticeTagName, nt.parentNoticeTagId
             FROM noticeTag nt";
         $stmt = $this->db->prepare($sql);
-        $stmt->bindParam('noticeTagId', $noticeTagId);
         $stmt->execute();
         $results = [];
-        while($row = $stmt->fetch()) {
+        while ($row = $stmt->fetch()) {
             $rows[] = $row;
             $categories[$row['parentNoticeTagId']][] = $row;
         }
@@ -16,7 +24,7 @@ class NoticeTagRepository extends Repository
 
         $result = array();
         foreach ($rows as &$resultRow) {
-            if($resultRow['parentNoticeTagId'] == null || $resultRow['parentNoticeTagId'] == 0 ){
+            if ($resultRow['parentNoticeTagId'] == null || $resultRow['parentNoticeTagId'] == 0) {
                 $result[] = $this->getChildrenOfNoticeTag($resultRow, $categories);
             }
         }
@@ -24,11 +32,11 @@ class NoticeTagRepository extends Repository
         return $result;
     }
 
-    private function getChildrenOfNoticeTag($noticeTag, &$categories){
-        if(!array_key_exists($noticeTag['noticeTagId'], $categories)){
+    private function getChildrenOfNoticeTag($noticeTag, &$categories) {
+        if (!array_key_exists($noticeTag['noticeTagId'], $categories)) {
             return $noticeTag;
         }
-        
+
         $subcategories = $categories[$noticeTag['noticeTagId']];
 
         foreach ($subcategories as &$subcategory) {
@@ -39,4 +47,5 @@ class NoticeTagRepository extends Repository
 
     }
 }
+
 ?>
