@@ -10,15 +10,6 @@ class ObservationRepository extends Repository {
         return ['observationId', 'observationText', 'activityId', 'observationDate', 'leaderId', 'participantId'];
     }
 
-    public function deleteObservation($observationId) {
-        $sql = "DELETE FROM observation WHERE observationId = :observationId";
-        $stmt = $this->db->prepare($sql);
-        $stmt->bindParam('observationId', $observationId);
-        $stmt->execute();
-
-    }
-
-
     public function getObservationTagbyObservationId($observationId) {
         $sql = "SELECT observationTagId from obs_obsTag WHERE observationId = :observationId";
         $stmt = $this->db->prepare($sql);

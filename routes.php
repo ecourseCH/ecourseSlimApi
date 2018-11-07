@@ -227,7 +227,7 @@ $app->post('/observation/{id}', function (Request $request, Response $response, 
 $app->delete('/observation/{id}', function (Request $request, Response $response, array $args) {
     $observationId = (int)$args['id'];
     $repository = new ObservationRepository($this->db);
-    return $repository->deleteObservation($observationId);;
+    return $repository->deleteById($observationId);;
 
 });
 // get all observations //TODO is this needed?
