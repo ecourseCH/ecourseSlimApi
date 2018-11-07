@@ -354,7 +354,7 @@ $app->get('/participant', function (Request $request, Response $response, array 
     $repository = new ParticipantRepository($this->db);
     // print_r("im here2");
 
-    $participants = $repository->getParticipants();
+    $participants = $repository->getAll();
     //  print_r("im 3");
     $newResponse = $response->withJson($participants);
     //   print_r("im here4");
@@ -364,7 +364,7 @@ $app->get('/participant', function (Request $request, Response $response, array 
 $app->get('/participant/{id}', function (Request $request, Response $response, array $args) {
     $participantId = (int)$args['id'];
     $repository = new ParticipantRepository($this->db);
-    $participant = $repository->getParticipant($participantId);
+    $participant = $repository->getById($participantId);
     $newResponse = $response->withJson($participant);
     return $newResponse;
 });

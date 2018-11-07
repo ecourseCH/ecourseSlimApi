@@ -10,30 +10,6 @@ class ParticipantRepository extends Repository {
         return ['participantId', 'participantScoutname', 'participantName', 'participantSurname'];
     }
 
-    public function getParticipants() {
-        $sql = "SELECT p.participantId, p.participantScoutname, p.participantName, p.participantSurname
-            FROM participant p";
-        $stmt = $this->db->prepare($sql);
-        $stmt->execute();
-        $results = [];
-        while ($row = $stmt->fetch()) {
-            $results[] = $row;
-        }
-        return $results;
-    }
-
-    public function getParticipant($participantId) {
-        $sql = "SELECT p.participantId, p.participantScoutname, p.participantName, p.participantSurname
-            FROM participant p
-            WHERE p.participantId = :participantId";
-        $stmt = $this->db->prepare($sql);
-        $stmt->bindParam('participantId', $participantId);
-        $stmt->execute();
-
-        $row = $stmt->fetch();
-        return $row;
-    }
-
     public function updateParticipant(array $participant) {
         $sql = "UPDATE participant SET participantName =:participantName, 
     participantSurname = :participantSurname, participantScoutname = :participantScoutname 
