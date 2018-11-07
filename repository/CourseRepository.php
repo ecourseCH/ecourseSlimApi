@@ -113,10 +113,6 @@ course c WHERE  c.courseId = :courseId ";
         return $insertedUser;
     }
 
-    //TODO update course is missing
-    public function updateCourse() {
-    }
-
     public function deleteCourse($userId, array $courseData) {
         $sql = "DELETE FROM course c where courseId = :courseId and ownerUserId = :ownerUserId ";
         $stmt = $this->db->prepare($sql);
