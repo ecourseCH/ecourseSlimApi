@@ -34,37 +34,6 @@ class ObservationRepository extends Repository {
         return $result;
     }
 
-    public function addObservation(array $observation) {
-        $sql = "INSERT INTO observation (observationText, activityId, observationDate, leaderId
-    ,participantId ) VALUES (:observationText, :activityId, :observationDate, :leaderId
-    , :participantId ) ";
-        $stmt = $this->db->prepare($sql);
-        $stmt->bindParam('observationText', $observation["observationText"]);
-        $stmt->bindParam('activityId', $observation["activityId"]);
-        $stmt->bindParam('observationDate', $observation["observationDate"]);
-        $stmt->bindParam('leaderId', $observation["leaderId"]);
-        $stmt->bindParam('participantId', $observation["participantId"]);
-        $stmt->execute();
-
-        $sql = "SELECT o.observationId, o.observationText, o.activityId, o.observationDate, 
-        o.leaderId, o.participantId
-            FROM observation o WHERE o.observationText = :observationText
-         "//   AND o.activityId = :activityId
-            //  AND o.observationDate = :observationDate
-            . "   AND o.leaderId = :leaderId
-    AND o.participantId = :participantId";
-        $stmt = $this->db->prepare($sql);
-        $stmt->bindParam('observationText', $observation["observationText"]);
-        //  $stmt->bindParam('activityId', $observation["activityId"]);
-        //  $stmt->bindParam('observationDate', $observation["observationDate"]);
-        $stmt->bindParam('leaderId', $observation["leaderId"]);
-        $stmt->bindParam('participantId', $observation["participantId"]);
-        $stmt->execute();
-        $result = $stmt->fetch();
-        return $result;
-
-    }
-
     public function updateObservation(array $observation) {
         $sql = "UPDATE observation SET observationText = :observationText, activityId =:activityId,
     observationDate = :observationDate, leaderId = :leaderId

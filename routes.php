@@ -208,7 +208,7 @@ $app->post('/observation', function (Request $request, Response $response, array
 
     $data = $request->getParsedBody();
     $repository = new ObservationRepository($this->db);
-    $insertedObservation = $repository->addObservation($data);
+    $insertedObservation = $repository->add($data);
     $newResponse = $response->withJson($insertedObservation);
     return $newResponse;
 
