@@ -34,28 +34,6 @@ class ParticipantRepository extends Repository {
         return $row;
     }
 
-    public function addParticipant(array $participant) {
-        $sql = "INSERT INTO participant (participantName, participantSurname, participantScoutname ) VALUES
-     (:participantName, :participantSurname, :participantScoutname )";
-        $stmt = $this->db->prepare($sql);
-        $stmt->bindParam('participantName', $participant['participantName']);
-        $stmt->bindParam('participantSurname', $participant['participantSurname']);
-        $stmt->bindParam('participantScoutname', $participant['participantScoutname']);
-        $stmt->execute();
-        // tbd add return value
-        $sql = "SELECT p.participantId, p.participantScoutname, p.participantName, p.participantSurname
-            FROM participant p
-            WHERE p.participantName = :participantName AND p.participantSurname = :participantSurname AND p.participantScoutname = :participantScoutname";
-        $stmt = $this->db->prepare($sql);
-        $stmt->bindParam('participantName', $participant['participantName']);
-        $stmt->bindParam('participantSurname', $participant['participantSurname']);
-        $stmt->bindParam('participantScoutname', $participant['participantScoutname']);
-        $stmt->execute();
-
-        $row = $stmt->fetch();
-        return $row;
-    }
-
     public function updateParticipant(array $participant) {
         $sql = "UPDATE participant SET participantName =:participantName, 
     participantSurname = :participantSurname, participantScoutname = :participantScoutname 
