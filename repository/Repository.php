@@ -17,19 +17,19 @@ abstract class Repository {
         return $this->getEntityFields();
     }
 
-    private static function wrapFieldNameInQuotes($fieldName) {
+    private static function wrapFieldNameInQuotes(string $fieldName) {
         return '`' . $fieldName . '`';
     }
 
-    private static function prefixFieldValueWithColon($fieldValue) {
+    private static function prefixFieldValueWithColon(string $fieldValue) {
         return ':' . $fieldValue;
     }
 
-    private static function createEqualsExpression($fieldName) {
+    private static function createEqualsExpression(string $fieldName) {
         return self::wrapFieldNameInQuotes($fieldName) . ' = ' . self::prefixFieldValueWithColon($fieldName);
     }
 
-    public function add($entity) {
+    public function add(array $entity) {
         $entityName = $this->getEntityName();
         $entityFields = $this->getEntityFields();
         $entityFieldsString = implode(",", array_map(['self', 'wrapFieldNameInQuotes'], $entityFields));
@@ -62,11 +62,11 @@ abstract class Repository {
         return $results;
     }
 
-    public function getById($id) {
+    public function getById(string $id) {
         return $this->getByUniqueField($this->getIdName(), $id);
     }
 
-    public function getByUniqueField($fieldName, $fieldValue) {
+    public function getByUniqueField(string $fieldName, string $fieldValue) {
         $entityName = $this->getEntityName();
         $publicFieldsString = implode(', ', array_map(['self', 'wrapFieldNameInQuotes'], $this->getPublicFields()));
         $fieldCondition = self::createEqualsExpression($fieldName);
@@ -80,7 +80,7 @@ abstract class Repository {
         return $row;
     }
 
-    public function update($id, $entity) {
+    public function update(string $id, array $entity) {
         $entityName = $this->getEntityName();
         $entityFields = $this->getEntityFields();
         $entityFieldAssignments = implode( ', ', array_map(['self', 'createEqualsExpression'], $entityFields));
@@ -109,7 +109,7 @@ abstract class Repository {
         $stmt->execute();
     }
 
-    public function deleteById($id) {
+    public function deleteById(string $id) {
         $entityName = $this->getEntityName();
         $idFieldName = $this->getIdName();
         $idFieldCondition = self::createEqualsExpression($idFieldName);
