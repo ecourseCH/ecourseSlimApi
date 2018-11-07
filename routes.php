@@ -129,7 +129,7 @@ $app->post('/activity/{id}', function (Request $request, Response $response, arr
     $activityId = (int)$args['id'];
     $data = $request->getParsedBody();
     $repository = new ActivityRepository($this->db);
-    $insertedActivity = $repository->updateActivity($activityId, $data);
+    $insertedActivity = $repository->update($activityId, $data);
     $newResponse = $response->withJson($insertedActivity);
     return $newResponse;
 

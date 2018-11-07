@@ -16,17 +16,4 @@ class ActivityRepository extends Repository {
         $stmt->bindParam('activityId', $activityId);
         $stmt->execute();
     }
-
-
-    public function updateActivity(array $activity) {
-        $sql = "UPDATE activity SET activityName =:activityName, activityNumber = :activityNumber,
-    activityDate = :activityDate WHERE activityId = :activityID";
-        $stmt = $this->db->prepare($sql);
-        $stmt->bindParam('activityName', $activity['activityName']);
-        $stmt->bindParam('activityId', $activity['activityId']);
-        $stmt->bindParam('activityNumber', $activity['activityNumber']);
-        $stmt->bindParam('activityDate', $activity['activityDate']);
-        $stmt->execute();
-        return getActivity($activity['activityId']);
-    }
 }
