@@ -174,7 +174,7 @@ $app->post('/codeMapping/{id}', function (Request $request, Response $response, 
     $codeMappingId = (int)$args['id'];
     $data = $request->getParsedBody();
     $repository = new CodeMappingRepository($this->db);
-    $insertedCodeMapping = $repository->updateCodeMapping($codeMappingId, $data);
+    $insertedCodeMapping = $repository->update($codeMappingId, $data);
     $newResponse = $response->withJson($insertedCodeMapping);
     return $newResponse;
 
