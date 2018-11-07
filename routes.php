@@ -233,7 +233,7 @@ $app->delete('/observation/{id}', function (Request $request, Response $response
 // get all observations //TODO is this needed?
 $app->get('/observation', function (Request $request, Response $response, array $args) {
     $repository = new ObservationRepository($this->db);
-    $observations = $repository->getObservations();
+    $observations = $repository->getAll();
     $newResponse = $response->withJson($observations);
     return $newResponse;
 });
@@ -241,7 +241,7 @@ $app->get('/observation', function (Request $request, Response $response, array 
 $app->get('/observation/{id}', function (Request $request, Response $response, array $args) {
     $observationId = (int)$args['id'];
     $repository = new ObservationRepository($this->db);
-    $observation = $repository->getObservation($observationId);
+    $observation = $repository->getById($observationId);
     $newResponse = $response->withJson($observation);
     return $newResponse;
 });

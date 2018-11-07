@@ -10,30 +10,6 @@ class ObservationRepository extends Repository {
         return ['observationId', 'observationText', 'activityId', 'observationDate', 'leaderId', 'participantId'];
     }
 
-    public function getObservations() {
-        $sql = "SELECT o.observationId, o.observationText, o.activityId, o.observationDate, 
-        o.leaderId, o.participantId
-            FROM observation o";
-        $stmt = $this->db->prepare($sql);
-        $stmt->execute();
-        $results = [];
-        while ($row = $stmt->fetch()) {
-            $results[] = $row;
-        }
-        return $results;
-    }
-
-    public function getObservation($observationId) {
-        $sql = "SELECT o.observationId, o.observationText, o.activityId, o.observationDate, 
-        o.leaderId, o.participantId
-            FROM observation o WHERE observationId = :observationId";
-        $stmt = $this->db->prepare($sql);
-        $stmt->bindParam('observationId', $observationId);
-        $stmt->execute();
-        $result = $stmt->fetch();
-        return $result;
-    }
-
     public function updateObservation(array $observation) {
         $sql = "UPDATE observation SET observationText = :observationText, activityId =:activityId,
     observationDate = :observationDate, leaderId = :leaderId
