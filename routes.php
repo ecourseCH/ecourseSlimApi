@@ -51,7 +51,7 @@ $app->get('/user/{id}', function (Request $request, Response $response, array $a
 // get all courses
 $app->get('/course', function (Request $request, Response $response, array $args) {
     $repository = new CourseRepository($this->db);
-    $courses = $repository->getCourses();
+    $courses = $repository->getAll();
     $newResponse = $response->withJson($courses);
     return $newResponse;
 });
@@ -60,7 +60,7 @@ $app->get('/course', function (Request $request, Response $response, array $args
 $app->get('/course/{id}', function (Request $request, Response $response, array $args) {
     $courseId = (int)$args['id'];
     $repository = new CourseRepository($this->db);
-    $course = $repository->getCourse($courseId);
+    $course = $repository->getById($courseId);
     $newResponse = $response->withJson($course);
     return $newResponse;
 });

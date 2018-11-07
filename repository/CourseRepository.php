@@ -10,29 +10,6 @@ class CourseRepository extends Repository {
         return ['courseId', 'courseName', 'ownerUserId', 'dbScheme'];
     }
 
-    public function getCourses() {
-        $sql = "SELECT c.courseId, c.courseName, c.ownerUserId
-            FROM course c";
-        $stmt = $this->db->prepare($sql);
-        $results = [];
-        while ($row = $stmt->fetch()) {
-            $results[] = $row;
-        }
-        return $results;
-    }
-
-    public function getCourse($courseId) {
-        $sql = "SELECT c.courseId, c.courseName, c.ownerUserId, c.dbScheme
-            FROM course c
-            WHERE c.courseId = :courseId";
-        $stmt = $this->db->prepare($sql);
-        $stmt->bindParam('courseId', $courseId);
-        $stmt->execute();
-
-        $row = $stmt->fetch();
-        return $row;
-    }
-
     public function getNewCourseId() {
         static $courseIdLength = "8";
         $checkStr = "1";
