@@ -9,7 +9,7 @@ $app->post('/user', function (Request $request, Response $response, array $args)
 
     $data = $request->getParsedBody();
     $repository = new UserRepository($this->db);
-    $insertedUser = $repository->addUser($data);
+    $insertedUser = $repository->add($data);
     $newResponse = $response->withJson($insertedUser);
     return $newResponse;
 

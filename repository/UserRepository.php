@@ -70,25 +70,6 @@ class UserRepository extends Repository {
         return $loggedInUserId;
     }
 
-    public function addUser(array $userData) {
-        $sql = "INSERT INTO user ( userName, userMail, language) VALUES (:userName,:userMail,:language)";
-        $stmt = $this->db->prepare($sql);
-        $stmt->bindParam('userName', $userData['userName']);
-        $stmt->bindParam('userMail', $userData['userMail']);
-        $stmt->bindParam('language', $userData['language']);  //todo check that language is part of codes
-        $stmt->execute();
-
-        $sqlSelect = "SELECT u.userId, u.userName, u.userMail, u.language
-            FROM user u
-            WHERE u.userMail = :userMail";  // todo works as long as name is unique
-        $stmtSelect = $this->db->prepare($sqlSelect);
-        $stmtSelect->bindParam('userMail', $userData['userMail']);
-        $stmtSelect->execute();
-        $insertedUser = $stmtSelect->fetch();
-
-        return $insertedUser;
-    }
-
     //TODO are we using this?
     public function getUserLanguages() {
         $sql = "SELECT value1 FROM codeMapping WHERE codeMappingName = 'Locales'";
