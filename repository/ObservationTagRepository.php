@@ -9,28 +9,6 @@ class ObservationTagRepository extends Repository {
         return ['observationTagId', 'parentObservationTagId', 'observationTagName'];
     }
 
-    public function getObservationTags() {
-        $sql = "SELECT ot.observationTagId,ot.parentObservationTagId, ot.observationTagName
-        FROM observationTag ot";
-        $stmt = $this->db->prepare($sql);
-        $stmt->execute();
-        $results = [];
-        while ($row = $stmt->fetch()) {
-            $results[] = $row;
-        }
-        return $results;
-    }
-
-    public function getObservationTag($observationTagId) {
-        $sql = "SELECT ot.observationTagId,ot.parentObservationTagId, ot.observationTagName
-        FROM observationTag ot WHERE ot.observationTagId = :observationTagId";
-        $stmt = $this->db->prepare($sql);
-        $stmt->bindParam('observationTagId', $observationTagId);
-        $stmt->execute();
-        $result = $stmt->fetch();
-        return $result;
-    }
-
     public function getObservationTagByKey(array $observationTag) {
         IF (isset($observationTag['parentObservationTagId'])) {
             $parentObservationTagId = $observationTag['parentObservationTagId'];
@@ -75,7 +53,7 @@ class ObservationTagRepository extends Repository {
 
         $stmt->execute();
 
-        return $this->getObservationTag(0);
+        return $this->getById(0);
 
     }
 

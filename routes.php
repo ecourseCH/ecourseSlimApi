@@ -306,7 +306,7 @@ $app->delete('/observationTag/{id}', function (Request $request, Response $respo
 // get all observationTags
 $app->get('/observationTag', function (Request $request, Response $response, array $args) {
     $repository = new ObservationTagRepository($this->db);
-    $observationTags = $repository->getObservationTags();
+    $observationTags = $repository->getAll();
     $newResponse = $response->withJson($observationTags);
     return $newResponse;
 });
@@ -314,7 +314,7 @@ $app->get('/observationTag', function (Request $request, Response $response, arr
 $app->get('/observationTag/{id}', function (Request $request, Response $response, array $args) {
     $observationTagId = (int)$args['id'];
     $repository = new ObservationTagRepository($this->db);
-    $observationTag = $repository->getObservationTag($observationTagId);
+    $observationTag = $repository->getById($observationTagId);
     $newResponse = $response->withJson($observationTag);
     return $newResponse;
 });

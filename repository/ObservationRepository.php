@@ -19,7 +19,7 @@ class ObservationRepository extends Repository {
         $results = [];
         while ($row = $stmt->fetch()) {
             $repository = new ObservationTagRepository($this->db);
-            $results[] = $repository->getObservationTag($row['observationTagId']);
+            $results[] = $repository->getById($row['observationTagId']);
         }
         return $results;
     }
