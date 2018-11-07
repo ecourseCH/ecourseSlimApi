@@ -74,12 +74,4 @@ class ParticipantTagRepository extends Repository {
         return getParticipant($participantTag['participantTagId']);
     }
 
-    public function deleteParticipantTag($participantTagId) {
-        $sql = "DELETE FROM participantTag WHERE participantTagId = :participantTagId";
-        $stmt = $this->db->prepare($sql);
-        $stmt->bindParam('participantTagId', $participantTagId);
-        $stmt->execute();
-        $this->createParentParticipantTag();
-    }
-
 }

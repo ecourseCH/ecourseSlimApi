@@ -395,7 +395,7 @@ $app->post('/participantTag/{id}', function (Request $request, Response $respons
 $app->delete('/participantTag/{id}', function (Request $request, Response $response, array $args) {
     $participantTagId = (int)$args['id'];
     $repository = new ParticipantTagRepository($this->db);
-    return $repository->deleteParticipantTag($participantTagId);;
+    return $repository->deleteById($participantTagId);;
 
 });
 // get all participantTags
