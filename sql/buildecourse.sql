@@ -68,7 +68,7 @@ ALTER TABLE `codeMapping` ADD UNIQUE `uk_codeMapping`(`codeMappingName`,`Key1_al
 
 -- DELETE FROM mysql.user WHERE User = 'ecourse';
 
-drop user ecourse@localhost;
+drop user if exists ecourse@localhost;
 
 flush privileges;
 
