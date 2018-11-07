@@ -34,7 +34,7 @@ $app->delete('/user/{id}', function (Request $request, Response $response, array
 // get all users
 $app->get('/user', function (Request $request, Response $response, array $args) {
     $repository = new UserRepository($this->db);
-    $users = $repository->getUsers();
+    $users = $repository->getAll();
     $newResponse = $response->withJson($users);
     return $newResponse;
 });
@@ -42,7 +42,7 @@ $app->get('/user', function (Request $request, Response $response, array $args) 
 $app->get('/user/{id}', function (Request $request, Response $response, array $args) {
     $userId = (int)$args['id'];
     $repository = new UserRepository($this->db);
-    $user = $repository->getUser($userId);
+    $user = $repository->getById($userId);
     $newResponse = $response->withJson($user);
     return $newResponse;
 });

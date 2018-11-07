@@ -21,30 +21,6 @@ class UserRepository extends Repository {
         $stmt->execute();
     }
 
-    public function getUsers() {
-        $sql = "SELECT u.userId, u.userName, u.userMail, u.language
-            FROM user u";
-        $stmt = $this->db->prepare($sql);
-        $stmt->execute();
-        $results = [];
-        while ($row = $stmt->fetch()) {
-            $results[] = $row;
-        }
-        return $results;
-    }
-
-    public function getUser($userId) {
-        $sql = "SELECT u.userId, u.userName, u.userMail, u.language
-            FROM user u
-            WHERE u.userId = :userId";
-        $stmt = $this->db->prepare($sql);
-        $stmt->bindParam('userId', $userId);
-        $stmt->execute();
-
-        $row = $stmt->fetch();
-        return $row;
-    }
-
     public function checkUserLogin(array $userData) {
         $sqlSelect = "SELECT u.userId, u.userName, u.userMail, u.language
             FROM user u
@@ -89,7 +65,7 @@ class UserRepository extends Repository {
         $stmt->bindParam('language', $userData['language']);  //todo check that language is part of codes
         $stmt->execute();
 
-        return $this->getUser($userId);
+        return $this->getById($userId);
     }
 
     public function deleteUser($userId) {
