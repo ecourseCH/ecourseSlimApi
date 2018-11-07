@@ -10,22 +10,6 @@ class ObservationRepository extends Repository {
         return ['observationId', 'observationText', 'activityId', 'observationDate', 'leaderId', 'participantId'];
     }
 
-    public function updateObservation(array $observation) {
-        $sql = "UPDATE observation SET observationText = :observationText, activityId =:activityId,
-    observationDate = :observationDate, leaderId = :leaderId
-    ,participantId = :participantId
-    WHERE observationId = :observationId";
-        $stmt = $this->db->prepare($sql);
-        $stmt->bindParam('observationId', $observation["observationId"]);
-        $stmt->bindParam('observationText', $observation["observationText"]);
-        $stmt->bindParam('activityId', $observation["activityId"]);
-        $stmt->bindParam('observationDate', $observation["observationDate"]);
-        $stmt->bindParam('leaderId', $observation["leaderId"]);
-        $stmt->bindParam('participantId', $observation["participantId"]);
-        $stmt->execute();
-        return getObservation($observation["observationId"]);
-    }
-
     public function deleteObservation($observationId) {
         $sql = "DELETE FROM observation WHERE observationId = :observationId";
         $stmt = $this->db->prepare($sql);
