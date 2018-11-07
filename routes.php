@@ -19,7 +19,7 @@ $app->post('/user/{id}', function (Request $request, Response $response, array $
     $userId = (int)$args['id'];
     $data = $request->getParsedBody();
     $repository = new UserRepository($this->db);
-    $insertedUser = $repository->updateUser($userId, $data);
+    $insertedUser = $repository->update($userId, $data);
     $newResponse = $response->withJson($insertedUser);
     return $newResponse;
 

@@ -55,19 +55,6 @@ class UserRepository extends Repository {
         return $availableLanguages;
     }
 
-    public function updateUser($userId, array $userData) {
-        $sql = "UPDATE user SET userName = :userName, userMail = :userMail,
-    language = :language WHERE userId = :userId ";
-        $stmt = $this->db->prepare($sql);
-        $stmt->bindParam('userId', $userId);
-        $stmt->bindParam('userName', $userData['userName']);
-        $stmt->bindParam('userMail', $userData['userMail']);
-        $stmt->bindParam('language', $userData['language']);  //todo check that language is part of codes
-        $stmt->execute();
-
-        return $this->getById($userId);
-    }
-
     public function deleteUser($userId) {
         $sql = "DELETE FROM user WHERE userId = :userId  ";
         $stmt = $this->db->prepare($sql);
