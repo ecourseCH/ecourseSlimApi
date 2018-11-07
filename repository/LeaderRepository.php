@@ -10,32 +10,6 @@ class LeaderRepository extends Repository {
         return ['leaderId', 'userId', 'leaderName', 'leaderSurname', 'leaderScoutname'];
     }
 
-    public function getLeaders() {
-        $sql = "SELECT l.leaderId, l.userId, l.leaderName, l.leaderSurname, l.leaderScoutname
-            FROM leader l ";
-        $stmt = $this->db->prepare($sql);
-        //$stmt->bindParam('leaderId', $leaderId);
-        $stmt->execute();
-        $results = [];
-        while ($row = $stmt->fetch()) {
-            $results[] = $row;
-        }
-        return $results;
-
-    }
-
-
-    public function getLeader($leaderId) {
-        $sql = "SELECT l.leaderId, l.userId, l.leaderName, l.leaderSurname, l.leaderScoutname
-            FROM leader l WHERE leaderId = :leaderId";
-
-        $stmt = $this->db->prepare($sql);
-        $stmt->bindParam('leaderId', $leaderId);
-        $stmt->execute();
-        $results = $stmt->fetch();
-        return $results;
-    }
-
     public function getLeaderByUserId($userId) {
         $sql = "SELECT l.leaderId, l.userId, l.leaderName, l.leaderSurname, l.leaderScoutname
             FROM leader l WHERE userId = :userId";

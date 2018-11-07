@@ -82,7 +82,7 @@ $app->post('/course', function (Request $request, Response $response, array $arg
 // get leaders
 $app->get('/leader', function (Request $request, Response $response, array $args) {
     $repository = new LeaderRepository($this->db);
-    $leaders = $repository->getLeaders();
+    $leaders = $repository->getAll();
     $newResponse = $response->withJson($leaders);
     return $newResponse;
 });
@@ -91,7 +91,7 @@ $app->get('/leader', function (Request $request, Response $response, array $args
 $app->get('/leader/{id}', function (Request $request, Response $response, array $args) {
     $leaderId = (int)$args['id'];
     $repository = new LeaderRepository($this->db);
-    $leader = $repository->getLeader($leaderId);
+    $leader = $repository->getById($leaderId);
     $newResponse = $response->withJson($leader);
     return $newResponse;
 });
