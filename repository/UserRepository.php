@@ -15,12 +15,6 @@ class UserRepository extends Repository {
         return array_diff($this->getEntityFields(), ['password']);
     }
 
-    public function delAllUsers() {
-        $sql = "DELETE FROM user";
-        $stmt = $this->db->prepare($sql);
-        $stmt->execute();
-    }
-
     public function checkUserLogin(array $userData) {
         $sqlSelect = "SELECT u.userId, u.userName, u.userMail, u.language
             FROM user u
@@ -53,12 +47,5 @@ class UserRepository extends Repository {
         $stmt->execute();
         $availableLanguages = $stmt->fetch();
         return $availableLanguages;
-    }
-
-    public function deleteUser($userId) {
-        $sql = "DELETE FROM user WHERE userId = :userId  ";
-        $stmt = $this->db->prepare($sql);
-        $stmt->bindParam('userId', $userId);
-        $stmt->execute();
     }
 }

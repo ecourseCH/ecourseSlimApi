@@ -28,7 +28,7 @@ $app->post('/user/{id}', function (Request $request, Response $response, array $
 $app->delete('/user/{id}', function (Request $request, Response $response, array $args) {
     $userId = (int)$args['id'];
     $repository = new UserRepository($this->db);
-    return $repository->deleteUser($userId);;
+    return $repository->deleteById($userId);;
 
 });
 // get all users
@@ -425,7 +425,7 @@ $app->delete('/user', function (Request $request, Response $response, array $arg
 
     $repository = new UserRepository($this->db);
 
-    return $repository->delAllUsers();;
+    return $repository->deleteAll();
 });
 // create new course id
 $app->get('/courseId', function (Request $request, Response $response, array $args) {
