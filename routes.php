@@ -291,7 +291,7 @@ $app->post('/observationTag/{id}', function (Request $request, Response $respons
     $observationTagId = (int)$args['id'];
     $data = $request->getParsedBody();
     $repository = new ObservationTagRepository($this->db);
-    $insertedObservationTag = $repository->updateObservationTag($observationTagId, $data);
+    $insertedObservationTag = $repository->update($observationTagId, $data);
     $newResponse = $response->withJson($insertedObservationTag);
     return $newResponse;
 

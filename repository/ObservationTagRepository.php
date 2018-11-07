@@ -57,23 +57,6 @@ class ObservationTagRepository extends Repository {
 
     }
 
-    public function updateObservationTag(array $observationTag) {
-        IF (isset($observationTag['parentObservationTagId'])) {
-            $parentObservationTagId = $observationTag['parentObservationTagId'];
-        } else {
-            $parentObservationTagId = 0;
-        }
-        $sql = "UPDATE observationTag SET parentObservationTagId = :parentObservationTagId, observationTagName = :observationTagName
-    WHERE observationTagId = :observationTagId";
-        $stmt = $this->db->prepare($sql);
-        $stmt->bindParam('parentObservationTagId', $parentObservationTagId);
-        $stmt->bindParam('observationTagName', $observationTag['observationTagName']);
-        $stmt->bindParam('observationTagId', $observationTag['observationTagId']);
-
-        $stmt->execute();
-        return $this->getObservation($observationTag['observationTagId']);
-    }
-
     public function deleteObservationTag($observationTagId) {
         $sql = "DELETE FROM observationTag WHERE observationTagId = :observationTagId";
         $stmt = $this->db->prepare($sql);
