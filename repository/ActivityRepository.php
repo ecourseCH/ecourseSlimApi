@@ -40,25 +40,6 @@ class ActivityRepository extends Repository {
     }
 
 
-    public function addActivity(array $activity) {
-        $sql = "INSERT INTO activity (activityName, activityNumber, activityDate ) VALUES
-    (:activityName, :activityNumber, :activityDate )";
-        $stmt = $this->db->prepare($sql);
-        $stmt->bindParam('activityName', $activity['activityName']);
-        $stmt->bindParam('activityNumber', $activity['activityNumber']);
-        $stmt->bindParam('activityDate', $activity['activityDate']);
-        $stmt->execute();
-
-        //TODO return value should be the right ones
-        $sql = "SELECT activityId from activity ORDER BY activityId desc limit 1";
-        $stmt = $this->db->prepare($sql);
-        $stmt->execute();
-        $activity = $stmt->fetch();
-
-        return $this->getActivity($activity['activityId']);
-    }
-
-
     public function updateActivity(array $activity) {
         $sql = "UPDATE activity SET activityName =:activityName, activityNumber = :activityNumber,
     activityDate = :activityDate WHERE activityId = :activityID";
