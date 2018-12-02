@@ -83,17 +83,25 @@ abstract class Repository {
     public function update(string $id, array $entity) {
         $entityName = $this->getEntityName();
         $entityFields = $this->getEntityFields();
+        $positionOfIdFieldInEntityArray = array_search($this->getIdName(), $entityFields);
+        
+        if($positionOfIdFieldInEntityArray === false){
+	  throw new Exception("Id field with name ". $this->getIdName() ." was not found in EntityFields ".implode(', ',$this->getEntityFields()));
+        }
+        unset($entityFields[$positionOfIdFieldInEntityArray]);
+
         $entityFieldAssignments = implode( ', ', array_map(['self', 'createEqualsExpression'], $entityFields));
         $idFieldName = $this->getIdName();
         $idFieldCondition = self::createEqualsExpression($idFieldName);
-        // Prevent updating id
         unset($entity[$idFieldName]);
 
         $sql = "UPDATE $entityName SET $entityFieldAssignments WHERE $idFieldCondition";
+      
         $stmt = $this->db->prepare($sql);
         foreach ($entityFields as $field) {
-            // todo validation
-            $stmt->bindParam($field, $entity[$field]);
+            if(isset($entity[$field])){
+	      $stmt->bindParam($field, $entity[$field]);
+            }
         }
         $stmt->bindParam($idFieldName, $id);
         $stmt->execute();

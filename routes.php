@@ -414,7 +414,7 @@ $app->get('/participantTag', function (Request $request, Response $response, arr
 $app->get('/participantTag/{id}', function (Request $request, Response $response, array $args) {
     $participantTagId = (int)$args['id'];
     $repository = new ParticipantTagRepository($this->db);
-    $participantTag = $repository->getParticipantTag($participantTagId);
+    $participantTag = $repository->getById($participantTagId);
     $newResponse = $response->withJson($participantTag);
     return $newResponse;
 });
