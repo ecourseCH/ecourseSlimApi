@@ -1,0 +1,4726 @@
+{
+	"info": {
+		"_postman_id": "37a26e30-5b0e-4003-baf3-bd73c18ac044",
+		"name": "eCourseSlimApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"_postman_id": "c1326601-c91b-47b1-a8a9-51bf794b8fe9",
+			"name": "del user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "25efe386-9a5f-468c-84e2-70266a1cf97e",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userName",
+							"value": "Test user name1",
+							"sessionValue": "testmyc",
+							"type": "text"
+						},
+						{
+							"key": "userMail",
+							"value": "test1@test.ch",
+							"sessionValue": "0",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "testpwd",
+							"sessionValue": "testpwd",
+							"type": "text"
+						},
+						{
+							"key": "language",
+							"value": "DE_CH",
+							"sessionValue": "DE_CH",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "9b470bf8-907a-4fbf-aa3b-8f639343dfd0",
+			"name": "create user 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f6eca716-3cc1-4053-904f-2143984c86e2",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							"",
+							"pm.test(\"set userId variable\", function() {",
+							"        var jsonData = pm.response.json();",
+							"    pm.environment.set(\"userId1\",jsonData.userId)",
+							"    ",
+							"})",
+							"/*",
+							"pm.test(\"user id present\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.userId).to.be.below(10);",
+							"});",
+							"",
+							"*/"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userName",
+							"value": "Test user name1",
+							"sessionValue": "testmyc",
+							"type": "text"
+						},
+						{
+							"key": "userMail",
+							"value": "test1@test.ch",
+							"sessionValue": "0",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "testpwd",
+							"sessionValue": "testpwd",
+							"type": "text"
+						},
+						{
+							"key": "language",
+							"value": "DE_CH",
+							"sessionValue": "DE_CH",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "46668a92-f22b-4361-b017-075818530218",
+			"name": "create user 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bf431e5e-9ffe-41e0-8a6c-631874986ae6",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							"pm.test(\"set userId variable\", function() {",
+							"        var jsonData = pm.response.json();",
+							"    pm.environment.set(\"userId2\",jsonData.userId)",
+							"    ",
+							"})",
+							"/*",
+							"pm.test(\"user id present\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.userId).to.be.below(10);",
+							"});",
+							"",
+							"*/"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userName",
+							"value": "Test user name2",
+							"sessionValue": "testmyc",
+							"type": "text"
+						},
+						{
+							"key": "userMail",
+							"value": "test2@test.ch",
+							"sessionValue": "0",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "testpwd",
+							"sessionValue": "testpwd",
+							"type": "text"
+						},
+						{
+							"key": "language",
+							"value": "DE_CH",
+							"sessionValue": "DE_CH",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "679c91fa-bc8c-4440-b660-d43d66762d8e",
+			"name": "get users",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "25efe386-9a5f-468c-84e2-70266a1cf97e",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userName",
+							"value": "Test user name1",
+							"sessionValue": "testmyc",
+							"type": "text"
+						},
+						{
+							"key": "userMail",
+							"value": "test1@test.ch",
+							"sessionValue": "0",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "testpwd",
+							"sessionValue": "testpwd",
+							"type": "text"
+						},
+						{
+							"key": "language",
+							"value": "DE_CH",
+							"sessionValue": "DE_CH",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "30b4e82f-cb73-4a1b-bb7e-0c317e6938e0",
+			"name": "get user 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "25efe386-9a5f-468c-84e2-70266a1cf97e",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userName",
+							"value": "Test user name1",
+							"sessionValue": "testmyc",
+							"type": "text"
+						},
+						{
+							"key": "userMail",
+							"value": "test1@test.ch",
+							"sessionValue": "0",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "testpwd",
+							"sessionValue": "testpwd",
+							"type": "text"
+						},
+						{
+							"key": "language",
+							"value": "DE_CH",
+							"sessionValue": "DE_CH",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/{{userId2}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"{{userId2}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "7b430223-0d9c-446c-8c37-c7e35a7f024d",
+			"name": "get user 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "25efe386-9a5f-468c-84e2-70266a1cf97e",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userName",
+							"value": "Test user name1",
+							"sessionValue": "testmyc",
+							"type": "text"
+						},
+						{
+							"key": "userMail",
+							"value": "test1@test.ch",
+							"sessionValue": "0",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "testpwd",
+							"sessionValue": "testpwd",
+							"type": "text"
+						},
+						{
+							"key": "language",
+							"value": "DE_CH",
+							"sessionValue": "DE_CH",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/{{userId1}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"{{userId1}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "9bb95a0d-e221-478c-abd9-61157c418125",
+			"name": "update user 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bf431e5e-9ffe-41e0-8a6c-631874986ae6",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							"pm.test(\"set userId variable\", function() {",
+							"        var jsonData = pm.response.json();",
+							"    pm.environment.set(\"userId2\",jsonData.userId)",
+							"    ",
+							"})",
+							"/*",
+							"pm.test(\"user id present\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.userId).to.be.below(10);",
+							"});",
+							"",
+							"*/"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userName",
+							"value": "Test user name2_2",
+							"sessionValue": "testmyc",
+							"type": "text"
+						},
+						{
+							"key": "userMail",
+							"value": "test2_2@test.ch",
+							"sessionValue": "0",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "testpwd",
+							"sessionValue": "testpwd",
+							"type": "text"
+						},
+						{
+							"key": "language",
+							"value": "DE_CH_2",
+							"sessionValue": "DE_CH",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/{{userId2}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"{{userId2}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "46a2d1f8-6ceb-47a9-995a-73ed3dc47dd0",
+			"name": "delete user 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1d30ac36-554f-47bd-8827-59ddd4c68c7b",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"/*",
+							"pm.test(\"set userId variable\", function() {",
+							"        var jsonData = pm.response.json();",
+							"    pm.environment.set(\"userId2\",jsonData.userId)",
+							"    ",
+							"})",
+							"",
+							"pm.test(\"user id present\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.userId).to.be.below(10);",
+							"});",
+							"",
+							"*/"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3000/user/{{userId2}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"{{userId2}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "75afe903-0d0e-418d-9a4c-961f074b2a83",
+			"name": "get course id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "25efe386-9a5f-468c-84e2-70266a1cf97e",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userName",
+							"value": "Test user name1",
+							"sessionValue": "testmyc",
+							"type": "text"
+						},
+						{
+							"key": "userMail",
+							"value": "test1@test.ch",
+							"sessionValue": "0",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "testpwd",
+							"sessionValue": "testpwd",
+							"type": "text"
+						},
+						{
+							"key": "language",
+							"value": "DE_CH",
+							"sessionValue": "DE_CH",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/courseId",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"courseId"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "a2b6c908-c397-48df-b9d6-fc3c99af4e53",
+			"name": "get courses",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "25efe386-9a5f-468c-84e2-70266a1cf97e",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userName",
+							"value": "Test user name1",
+							"sessionValue": "testmyc",
+							"type": "text"
+						},
+						{
+							"key": "userMail",
+							"value": "test1@test.ch",
+							"sessionValue": "0",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "testpwd",
+							"sessionValue": "testpwd",
+							"type": "text"
+						},
+						{
+							"key": "language",
+							"value": "DE_CH",
+							"sessionValue": "DE_CH",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/course",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"course"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "8b26b0d0-4b96-44f1-906e-5246b687e38e",
+			"name": "add course 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "479048f4-f158-4e1c-80b8-663fae6273c4",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							"pm.test(\"set courseId1 variable\", function() {",
+							"        var jsonData = pm.response.json();",
+							"    pm.environment.set(\"courseId1\",jsonData.courseId)",
+							"    ",
+							"})"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userId",
+							"value": "{{userId1}}",
+							"sessionValue": "{{userId1}}",
+							"type": "text"
+						},
+						{
+							"key": "courseName",
+							"value": "test course1",
+							"sessionValue": "test course1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/course",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"course"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "3af7df43-6d30-4dc3-867c-b980c507b91a",
+			"name": "del course",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "25efe386-9a5f-468c-84e2-70266a1cf97e",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userName",
+							"value": "Test user name1",
+							"sessionValue": "testmyc",
+							"type": "text"
+						},
+						{
+							"key": "userMail",
+							"value": "test1@test.ch",
+							"sessionValue": "0",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "testpwd",
+							"sessionValue": "testpwd",
+							"type": "text"
+						},
+						{
+							"key": "language",
+							"value": "DE_CH",
+							"sessionValue": "DE_CH",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/course",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"course"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "50661232-48a4-4202-83da-8d80fd9c56ef",
+			"name": "get test course",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "25efe386-9a5f-468c-84e2-70266a1cf97e",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userName",
+							"value": "Test user name1",
+							"sessionValue": "testmyc",
+							"type": "text"
+						},
+						{
+							"key": "userMail",
+							"value": "test1@test.ch",
+							"sessionValue": "0",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "testpwd",
+							"sessionValue": "testpwd",
+							"type": "text"
+						},
+						{
+							"key": "language",
+							"value": "DE_CH",
+							"sessionValue": "DE_CH",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/testcourse",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"testcourse"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "1e7f7a99-64f6-47a4-921a-92e0b6c031a0",
+			"name": "get leaders",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "25efe386-9a5f-468c-84e2-70266a1cf97e",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userName",
+							"value": "Test user name1",
+							"sessionValue": "testmyc",
+							"type": "text"
+						},
+						{
+							"key": "userMail",
+							"value": "test1@test.ch",
+							"sessionValue": "0",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "testpwd",
+							"sessionValue": "testpwd",
+							"type": "text"
+						},
+						{
+							"key": "language",
+							"value": "DE_CH",
+							"sessionValue": "DE_CH",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/leader",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"leader"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "83e1ab23-e473-49c4-8cc2-58172a14444c",
+			"name": "create leader 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "db03cc7d-ac06-4a64-923a-2c6d057e4af6",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							"",
+							"pm.test(\"set leaderId variable\", function() {",
+							"        var jsonData = pm.response.json();",
+							"    pm.environment.set(\"leaderId1\",jsonData.leaderId)",
+							"    ",
+							"})",
+							"/*",
+							"pm.test(\"user id present\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.userId).to.be.below(10);",
+							"});",
+							"",
+							"*/"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userId",
+							"value": "{{userId1}}",
+							"sessionValue": "testmyc",
+							"type": "text"
+						},
+						{
+							"key": "leaderName",
+							"value": "test leaderName 1",
+							"sessionValue": "0",
+							"type": "text"
+						},
+						{
+							"key": "leaderSurname",
+							"value": "test leaderSurname 1",
+							"sessionValue": "testpwd",
+							"type": "text"
+						},
+						{
+							"key": "leaderScoutname",
+							"value": "test leaderScoutname 1",
+							"sessionValue": "DE_CH",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/leader",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"leader"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "3ca5eab1-b1aa-4951-8778-e25495c9e4c0",
+			"name": "get leader 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "25efe386-9a5f-468c-84e2-70266a1cf97e",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userName",
+							"value": "Test user name1",
+							"sessionValue": "testmyc",
+							"type": "text"
+						},
+						{
+							"key": "userMail",
+							"value": "test1@test.ch",
+							"sessionValue": "0",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "testpwd",
+							"sessionValue": "testpwd",
+							"type": "text"
+						},
+						{
+							"key": "language",
+							"value": "DE_CH",
+							"sessionValue": "DE_CH",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/leader/{{leaderId1}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"leader",
+						"{{leaderId1}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "f6b5034b-2a4d-4a7a-aadb-2af893700b1c",
+			"name": "delete leader 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "79b4b10c-c8f4-467f-86ba-22e94243a08f",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							"/*",
+							"pm.test(\"set userId variable\", function() {",
+							"        var jsonData = pm.response.json();",
+							"    pm.environment.set(\"leaderId1\",jsonData.leaderId)",
+							"    ",
+							"})",
+							"",
+							"pm.test(\"user id present\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.userId).to.be.below(10);",
+							"});",
+							"",
+							"*/"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userId",
+							"value": "{{userId1}}",
+							"sessionValue": "testmyc",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "leaderName",
+							"value": "test leaderName 1",
+							"sessionValue": "0",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "leaderSurname",
+							"value": "test leaderSurname 1",
+							"sessionValue": "testpwd",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "leaderScoutname",
+							"value": "test leaderScoutname 1",
+							"sessionValue": "DE_CH",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/leader/{{leaderId1}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"leader",
+						"{{leaderId1}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "23d48b95-50d2-474a-86bf-9650f999539a",
+			"name": "create leader 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e60606c7-817c-49c5-a898-8c62babef00a",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							"",
+							"pm.test(\"set leaderId variable\", function() {",
+							"        var jsonData = pm.response.json();",
+							"    pm.environment.set(\"leaderId2\",jsonData.leaderId)",
+							"    ",
+							"})",
+							"/*",
+							"pm.test(\"user id present\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.userId).to.be.below(10);",
+							"});",
+							"",
+							"*/"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userId",
+							"value": "{{userId1}}",
+							"sessionValue": "testmyc",
+							"type": "text"
+						},
+						{
+							"key": "leaderName",
+							"value": "test leaderName 1",
+							"sessionValue": "0",
+							"type": "text"
+						},
+						{
+							"key": "leaderSurname",
+							"value": "test leaderSurname 1",
+							"sessionValue": "testpwd",
+							"type": "text"
+						},
+						{
+							"key": "leaderScoutname",
+							"value": "test leaderScoutname 1",
+							"sessionValue": "DE_CH",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/leader",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"leader"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "861af76a-d832-465f-afa2-37492684d302",
+			"name": "get activities",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "25efe386-9a5f-468c-84e2-70266a1cf97e",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userName",
+							"value": "Test user name1",
+							"sessionValue": "testmyc",
+							"type": "text"
+						},
+						{
+							"key": "userMail",
+							"value": "test1@test.ch",
+							"sessionValue": "0",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "testpwd",
+							"sessionValue": "testpwd",
+							"type": "text"
+						},
+						{
+							"key": "language",
+							"value": "DE_CH",
+							"sessionValue": "DE_CH",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/activity",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"activity"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "3ac19570-87a0-43e0-b08a-90561d4b80f2",
+			"name": "create activity 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3b76cbc0-fc98-4048-bdfc-d4d3dea70d0c",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							"",
+							"pm.test(\"set activityId variable\", function() {",
+							"        var jsonData = pm.response.json();",
+							"    pm.environment.set(\"activityId1\",jsonData.activityId)",
+							"    ",
+							"})",
+							"",
+							"pm.test(\"activity id below 10\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.activityId).to.be.below(10);",
+							"});",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "activityName",
+							"value": "Test activity name1",
+							"sessionValue": "testmyc",
+							"type": "text"
+						},
+						{
+							"key": "activityNumber",
+							"value": "12",
+							"sessionValue": "0",
+							"type": "text"
+						},
+						{
+							"key": "activityDate",
+							"value": "",
+							"sessionValue": "testpwd",
+							"type": "text"
+						},
+						{
+							"key": "language",
+							"value": "DE_CH",
+							"sessionValue": "DE_CH",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/activity",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"activity"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "4e5cddb1-3bd6-49a9-9b03-e8df2b19e826",
+			"name": "get activity 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "25efe386-9a5f-468c-84e2-70266a1cf97e",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userName",
+							"value": "Test user name1",
+							"sessionValue": "testmyc",
+							"type": "text"
+						},
+						{
+							"key": "userMail",
+							"value": "test1@test.ch",
+							"sessionValue": "0",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "testpwd",
+							"sessionValue": "testpwd",
+							"type": "text"
+						},
+						{
+							"key": "language",
+							"value": "DE_CH",
+							"sessionValue": "DE_CH",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/activity/{{activityId1}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"activity",
+						"{{activityId1}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "a597d235-5567-44cc-bbdc-b1f0dee948c9",
+			"name": "delete activity 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "79b4b10c-c8f4-467f-86ba-22e94243a08f",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							"/*",
+							"pm.test(\"set userId variable\", function() {",
+							"        var jsonData = pm.response.json();",
+							"    pm.environment.set(\"leaderId1\",jsonData.leaderId)",
+							"    ",
+							"})",
+							"",
+							"pm.test(\"user id present\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.userId).to.be.below(10);",
+							"});",
+							"",
+							"*/"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userId",
+							"value": "{{userId1}}",
+							"sessionValue": "testmyc",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "leaderName",
+							"value": "test leaderName 1",
+							"sessionValue": "0",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "leaderSurname",
+							"value": "test leaderSurname 1",
+							"sessionValue": "testpwd",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "leaderScoutname",
+							"value": "test leaderScoutname 1",
+							"sessionValue": "DE_CH",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/activity/{{activityId1}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"activity",
+						"{{activityId1}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "1ffab913-69bf-4508-90f0-59d50b13191c",
+			"name": "get participants",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "25efe386-9a5f-468c-84e2-70266a1cf97e",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userName",
+							"value": "Test user name1",
+							"sessionValue": "testmyc",
+							"type": "text"
+						},
+						{
+							"key": "userMail",
+							"value": "test1@test.ch",
+							"sessionValue": "0",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "testpwd",
+							"sessionValue": "testpwd",
+							"type": "text"
+						},
+						{
+							"key": "language",
+							"value": "DE_CH",
+							"sessionValue": "DE_CH",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/participant",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"participant"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "98c794a1-7006-470d-865f-c4ee9390e2cd",
+			"name": "create participant 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "775c0db0-1206-4a45-b674-325da7ffc4f8",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							"",
+							"pm.test(\"set participantId variable\", function() {",
+							"        var jsonData = pm.response.json();",
+							"    pm.environment.set(\"participantId1\",jsonData.participantId)",
+							"    ",
+							"})",
+							"/*",
+							"pm.test(\"activity id below 10\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.activityId).to.be.below(10);",
+							"});",
+							"",
+							"*/"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "activityName",
+							"value": "Test activity name1",
+							"sessionValue": "testmyc",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "activityNumber",
+							"value": "12",
+							"sessionValue": "0",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "activityDate",
+							"value": "",
+							"sessionValue": "testpwd",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "language",
+							"value": "DE_CH",
+							"sessionValue": "DE_CH",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "participantName",
+							"value": "est",
+							"sessionValue": "est",
+							"type": "text"
+						},
+						{
+							"key": "participantSurname",
+							"value": "sdf",
+							"sessionValue": "sdf",
+							"type": "text"
+						},
+						{
+							"key": "participantScoutname",
+							"value": "sdf",
+							"sessionValue": "sdf",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/participant",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"participant"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "9f721bcd-c5b1-4c03-87a1-9a49064e85a0",
+			"name": "get participant1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "25efe386-9a5f-468c-84e2-70266a1cf97e",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userName",
+							"value": "Test user name1",
+							"sessionValue": "testmyc",
+							"type": "text"
+						},
+						{
+							"key": "userMail",
+							"value": "test1@test.ch",
+							"sessionValue": "0",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "testpwd",
+							"sessionValue": "testpwd",
+							"type": "text"
+						},
+						{
+							"key": "language",
+							"value": "DE_CH",
+							"sessionValue": "DE_CH",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/participant/{{participantId1}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"participant",
+						"{{participantId1}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "df5a1110-6587-4cef-a0fd-5faa67654f1a",
+			"name": "delete participant1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "79b4b10c-c8f4-467f-86ba-22e94243a08f",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							"/*",
+							"pm.test(\"set userId variable\", function() {",
+							"        var jsonData = pm.response.json();",
+							"    pm.environment.set(\"leaderId1\",jsonData.leaderId)",
+							"    ",
+							"})",
+							"",
+							"pm.test(\"user id present\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.userId).to.be.below(10);",
+							"});",
+							"",
+							"*/"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userId",
+							"value": "{{userId1}}",
+							"sessionValue": "testmyc",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "leaderName",
+							"value": "test leaderName 1",
+							"sessionValue": "0",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "leaderSurname",
+							"value": "test leaderSurname 1",
+							"sessionValue": "testpwd",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "leaderScoutname",
+							"value": "test leaderScoutname 1",
+							"sessionValue": "DE_CH",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/participant/{{participantId1}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"participant",
+						"{{participantId1}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "cc5363a5-84c6-4fcc-93a7-cefcd3d3fc12",
+			"name": "create participant 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "719db3b0-0cbf-433c-9661-d601b355d15b",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							"",
+							"pm.test(\"set participantId variable\", function() {",
+							"        var jsonData = pm.response.json();",
+							"    pm.environment.set(\"participantId2\",jsonData.participantId)",
+							"    ",
+							"})",
+							"/*",
+							"pm.test(\"activity id below 10\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.activityId).to.be.below(10);",
+							"});",
+							"",
+							"*/"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "activityName",
+							"value": "Test activity name1",
+							"sessionValue": "testmyc",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "activityNumber",
+							"value": "12",
+							"sessionValue": "0",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "activityDate",
+							"value": "",
+							"sessionValue": "testpwd",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "language",
+							"value": "DE_CH",
+							"sessionValue": "DE_CH",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "participantName",
+							"value": "est",
+							"sessionValue": "est",
+							"type": "text"
+						},
+						{
+							"key": "participantSurname",
+							"value": "sdf",
+							"sessionValue": "sdf",
+							"type": "text"
+						},
+						{
+							"key": "participantScoutname",
+							"value": "sdf",
+							"sessionValue": "sdf",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/participant",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"participant"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "d2239379-7cb2-4f23-a2f0-0308332ed074",
+			"name": "get observations",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "25efe386-9a5f-468c-84e2-70266a1cf97e",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userName",
+							"value": "Test user name1",
+							"sessionValue": "testmyc",
+							"type": "text"
+						},
+						{
+							"key": "userMail",
+							"value": "test1@test.ch",
+							"sessionValue": "0",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "testpwd",
+							"sessionValue": "testpwd",
+							"type": "text"
+						},
+						{
+							"key": "language",
+							"value": "DE_CH",
+							"sessionValue": "DE_CH",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/observation",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"observation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "f0643849-50ba-486f-93eb-d4bd166cd661",
+			"name": "create observation 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "af1df05a-76f0-421b-8d67-b3f6820a85f7",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							"",
+							"pm.test(\"set observationId variable\", function() {",
+							"        var jsonData = pm.response.json();",
+							"    pm.environment.set(\"observationId1\",jsonData.observationId)",
+							"    ",
+							"})",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "activityName",
+							"value": "Test activity name1",
+							"sessionValue": "testmyc",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "activityNumber",
+							"value": "12",
+							"sessionValue": "0",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "activityDate",
+							"value": "",
+							"sessionValue": "testpwd",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "language",
+							"value": "DE_CH",
+							"sessionValue": "DE_CH",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "observationText",
+							"value": "test",
+							"sessionValue": "test",
+							"type": "text"
+						},
+						{
+							"key": "leaderId",
+							"value": "{{leaderId2}}",
+							"sessionValue": "{{leaderId1}}",
+							"type": "text"
+						},
+						{
+							"key": "participantId",
+							"value": "{{participantId2}}",
+							"sessionValue": "participantId1}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/observation",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"observation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "eeeaeff7-a18e-4a7c-95da-e45d1385a1c0",
+			"name": "create observation 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "fe57d083-d9cd-4302-a5ea-c652b75dca75",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							"",
+							"pm.test(\"set observationId2 variable\", function() {",
+							"        var jsonData = pm.response.json();",
+							"    pm.environment.set(\"observationId2\",jsonData.observationId)",
+							"    ",
+							"})",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "activityName",
+							"value": "Test activity name1",
+							"sessionValue": "testmyc",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "activityNumber",
+							"value": "12",
+							"sessionValue": "0",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "activityDate",
+							"value": "",
+							"sessionValue": "testpwd",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "language",
+							"value": "DE_CH",
+							"sessionValue": "DE_CH",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "observationText",
+							"value": "test observation",
+							"sessionValue": "test",
+							"type": "text"
+						},
+						{
+							"key": "leaderId",
+							"value": "{{leaderId2}}",
+							"sessionValue": "{{leaderId1}}",
+							"type": "text"
+						},
+						{
+							"key": "participantId",
+							"value": "{{participantId2}}",
+							"sessionValue": "participantId1}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/observation",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"observation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "981ffe6e-ba7e-4601-b82f-42e4d882f02e",
+			"name": "get observation 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "25efe386-9a5f-468c-84e2-70266a1cf97e",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userName",
+							"value": "Test user name1",
+							"sessionValue": "testmyc",
+							"type": "text"
+						},
+						{
+							"key": "userMail",
+							"value": "test1@test.ch",
+							"sessionValue": "0",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "testpwd",
+							"sessionValue": "testpwd",
+							"type": "text"
+						},
+						{
+							"key": "language",
+							"value": "DE_CH",
+							"sessionValue": "DE_CH",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/observation/{{observationId1}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"observation",
+						"{{observationId1}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "d7240edb-cb31-4742-987d-bce8cc22f1fc",
+			"name": "delete observation 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "79b4b10c-c8f4-467f-86ba-22e94243a08f",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							"/*",
+							"pm.test(\"set userId variable\", function() {",
+							"        var jsonData = pm.response.json();",
+							"    pm.environment.set(\"leaderId1\",jsonData.leaderId)",
+							"    ",
+							"})",
+							"",
+							"pm.test(\"user id present\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.userId).to.be.below(10);",
+							"});",
+							"",
+							"*/"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userId",
+							"value": "{{userId1}}",
+							"sessionValue": "testmyc",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "leaderName",
+							"value": "test leaderName 1",
+							"sessionValue": "0",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "leaderSurname",
+							"value": "test leaderSurname 1",
+							"sessionValue": "testpwd",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "leaderScoutname",
+							"value": "test leaderScoutname 1",
+							"sessionValue": "DE_CH",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/observation/{{observationId1}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"observation",
+						"{{observationId1}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "e5049cd9-63a7-472f-ae76-7570a5b13c63",
+			"name": "get observationTags",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "25efe386-9a5f-468c-84e2-70266a1cf97e",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userName",
+							"value": "Test user name1",
+							"sessionValue": "testmyc",
+							"type": "text"
+						},
+						{
+							"key": "userMail",
+							"value": "test1@test.ch",
+							"sessionValue": "0",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "testpwd",
+							"sessionValue": "testpwd",
+							"type": "text"
+						},
+						{
+							"key": "language",
+							"value": "DE_CH",
+							"sessionValue": "DE_CH",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/observationTag",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"observationTag"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "c57b50a5-ee6c-4f1d-bee9-8577047b9856",
+			"name": "create observationTag 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2095a9b0-96af-4cc9-b0be-bb30eba100d8",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							"",
+							"pm.test(\"set observationId variable\", function() {",
+							"        var jsonData = pm.response.json();",
+							"    pm.environment.set(\"observationTagId1\",jsonData.observationTagId)",
+							"    ",
+							"})",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "activityName",
+							"value": "Test activity name1",
+							"sessionValue": "testmyc",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "activityNumber",
+							"value": "12",
+							"sessionValue": "0",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "activityDate",
+							"value": "",
+							"sessionValue": "testpwd",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "language",
+							"value": "DE_CH",
+							"sessionValue": "DE_CH",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "observationText",
+							"value": "test",
+							"sessionValue": "test",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "leaderId",
+							"value": "{{leaderId2}}",
+							"sessionValue": "{{leaderId1}}",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "participantId",
+							"value": "{{participantId2}}",
+							"sessionValue": "participantId1}}",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "observationTagName",
+							"value": "testname",
+							"sessionValue": "testname",
+							"type": "text"
+						},
+						{
+							"key": "parentObservationTagId",
+							"value": "1",
+							"sessionValue": "1",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/observationTag",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"observationTag"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "984b1655-a47b-4d1c-bdca-389e46a22b14",
+			"name": "create observationTag 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2355a51d-21af-4112-8f54-632d49f2152c",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							"",
+							"pm.test(\"set observationId variable\", function() {",
+							"        var jsonData = pm.response.json();",
+							"    pm.environment.set(\"observationTagId2\",jsonData.observationTagId)",
+							"    ",
+							"})",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "activityName",
+							"value": "Test activity name1",
+							"sessionValue": "testmyc",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "activityNumber",
+							"value": "12",
+							"sessionValue": "0",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "activityDate",
+							"value": "",
+							"sessionValue": "testpwd",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "language",
+							"value": "DE_CH",
+							"sessionValue": "DE_CH",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "observationText",
+							"value": "test",
+							"sessionValue": "test",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "leaderId",
+							"value": "{{leaderId2}}",
+							"sessionValue": "{{leaderId1}}",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "participantId",
+							"value": "{{participantId2}}",
+							"sessionValue": "participantId1}}",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "observationTagName",
+							"value": "test observation tag",
+							"sessionValue": "testname",
+							"type": "text"
+						},
+						{
+							"key": "parentObservationTagId",
+							"value": "1",
+							"sessionValue": "1",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/observationTag",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"observationTag"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "904516e0-e1bc-47ed-91cf-d1f4d3d0f095",
+			"name": "get observationTag 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "25efe386-9a5f-468c-84e2-70266a1cf97e",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userName",
+							"value": "Test user name1",
+							"sessionValue": "testmyc",
+							"type": "text"
+						},
+						{
+							"key": "userMail",
+							"value": "test1@test.ch",
+							"sessionValue": "0",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "testpwd",
+							"sessionValue": "testpwd",
+							"type": "text"
+						},
+						{
+							"key": "language",
+							"value": "DE_CH",
+							"sessionValue": "DE_CH",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/observationTag/{{observationTagId1}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"observationTag",
+						"{{observationTagId1}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "6208e91f-1d59-4195-b5d9-9070e67515e7",
+			"name": "delete observationTag 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "79b4b10c-c8f4-467f-86ba-22e94243a08f",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							"/*",
+							"pm.test(\"set userId variable\", function() {",
+							"        var jsonData = pm.response.json();",
+							"    pm.environment.set(\"leaderId1\",jsonData.leaderId)",
+							"    ",
+							"})",
+							"",
+							"pm.test(\"user id present\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.userId).to.be.below(10);",
+							"});",
+							"",
+							"*/"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userId",
+							"value": "{{userId1}}",
+							"sessionValue": "testmyc",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "leaderName",
+							"value": "test leaderName 1",
+							"sessionValue": "0",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "leaderSurname",
+							"value": "test leaderSurname 1",
+							"sessionValue": "testpwd",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "leaderScoutname",
+							"value": "test leaderScoutname 1",
+							"sessionValue": "DE_CH",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/observationTag/{{observationTagId1}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"observationTag",
+						"{{observationTagId1}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "2c3b0195-a0a3-44f0-91da-05f7778bd7a9",
+			"name": "get observationTags per observation",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "25efe386-9a5f-468c-84e2-70266a1cf97e",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userName",
+							"value": "Test user name1",
+							"sessionValue": "testmyc",
+							"type": "text"
+						},
+						{
+							"key": "userMail",
+							"value": "test1@test.ch",
+							"sessionValue": "0",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "testpwd",
+							"sessionValue": "testpwd",
+							"type": "text"
+						},
+						{
+							"key": "language",
+							"value": "DE_CH",
+							"sessionValue": "DE_CH",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/observation/{{observationId2}}/observationTag",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"observation",
+						"{{observationId2}}",
+						"observationTag"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "dd6b9102-5d46-45a0-a73b-9a667a8d2bb3",
+			"name": "add observationTag to observation",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "28f2b715-12d8-4605-b867-01445328d892",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "activityName",
+							"value": "Test activity name1",
+							"sessionValue": "testmyc",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "activityNumber",
+							"value": "12",
+							"sessionValue": "0",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "activityDate",
+							"value": "",
+							"sessionValue": "testpwd",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "language",
+							"value": "DE_CH",
+							"sessionValue": "DE_CH",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "observationText",
+							"value": "test observation",
+							"sessionValue": "test",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "leaderId",
+							"value": "{{leaderId2}}",
+							"sessionValue": "{{leaderId1}}",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "participantId",
+							"value": "{{participantId2}}",
+							"sessionValue": "participantId1}}",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "observationTagId",
+							"value": "{{observationTagId2}}",
+							"sessionValue": "{{observationTagId2}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/observation/{{observationId2}}/observationTag",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"observation",
+						"{{observationId2}}",
+						"observationTag"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "b112fc82-a127-436d-9b44-99dd1f6e715b",
+			"name": "delete observationTag from observation",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "79b4b10c-c8f4-467f-86ba-22e94243a08f",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							"/*",
+							"pm.test(\"set userId variable\", function() {",
+							"        var jsonData = pm.response.json();",
+							"    pm.environment.set(\"leaderId1\",jsonData.leaderId)",
+							"    ",
+							"})",
+							"",
+							"pm.test(\"user id present\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.userId).to.be.below(10);",
+							"});",
+							"",
+							"*/"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userId",
+							"value": "{{userId1}}",
+							"sessionValue": "testmyc",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "leaderName",
+							"value": "test leaderName 1",
+							"sessionValue": "0",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "leaderSurname",
+							"value": "test leaderSurname 1",
+							"sessionValue": "testpwd",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "leaderScoutname",
+							"value": "test leaderScoutname 1",
+							"sessionValue": "DE_CH",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "observationTagId",
+							"value": "{{observationTagId2}}",
+							"sessionValue": "{{observationTagId2}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/observation/{{observationId2}}/observationTag",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"observation",
+						"{{observationId2}}",
+						"observationTag"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "65b0c480-e2ad-415f-832f-15abf4156546",
+			"name": "get participantTags",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "25efe386-9a5f-468c-84e2-70266a1cf97e",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userName",
+							"value": "Test user name1",
+							"sessionValue": "testmyc",
+							"type": "text"
+						},
+						{
+							"key": "userMail",
+							"value": "test1@test.ch",
+							"sessionValue": "0",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "testpwd",
+							"sessionValue": "testpwd",
+							"type": "text"
+						},
+						{
+							"key": "language",
+							"value": "DE_CH",
+							"sessionValue": "DE_CH",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/participantTag",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"participantTag"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "067f66c4-aacb-4b28-b2bc-e3b3f9348910",
+			"name": "create participantTag 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b5bdd5ca-a285-4bbb-b3c4-3657d7653ca8",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							"",
+							"pm.test(\"set observationId variable\", function() {",
+							"        var jsonData = pm.response.json();",
+							"    pm.environment.set(\"participantTagId1\",jsonData.participantTagId)",
+							"    ",
+							"})",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "activityName",
+							"value": "Test activity name1",
+							"sessionValue": "testmyc",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "activityNumber",
+							"value": "12",
+							"sessionValue": "0",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "activityDate",
+							"value": "",
+							"sessionValue": "testpwd",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "language",
+							"value": "DE_CH",
+							"sessionValue": "DE_CH",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "observationText",
+							"value": "test",
+							"sessionValue": "test",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "leaderId",
+							"value": "{{leaderId2}}",
+							"sessionValue": "{{leaderId1}}",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "participantId",
+							"value": "{{participantId2}}",
+							"sessionValue": "participantId1}}",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "participantTagName",
+							"value": "testname",
+							"sessionValue": "testname",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/participantTag",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"participantTag"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "0ec8b13a-0135-4aa2-bc07-cabe61dafaff",
+			"name": "get participantTag 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "25efe386-9a5f-468c-84e2-70266a1cf97e",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userName",
+							"value": "Test user name1",
+							"sessionValue": "testmyc",
+							"type": "text"
+						},
+						{
+							"key": "userMail",
+							"value": "test1@test.ch",
+							"sessionValue": "0",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "testpwd",
+							"sessionValue": "testpwd",
+							"type": "text"
+						},
+						{
+							"key": "language",
+							"value": "DE_CH",
+							"sessionValue": "DE_CH",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/participantTag/{{participantTagId1}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"participantTag",
+						"{{participantTagId1}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "0597b602-7bcc-4736-a206-a4a17e8c0499",
+			"name": "delete participantTag 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "79b4b10c-c8f4-467f-86ba-22e94243a08f",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							"/*",
+							"pm.test(\"set userId variable\", function() {",
+							"        var jsonData = pm.response.json();",
+							"    pm.environment.set(\"leaderId1\",jsonData.leaderId)",
+							"    ",
+							"})",
+							"",
+							"pm.test(\"user id present\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.userId).to.be.below(10);",
+							"});",
+							"",
+							"*/"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userId",
+							"value": "{{userId1}}",
+							"sessionValue": "testmyc",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "leaderName",
+							"value": "test leaderName 1",
+							"sessionValue": "0",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "leaderSurname",
+							"value": "test leaderSurname 1",
+							"sessionValue": "testpwd",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "leaderScoutname",
+							"value": "test leaderScoutname 1",
+							"sessionValue": "DE_CH",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/participantTag/{{participantTagId1}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"participantTag",
+						"{{participantTagId1}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "2edb36e7-bddf-485a-b239-eff012c42cb6",
+			"name": "get codeMappings",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "25efe386-9a5f-468c-84e2-70266a1cf97e",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userName",
+							"value": "Test user name1",
+							"sessionValue": "testmyc",
+							"type": "text"
+						},
+						{
+							"key": "userMail",
+							"value": "test1@test.ch",
+							"sessionValue": "0",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "testpwd",
+							"sessionValue": "testpwd",
+							"type": "text"
+						},
+						{
+							"key": "language",
+							"value": "DE_CH",
+							"sessionValue": "DE_CH",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/codeMapping",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"codeMapping"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "0c486317-1bee-4ff1-b553-9e8ba5c6a1ba",
+			"name": "create codeMapping 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3426fe5b-7633-456a-bda8-3a0518d153b0",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							"",
+							"pm.test(\"set codeMappingId variable\", function() {",
+							"        var jsonData = pm.response.json();",
+							"    pm.environment.set(\"codeMappingId1\",jsonData.codeMappingId)",
+							"    ",
+							"})",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "activityName",
+							"value": "Test activity name1",
+							"sessionValue": "testmyc",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "activityNumber",
+							"value": "12",
+							"sessionValue": "0",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "activityDate",
+							"value": "",
+							"sessionValue": "testpwd",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "language",
+							"value": "DE_CH",
+							"sessionValue": "DE_CH",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "observationText",
+							"value": "test",
+							"sessionValue": "test",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "leaderId",
+							"value": "{{leaderId2}}",
+							"sessionValue": "{{leaderId1}}",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "participantId",
+							"value": "{{participantId2}}",
+							"sessionValue": "participantId1}}",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "codeMappingName",
+							"value": "testmapping",
+							"sessionValue": "testmapping",
+							"type": "text"
+						},
+						{
+							"key": "Key1_alpha",
+							"value": "keytest1",
+							"sessionValue": "key",
+							"type": "text"
+						},
+						{
+							"key": "Value1",
+							"value": "value",
+							"sessionValue": "value",
+							"type": "text"
+						},
+						{
+							"key": "Key1_num",
+							"value": "3",
+							"sessionValue": "3",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/codeMapping",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"codeMapping"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "5dd887f4-c8e6-4bd4-a33a-63b6f14b77cb",
+			"name": "get codeMapping 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "25efe386-9a5f-468c-84e2-70266a1cf97e",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userName",
+							"value": "Test user name1",
+							"sessionValue": "testmyc",
+							"type": "text"
+						},
+						{
+							"key": "userMail",
+							"value": "test1@test.ch",
+							"sessionValue": "0",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "testpwd",
+							"sessionValue": "testpwd",
+							"type": "text"
+						},
+						{
+							"key": "language",
+							"value": "DE_CH",
+							"sessionValue": "DE_CH",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/codeMapping/{{codeMappingId1}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"codeMapping",
+						"{{codeMappingId1}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "7c229491-c642-408b-b817-fbe67e2142b3",
+			"name": "delete codeMapping 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "79b4b10c-c8f4-467f-86ba-22e94243a08f",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							"/*",
+							"pm.test(\"set userId variable\", function() {",
+							"        var jsonData = pm.response.json();",
+							"    pm.environment.set(\"leaderId1\",jsonData.leaderId)",
+							"    ",
+							"})",
+							"",
+							"pm.test(\"user id present\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.userId).to.be.below(10);",
+							"});",
+							"",
+							"*/"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userId",
+							"value": "{{userId1}}",
+							"sessionValue": "testmyc",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "leaderName",
+							"value": "test leaderName 1",
+							"sessionValue": "0",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "leaderSurname",
+							"value": "test leaderSurname 1",
+							"sessionValue": "testpwd",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "leaderScoutname",
+							"value": "test leaderScoutname 1",
+							"sessionValue": "DE_CH",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/codeMapping/{{codeMappingId1}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"codeMapping",
+						"{{codeMappingId1}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

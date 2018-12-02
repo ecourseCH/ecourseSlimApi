@@ -1,16 +1,17 @@
 #!/bin/bash
-# installation script for linux for eCourse
+# installation script for linux for eCourseSlimApi
 # Author Luxus
 
 # parameters 
 # 1 mysql pwd
-# 2 install dir of files default /var/www/html/ecourse
+# 2 install dir of files default /var/www/html/eCourseSlimApi
+# 3 path and name of composer file
 
 #check input parameters
 
 if [ -z "$2" ]
   then
-   DIR="/var/www/html/ecourse";
+   DIR="/var/www/html/eCourseSlimApi";
 echo "Directory set to " $DIR ;
 
 else
@@ -86,9 +87,29 @@ rsync -avz --exclude 'install.sh' --exclude 'sql/buildecourse.sql' --exclude '.g
   fi
 
 # install composer
+
+COMPOSER_FILE="";
+
+if [ -z "$3" ]
+  then
+    echo "here2";
+   PWD=`pwd`;
+   COMPOSER_FILE="${PWD}/composer.phar"; 
+  echo "Composer file set to " $COMPOSER_FILE ;
+else
+   COMPOSER_FILE="$3";
+   echo "here1";
+   echo "Composer file set to " $COMPOSER_FILE ;
+fi
 cd $DIR;
 
-./install_composer.sh
+if [ -f $COMPOSER_FILE ]; then
+   echo "File $COMPOSER_FILE exists."
+   cp $COMPOSER_FILE $DIR/composer.phar
+   
+else
+   echo "File $COMPOSER_FILE does not exist."
+   ./install_composer.sh
  if [ "$?" -eq 0 ]
    then
     echo "download composer successful"
@@ -96,6 +117,8 @@ cd $DIR;
     echo "download composer failed."
     exit 1;
   fi
+fi
+
 
  php composer.phar install
   if [ "$?" -eq 0 ]
@@ -110,3 +133,6 @@ cd $DIR;
 
 # start webservice
 # php -S localhost:3000
+
+#  cd ~/ecourseSlimApi/; ./install.sh pwd  /var/www/html/eCourseSlimApi ~/composer/composer.phar ; cd /var/www/html/eCourseSlimApi php -S localhost:3000
+
