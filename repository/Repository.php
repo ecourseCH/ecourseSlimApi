@@ -61,6 +61,42 @@ abstract class Repository {
 
         return $results;
     }
+    // idea: provide an object of return type and the values that are already set are acting as filter criteria
+    public function getSome(array $entity) {
+        $entityName = $this->getEntityName();
+        $entityFields = $this->getEntityFields();
+        $publicFieldsString = implode(', ', array_map(['self', 'wrapFieldNameInQuotes'], $this->getPublicFields()));
+        // create entity filter
+        $filterFields = [];
+	$entityFilter = " 1 = 1 ";
+        // go through fields and check if they are filled
+        $keys = array_keys($entity);
+        foreach ($keys as $key) {
+        if(isset($entity[$key]) and in_array($key,$entityFields))
+        {
+        $entityFilter = $entityFilter . " and " . $key . " = :" . $key ;
+        array_push($filterFields, $key);
+        }
+
+        }
+
+        $sql = "SELECT $publicFieldsString FROM $entityName entity WHERE $entityFilter";
+
+        $stmt = $this->db->prepare($sql);
+        
+        foreach ($filterFields as $field) {
+            // todo validation
+            $stmt->bindParam($field, $entity[$field]);
+        }
+        
+        $stmt->execute();
+        $results = [];
+        while($row = $stmt->fetch()) {
+            $results[] = $row;
+        }
+
+        return $results;
+    }
 
     public function getById(string $id) {
         return $this->getByUniqueField($this->getIdName(), $id);

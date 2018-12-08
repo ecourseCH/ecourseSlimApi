@@ -6,7 +6,7 @@
 	},
 	"item": [
 		{
-			"_postman_id": "c1326601-c91b-47b1-a8a9-51bf794b8fe9",
+			"_postman_id": "102265d2-fd3a-46f4-ac27-41269549529f",
 			"name": "del user",
 			"event": [
 				{
@@ -93,7 +93,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "9b470bf8-907a-4fbf-aa3b-8f639343dfd0",
+			"_postman_id": "3fa46347-ad82-4675-a637-16b5bdc32e58",
 			"name": "create user 1",
 			"event": [
 				{
@@ -192,7 +192,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "46668a92-f22b-4361-b017-075818530218",
+			"_postman_id": "cce4d156-ff3a-40c6-8f5c-537e9891dfe7",
 			"name": "create user 2",
 			"event": [
 				{
@@ -290,7 +290,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "679c91fa-bc8c-4440-b660-d43d66762d8e",
+			"_postman_id": "6e7ec436-afaf-4b6a-8df5-0d76ac779eb3",
 			"name": "get users",
 			"event": [
 				{
@@ -377,7 +377,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "30b4e82f-cb73-4a1b-bb7e-0c317e6938e0",
+			"_postman_id": "c094632a-a35b-44ad-8411-fb6a4b80c48c",
 			"name": "get user 2",
 			"event": [
 				{
@@ -465,7 +465,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "7b430223-0d9c-446c-8c37-c7e35a7f024d",
+			"_postman_id": "e571f68b-bf42-4e31-9f79-1813dfcdb4eb",
 			"name": "get user 1",
 			"event": [
 				{
@@ -553,7 +553,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "9bb95a0d-e221-478c-abd9-61157c418125",
+			"_postman_id": "840f720d-b2da-4266-8de5-b192632a77e4",
 			"name": "update user 2",
 			"event": [
 				{
@@ -652,7 +652,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "46a2d1f8-6ceb-47a9-995a-73ed3dc47dd0",
+			"_postman_id": "4a81cc86-29b5-40ff-8ad6-c7b35c714e1c",
 			"name": "delete user 2",
 			"event": [
 				{
@@ -723,7 +723,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "75afe903-0d0e-418d-9a4c-961f074b2a83",
+			"_postman_id": "40322dc8-5a1e-4390-8e83-9b3db01a498a",
 			"name": "get course id",
 			"event": [
 				{
@@ -810,7 +810,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "a2b6c908-c397-48df-b9d6-fc3c99af4e53",
+			"_postman_id": "e754e920-b3c6-4deb-b0da-4ed8f20ee1a7",
 			"name": "get courses",
 			"event": [
 				{
@@ -897,7 +897,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "8b26b0d0-4b96-44f1-906e-5246b687e38e",
+			"_postman_id": "c65f0b0b-d552-439c-a827-0fe47476b1dd",
 			"name": "add course 1",
 			"event": [
 				{
@@ -976,7 +976,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "3af7df43-6d30-4dc3-867c-b980c507b91a",
+			"_postman_id": "5149af7a-4960-40c9-bb2b-bd2a5706c158",
 			"name": "del course",
 			"event": [
 				{
@@ -1063,7 +1063,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "50661232-48a4-4202-83da-8d80fd9c56ef",
+			"_postman_id": "b71e58b2-5a76-47f8-b2f0-0f79d569ad3b",
 			"name": "get test course",
 			"event": [
 				{
@@ -1150,94 +1150,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "1e7f7a99-64f6-47a4-921a-92e0b6c031a0",
-			"name": "get leaders",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"id": "25efe386-9a5f-468c-84e2-70266a1cf97e",
-						"type": "text/javascript",
-						"exec": [
-							"pm.test(\"response is ok\", function () {",
-							"    pm.response.to.have.status(200);",
-							"});",
-							"",
-							"// example using response assertions",
-							"pm.test(\"response should be okay to process\", function () { ",
-							"    pm.response.to.not.be.error; ",
-							"    pm.response.to.have.jsonBody(\"\"); ",
-							"    pm.response.to.not.have.jsonBody(\"error\"); ",
-							"});",
-							"",
-							""
-						]
-					}
-				}
-			],
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json"
-					},
-					{
-						"key": "courseName",
-						"value": "testmyc",
-						"disabled": true
-					},
-					{
-						"key": "ownerUserId",
-						"value": "0",
-						"disabled": true
-					}
-				],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "userName",
-							"value": "Test user name1",
-							"sessionValue": "testmyc",
-							"type": "text"
-						},
-						{
-							"key": "userMail",
-							"value": "test1@test.ch",
-							"sessionValue": "0",
-							"type": "text"
-						},
-						{
-							"key": "password",
-							"value": "testpwd",
-							"sessionValue": "testpwd",
-							"type": "text"
-						},
-						{
-							"key": "language",
-							"value": "DE_CH",
-							"sessionValue": "DE_CH",
-							"type": "text"
-						}
-					]
-				},
-				"url": {
-					"raw": "http://localhost:3000/leader",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"leader"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"_postman_id": "83e1ab23-e473-49c4-8cc2-58172a14444c",
+			"_postman_id": "e74e82d4-1fa7-4b9d-bca5-dcf583b47b21",
 			"name": "create leader 1",
 			"event": [
 				{
@@ -1336,7 +1249,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "3ca5eab1-b1aa-4951-8778-e25495c9e4c0",
+			"_postman_id": "fef712e3-d85f-4354-b5b3-ac59f9e753bf",
 			"name": "get leader 1",
 			"event": [
 				{
@@ -1424,7 +1337,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "f6b5034b-2a4d-4a7a-aadb-2af893700b1c",
+			"_postman_id": "ed18fd41-9ef8-426f-8506-dcb09bcff554",
 			"name": "delete leader 1",
 			"event": [
 				{
@@ -1528,7 +1441,94 @@
 			"response": []
 		},
 		{
-			"_postman_id": "23d48b95-50d2-474a-86bf-9650f999539a",
+			"_postman_id": "729fc8aa-ccd3-48ed-b595-e142036424d8",
+			"name": "get leaders",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "25efe386-9a5f-468c-84e2-70266a1cf97e",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userName",
+							"value": "Test user name1",
+							"sessionValue": "testmyc",
+							"type": "text"
+						},
+						{
+							"key": "userMail",
+							"value": "test1@test.ch",
+							"sessionValue": "0",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "testpwd",
+							"sessionValue": "testpwd",
+							"type": "text"
+						},
+						{
+							"key": "language",
+							"value": "DE_CH",
+							"sessionValue": "DE_CH",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/leader",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"leader"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "1173d4df-5d8f-4f8d-b6f4-1a1901b880e0",
 			"name": "create leader 2",
 			"event": [
 				{
@@ -1627,7 +1627,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "861af76a-d832-465f-afa2-37492684d302",
+			"_postman_id": "4482b33a-172e-4f42-8670-131eb1825fea",
 			"name": "get activities",
 			"event": [
 				{
@@ -1714,7 +1714,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "3ac19570-87a0-43e0-b08a-90561d4b80f2",
+			"_postman_id": "99be5ab5-366c-4158-8ec1-8e31d8f51531",
 			"name": "create activity 1",
 			"event": [
 				{
@@ -1814,7 +1814,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "4e5cddb1-3bd6-49a9-9b03-e8df2b19e826",
+			"_postman_id": "a4c841a1-3b7a-44e3-acc0-d8a27b6a8804",
 			"name": "get activity 1",
 			"event": [
 				{
@@ -1902,7 +1902,94 @@
 			"response": []
 		},
 		{
-			"_postman_id": "a597d235-5567-44cc-bbdc-b1f0dee948c9",
+			"_postman_id": "75b7ea84-da40-4a73-9440-f4a901668ca1",
+			"name": "get participants",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "25efe386-9a5f-468c-84e2-70266a1cf97e",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userName",
+							"value": "Test user name1",
+							"sessionValue": "testmyc",
+							"type": "text"
+						},
+						{
+							"key": "userMail",
+							"value": "test1@test.ch",
+							"sessionValue": "0",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "testpwd",
+							"sessionValue": "testpwd",
+							"type": "text"
+						},
+						{
+							"key": "language",
+							"value": "DE_CH",
+							"sessionValue": "DE_CH",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/participant",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"participant"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "e4700afc-6d6f-4630-b590-21e40da35683",
 			"name": "delete activity 1",
 			"event": [
 				{
@@ -2006,303 +2093,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "1ffab913-69bf-4508-90f0-59d50b13191c",
-			"name": "get participants",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"id": "25efe386-9a5f-468c-84e2-70266a1cf97e",
-						"type": "text/javascript",
-						"exec": [
-							"pm.test(\"response is ok\", function () {",
-							"    pm.response.to.have.status(200);",
-							"});",
-							"",
-							"// example using response assertions",
-							"pm.test(\"response should be okay to process\", function () { ",
-							"    pm.response.to.not.be.error; ",
-							"    pm.response.to.have.jsonBody(\"\"); ",
-							"    pm.response.to.not.have.jsonBody(\"error\"); ",
-							"});",
-							"",
-							""
-						]
-					}
-				}
-			],
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json"
-					},
-					{
-						"key": "courseName",
-						"value": "testmyc",
-						"disabled": true
-					},
-					{
-						"key": "ownerUserId",
-						"value": "0",
-						"disabled": true
-					}
-				],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "userName",
-							"value": "Test user name1",
-							"sessionValue": "testmyc",
-							"type": "text"
-						},
-						{
-							"key": "userMail",
-							"value": "test1@test.ch",
-							"sessionValue": "0",
-							"type": "text"
-						},
-						{
-							"key": "password",
-							"value": "testpwd",
-							"sessionValue": "testpwd",
-							"type": "text"
-						},
-						{
-							"key": "language",
-							"value": "DE_CH",
-							"sessionValue": "DE_CH",
-							"type": "text"
-						}
-					]
-				},
-				"url": {
-					"raw": "http://localhost:3000/participant",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"participant"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"_postman_id": "98c794a1-7006-470d-865f-c4ee9390e2cd",
-			"name": "create participant 1",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"id": "775c0db0-1206-4a45-b674-325da7ffc4f8",
-						"type": "text/javascript",
-						"exec": [
-							"pm.test(\"response is ok\", function () {",
-							"    pm.response.to.have.status(200);",
-							"});",
-							"",
-							"// example using response assertions",
-							"pm.test(\"response should be okay to process\", function () { ",
-							"    pm.response.to.not.be.error; ",
-							"    pm.response.to.have.jsonBody(\"\"); ",
-							"    pm.response.to.not.have.jsonBody(\"error\"); ",
-							"});",
-							"",
-							"",
-							"pm.test(\"set participantId variable\", function() {",
-							"        var jsonData = pm.response.json();",
-							"    pm.environment.set(\"participantId1\",jsonData.participantId)",
-							"    ",
-							"})",
-							"/*",
-							"pm.test(\"activity id below 10\", function () {",
-							"    var jsonData = pm.response.json();",
-							"    pm.expect(jsonData.activityId).to.be.below(10);",
-							"});",
-							"",
-							"*/"
-						]
-					}
-				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json"
-					},
-					{
-						"key": "courseName",
-						"value": "testmyc",
-						"disabled": true
-					},
-					{
-						"key": "ownerUserId",
-						"value": "0",
-						"disabled": true
-					}
-				],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "activityName",
-							"value": "Test activity name1",
-							"sessionValue": "testmyc",
-							"type": "text",
-							"disabled": true
-						},
-						{
-							"key": "activityNumber",
-							"value": "12",
-							"sessionValue": "0",
-							"type": "text",
-							"disabled": true
-						},
-						{
-							"key": "activityDate",
-							"value": "",
-							"sessionValue": "testpwd",
-							"type": "text",
-							"disabled": true
-						},
-						{
-							"key": "language",
-							"value": "DE_CH",
-							"sessionValue": "DE_CH",
-							"type": "text",
-							"disabled": true
-						},
-						{
-							"key": "participantName",
-							"value": "est",
-							"sessionValue": "est",
-							"type": "text"
-						},
-						{
-							"key": "participantSurname",
-							"value": "sdf",
-							"sessionValue": "sdf",
-							"type": "text"
-						},
-						{
-							"key": "participantScoutname",
-							"value": "sdf",
-							"sessionValue": "sdf",
-							"type": "text"
-						}
-					]
-				},
-				"url": {
-					"raw": "http://localhost:3000/participant",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"participant"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"_postman_id": "9f721bcd-c5b1-4c03-87a1-9a49064e85a0",
-			"name": "get participant1",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"id": "25efe386-9a5f-468c-84e2-70266a1cf97e",
-						"type": "text/javascript",
-						"exec": [
-							"pm.test(\"response is ok\", function () {",
-							"    pm.response.to.have.status(200);",
-							"});",
-							"",
-							"// example using response assertions",
-							"pm.test(\"response should be okay to process\", function () { ",
-							"    pm.response.to.not.be.error; ",
-							"    pm.response.to.have.jsonBody(\"\"); ",
-							"    pm.response.to.not.have.jsonBody(\"error\"); ",
-							"});",
-							"",
-							""
-						]
-					}
-				}
-			],
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json"
-					},
-					{
-						"key": "courseName",
-						"value": "testmyc",
-						"disabled": true
-					},
-					{
-						"key": "ownerUserId",
-						"value": "0",
-						"disabled": true
-					}
-				],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "userName",
-							"value": "Test user name1",
-							"sessionValue": "testmyc",
-							"type": "text"
-						},
-						{
-							"key": "userMail",
-							"value": "test1@test.ch",
-							"sessionValue": "0",
-							"type": "text"
-						},
-						{
-							"key": "password",
-							"value": "testpwd",
-							"sessionValue": "testpwd",
-							"type": "text"
-						},
-						{
-							"key": "language",
-							"value": "DE_CH",
-							"sessionValue": "DE_CH",
-							"type": "text"
-						}
-					]
-				},
-				"url": {
-					"raw": "http://localhost:3000/participant/{{participantId1}}",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"participant",
-						"{{participantId1}}"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"_postman_id": "df5a1110-6587-4cef-a0fd-5faa67654f1a",
+			"_postman_id": "92a96ecc-f5e4-424d-9ad5-ed35f3599f5e",
 			"name": "delete participant1",
 			"event": [
 				{
@@ -2406,7 +2197,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "cc5363a5-84c6-4fcc-93a7-cefcd3d3fc12",
+			"_postman_id": "9900955b-07e5-4331-bf27-7ec9acd3c29c",
 			"name": "create participant 2",
 			"event": [
 				{
@@ -2527,7 +2318,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "d2239379-7cb2-4f23-a2f0-0308332ed074",
+			"_postman_id": "fe502ffe-cf52-4021-adc8-a96e4482e67d",
 			"name": "get observations",
 			"event": [
 				{
@@ -2614,7 +2405,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "f0643849-50ba-486f-93eb-d4bd166cd661",
+			"_postman_id": "47603e4b-f7e8-4f0a-adf4-f1c3c3cfeffa",
 			"name": "create observation 1",
 			"event": [
 				{
@@ -2729,7 +2520,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "eeeaeff7-a18e-4a7c-95da-e45d1385a1c0",
+			"_postman_id": "22623b34-aab1-4b15-ae2d-95ccd091895d",
 			"name": "create observation 2",
 			"event": [
 				{
@@ -2844,7 +2635,101 @@
 			"response": []
 		},
 		{
-			"_postman_id": "981ffe6e-ba7e-4601-b82f-42e4d882f02e",
+			"_postman_id": "bd70baf3-7e0c-4cfe-81f3-075636bf4fd1",
+			"name": "get observations Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "25efe386-9a5f-468c-84e2-70266a1cf97e",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userName",
+							"value": "Test user name1",
+							"sessionValue": "testmyc",
+							"type": "text"
+						},
+						{
+							"key": "userMail",
+							"value": "test1@test.ch",
+							"sessionValue": "0",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "testpwd",
+							"sessionValue": "testpwd",
+							"type": "text"
+						},
+						{
+							"key": "language",
+							"value": "DE_CH",
+							"sessionValue": "DE_CH",
+							"type": "text"
+						},
+						{
+							"key": "leaderId",
+							"value": "2",
+							"sessionValue": "1",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/observationfilter",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"observationfilter"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "1425f6e1-0c7e-4f83-8e22-8ee05bf1c735",
 			"name": "get observation 1",
 			"event": [
 				{
@@ -2932,7 +2817,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "d7240edb-cb31-4742-987d-bce8cc22f1fc",
+			"_postman_id": "443bf59f-7fd6-48b9-959f-8e0cdb4a383c",
 			"name": "delete observation 1",
 			"event": [
 				{
@@ -3036,7 +2921,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "e5049cd9-63a7-472f-ae76-7570a5b13c63",
+			"_postman_id": "ad771e50-2547-4bd3-8846-9bcf55494213",
 			"name": "get observationTags",
 			"event": [
 				{
@@ -3123,13 +3008,13 @@
 			"response": []
 		},
 		{
-			"_postman_id": "c57b50a5-ee6c-4f1d-bee9-8577047b9856",
-			"name": "create observationTag 1",
+			"_postman_id": "dd831908-7f80-4617-8012-5c756cb02cb2",
+			"name": "create participant 1",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
-						"id": "2095a9b0-96af-4cc9-b0be-bb30eba100d8",
+						"id": "775c0db0-1206-4a45-b674-325da7ffc4f8",
 						"type": "text/javascript",
 						"exec": [
 							"pm.test(\"response is ok\", function () {",
@@ -3144,12 +3029,18 @@
 							"});",
 							"",
 							"",
-							"pm.test(\"set observationId variable\", function() {",
+							"pm.test(\"set participantId variable\", function() {",
 							"        var jsonData = pm.response.json();",
-							"    pm.environment.set(\"observationTagId1\",jsonData.observationTagId)",
+							"    pm.environment.set(\"participantId1\",jsonData.participantId)",
 							"    ",
 							"})",
-							""
+							"/*",
+							"pm.test(\"activity id below 10\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.activityId).to.be.below(10);",
+							"});",
+							"",
+							"*/"
 						]
 					}
 				}
@@ -3204,57 +3095,41 @@
 							"disabled": true
 						},
 						{
-							"key": "observationText",
-							"value": "test",
-							"sessionValue": "test",
-							"type": "text",
-							"disabled": true
-						},
-						{
-							"key": "leaderId",
-							"value": "{{leaderId2}}",
-							"sessionValue": "{{leaderId1}}",
-							"type": "text",
-							"disabled": true
-						},
-						{
-							"key": "participantId",
-							"value": "{{participantId2}}",
-							"sessionValue": "participantId1}}",
-							"type": "text",
-							"disabled": true
-						},
-						{
-							"key": "observationTagName",
-							"value": "testname",
-							"sessionValue": "testname",
+							"key": "participantName",
+							"value": "est",
+							"sessionValue": "est",
 							"type": "text"
 						},
 						{
-							"key": "parentObservationTagId",
-							"value": "1",
-							"sessionValue": "1",
-							"type": "text",
-							"disabled": true
+							"key": "participantSurname",
+							"value": "sdf",
+							"sessionValue": "sdf",
+							"type": "text"
+						},
+						{
+							"key": "participantScoutname",
+							"value": "sdf",
+							"sessionValue": "sdf",
+							"type": "text"
 						}
 					]
 				},
 				"url": {
-					"raw": "http://localhost:3000/observationTag",
+					"raw": "http://localhost:3000/participant",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
-						"observationTag"
+						"participant"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"_postman_id": "984b1655-a47b-4d1c-bdca-389e46a22b14",
+			"_postman_id": "2c789de1-ad41-4d70-9da8-ad049a2cde96",
 			"name": "create observationTag 2",
 			"event": [
 				{
@@ -3385,7 +3260,138 @@
 			"response": []
 		},
 		{
-			"_postman_id": "904516e0-e1bc-47ed-91cf-d1f4d3d0f095",
+			"_postman_id": "e3c83326-cae8-4105-9a3c-500eb0ba36e3",
+			"name": "create observationTag 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2095a9b0-96af-4cc9-b0be-bb30eba100d8",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							"",
+							"pm.test(\"set observationId variable\", function() {",
+							"        var jsonData = pm.response.json();",
+							"    pm.environment.set(\"observationTagId1\",jsonData.observationTagId)",
+							"    ",
+							"})",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "activityName",
+							"value": "Test activity name1",
+							"sessionValue": "testmyc",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "activityNumber",
+							"value": "12",
+							"sessionValue": "0",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "activityDate",
+							"value": "",
+							"sessionValue": "testpwd",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "language",
+							"value": "DE_CH",
+							"sessionValue": "DE_CH",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "observationText",
+							"value": "test",
+							"sessionValue": "test",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "leaderId",
+							"value": "{{leaderId2}}",
+							"sessionValue": "{{leaderId1}}",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "participantId",
+							"value": "{{participantId2}}",
+							"sessionValue": "participantId1}}",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "observationTagName",
+							"value": "testname",
+							"sessionValue": "testname",
+							"type": "text"
+						},
+						{
+							"key": "parentObservationTagId",
+							"value": "1",
+							"sessionValue": "1",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/observationTag",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"observationTag"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "c9188fd3-c87a-4241-9fc7-bece10c79691",
 			"name": "get observationTag 1",
 			"event": [
 				{
@@ -3473,7 +3479,95 @@
 			"response": []
 		},
 		{
-			"_postman_id": "6208e91f-1d59-4195-b5d9-9070e67515e7",
+			"_postman_id": "6e9bc4f5-bdc9-4e6f-ab62-637a7ecb84ff",
+			"name": "get participant1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "25efe386-9a5f-468c-84e2-70266a1cf97e",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userName",
+							"value": "Test user name1",
+							"sessionValue": "testmyc",
+							"type": "text"
+						},
+						{
+							"key": "userMail",
+							"value": "test1@test.ch",
+							"sessionValue": "0",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "testpwd",
+							"sessionValue": "testpwd",
+							"type": "text"
+						},
+						{
+							"key": "language",
+							"value": "DE_CH",
+							"sessionValue": "DE_CH",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/participant/{{participantId1}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"participant",
+						"{{participantId1}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "84a29764-ee4c-4043-9823-1e87d5e22029",
 			"name": "delete observationTag 1",
 			"event": [
 				{
@@ -3577,7 +3671,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "2c3b0195-a0a3-44f0-91da-05f7778bd7a9",
+			"_postman_id": "76736354-46be-4874-8ae3-4cc21c97c2c2",
 			"name": "get observationTags per observation",
 			"event": [
 				{
@@ -3666,7 +3760,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "dd6b9102-5d46-45a0-a73b-9a667a8d2bb3",
+			"_postman_id": "1cfb5111-c0e4-4d10-948c-c9c0d94f1cd6",
 			"name": "add observationTag to observation",
 			"event": [
 				{
@@ -3787,7 +3881,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "b112fc82-a127-436d-9b44-99dd1f6e715b",
+			"_postman_id": "cc5e09df-f733-4c46-b40f-aab93685b5ea",
 			"name": "delete observationTag from observation",
 			"event": [
 				{
@@ -3898,7 +3992,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "65b0c480-e2ad-415f-832f-15abf4156546",
+			"_postman_id": "9e3edcc1-e6ac-4b69-8111-d739102ef3ec",
 			"name": "get participantTags",
 			"event": [
 				{
@@ -3985,7 +4079,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "067f66c4-aacb-4b28-b2bc-e3b3f9348910",
+			"_postman_id": "be7f45b8-60cd-4e96-a0d1-745c3b7d45a4",
 			"name": "create participantTag 1",
 			"event": [
 				{
@@ -4110,7 +4204,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "0ec8b13a-0135-4aa2-bc07-cabe61dafaff",
+			"_postman_id": "f499c690-c05c-48bb-ab60-d252032dfb42",
 			"name": "get participantTag 1",
 			"event": [
 				{
@@ -4198,7 +4292,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "0597b602-7bcc-4736-a206-a4a17e8c0499",
+			"_postman_id": "c7729ac1-5e3d-4b1f-8ca9-6f8b67476fc7",
 			"name": "delete participantTag 1",
 			"event": [
 				{
@@ -4302,7 +4396,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "2edb36e7-bddf-485a-b239-eff012c42cb6",
+			"_postman_id": "a7c16a57-975d-4fe8-bd16-3dc622df0bf4",
 			"name": "get codeMappings",
 			"event": [
 				{
@@ -4389,7 +4483,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "0c486317-1bee-4ff1-b553-9e8ba5c6a1ba",
+			"_postman_id": "18309547-f986-4ba2-b65d-d152c8a17e29",
 			"name": "create codeMapping 1",
 			"event": [
 				{
@@ -4531,7 +4625,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "5dd887f4-c8e6-4bd4-a33a-63b6f14b77cb",
+			"_postman_id": "02bd9fa2-ad4f-4359-bf41-e10ce5c02d01",
 			"name": "get codeMapping 1",
 			"event": [
 				{
@@ -4619,7 +4713,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "7c229491-c642-408b-b817-fbe67e2142b3",
+			"_postman_id": "b69c6544-a598-44a4-97eb-4c6fdcff6142",
 			"name": "delete codeMapping 1",
 			"event": [
 				{

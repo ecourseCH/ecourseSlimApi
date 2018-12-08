@@ -95,6 +95,16 @@ $app->get('/leader/{id}', function (Request $request, Response $response, array 
     $newResponse = $response->withJson($leader);
     return $newResponse;
 });
+// update leader
+$app->post('/leader/{id}', function (Request $request, Response $response, array $args) {
+    $leaderId = (int)$args['id'];
+    $data = $request->getParsedBody();
+    $repository = new LeaderRepository($this->db);
+    $insertedLeader = $repository->update($leaderId, $data);
+    $newResponse = $response->withJson($insertedLeader);
+    return $newResponse;
+
+});
 // add leader
 $app->post('/leader', function (Request $request, Response $response, array $args) {
     $data = $request->getParsedBody();
@@ -230,10 +240,19 @@ $app->delete('/observation/{id}', function (Request $request, Response $response
     return $repository->deleteById($observationId);;
 
 });
-// get all observations //TODO is this needed?
+
 $app->get('/observation', function (Request $request, Response $response, array $args) {
     $repository = new ObservationRepository($this->db);
     $observations = $repository->getAll();
+    $newResponse = $response->withJson($observations);
+    return $newResponse;
+});
+
+$app->post('/observationfilter', function (Request $request, Response $response, array $args) {
+    $data = $request->getParsedBody();
+
+    $repository = new ObservationRepository($this->db);
+    $observations = $repository->getSome($data);
     $newResponse = $response->withJson($observations);
     return $newResponse;
 });
