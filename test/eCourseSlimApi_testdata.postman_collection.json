@@ -6,7 +6,7 @@
 	},
 	"item": [
 		{
-			"_postman_id": "762830c3-1e63-47e7-ab11-86252420308c",
+			"_postman_id": "33a5911d-f02a-43fe-af02-8fdd11332079",
 			"name": "get test course Copy",
 			"event": [
 				{
@@ -93,7 +93,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "91b6ec8a-7cad-44ce-9251-7de5c792d8e2",
+			"_postman_id": "efc4ded3-923f-4f05-a9a8-e6377e683ef7",
 			"name": "create user Donald",
 			"event": [
 				{
@@ -188,7 +188,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "423fa6c2-a9da-4ad3-9cce-ecf5a7d4120d",
+			"_postman_id": "0f91826e-d4b9-4e3c-8f10-69d1a853020f",
 			"name": "create user Daisy",
 			"event": [
 				{
@@ -286,7 +286,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "3d1a0c68-1b79-4551-9c49-69e8bf5909b4",
+			"_postman_id": "d4e85ddb-45ea-47dc-a665-664c777a0bc7",
 			"name": "create user Dagobert",
 			"event": [
 				{
@@ -384,7 +384,102 @@
 			"response": []
 		},
 		{
-			"_postman_id": "fbf5f880-3953-4828-b273-d7d3fcea6934",
+			"_postman_id": "7b7a1f02-41b1-4e95-82be-41452bd9b774",
+			"name": "create user Papa Schlumpf",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7fcce814-e52a-4268-bea8-72664a6f00b6",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							"pm.test(\"set userId variable\", function() {",
+							"        var jsonData = pm.response.json();",
+							"    pm.environment.set(\"userIdPapaSchlumpf\",jsonData.userId)",
+							"    ",
+							"})",
+							"",
+							"",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userName",
+							"value": "Papa",
+							"sessionValue": "testmyc",
+							"type": "text"
+						},
+						{
+							"key": "userMail",
+							"value": "papa@schlumpf.be",
+							"sessionValue": "0",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "rot",
+							"sessionValue": "testpwd",
+							"type": "text"
+						},
+						{
+							"key": "language",
+							"value": "DE_CH",
+							"sessionValue": "DE_CH",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "29d3604d-11f1-4003-8e6e-829cf499ed43",
 			"name": "add course Sommerlager",
 			"event": [
 				{
@@ -463,7 +558,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "15166834-5711-4277-9bfd-d4f684fffae0",
+			"_postman_id": "79546be2-2ba0-4c69-8574-b89938bc5f27",
 			"name": "create leader Donald",
 			"event": [
 				{
@@ -562,7 +657,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "5a20bd7c-894c-4ea9-a830-73851e3c5b67",
+			"_postman_id": "a6a785e1-9169-4f05-9844-f2921653e0ff",
 			"name": "create leader Daisy",
 			"event": [
 				{
@@ -661,7 +756,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "8cb9b646-3e38-4552-85e4-b15e767228f4",
+			"_postman_id": "0a6803a2-a032-44a0-8ae4-73b18dcd309c",
 			"name": "create leader Dagobert",
 			"event": [
 				{
@@ -760,7 +855,106 @@
 			"response": []
 		},
 		{
-			"_postman_id": "8620aeec-f360-4a5e-a5a2-7f4ab4e8520c",
+			"_postman_id": "a52d5069-c066-4aef-984f-10dfeb992ca9",
+			"name": "create leader Papa Schlumpf",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "197d806c-65da-442c-8e04-8331d909322b",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							"",
+							"pm.test(\"set leaderId variable\", function() {",
+							"        var jsonData = pm.response.json();",
+							"    pm.environment.set(\"leaderIdPapaSchlumpf\",jsonData.leaderId)",
+							"    ",
+							"})",
+							"/*",
+							"pm.test(\"user id present\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.userId).to.be.below(10);",
+							"});",
+							"",
+							"*/"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userId",
+							"value": "{{userIdPapaSchlumpf}}",
+							"sessionValue": "testmyc",
+							"type": "text"
+						},
+						{
+							"key": "leaderName",
+							"value": "Papa",
+							"sessionValue": "0",
+							"type": "text"
+						},
+						{
+							"key": "leaderSurname",
+							"value": "Schlumpf",
+							"sessionValue": "testpwd",
+							"type": "text"
+						},
+						{
+							"key": "leaderScoutname",
+							"value": "Grote Smurf",
+							"sessionValue": "DE_CH",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/leader",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"leader"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "d7a5d159-da77-4f6c-9f36-68f02f232778",
 			"name": "create participant Tick",
 			"event": [
 				{
@@ -853,7 +1047,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "03b7afe4-959e-4b08-a854-103dd32fce6d",
+			"_postman_id": "22ad08d2-a217-477e-96b7-128645185c61",
 			"name": "create participant Trick",
 			"event": [
 				{
@@ -946,7 +1140,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "3cb765fb-916d-4f1f-94c9-c923dc4ca31c",
+			"_postman_id": "dfbf347b-c88c-437b-a9fd-fbe23c782032",
 			"name": "create participant Track",
 			"event": [
 				{
@@ -1039,7 +1233,472 @@
 			"response": []
 		},
 		{
-			"_postman_id": "ab88cd94-33e9-42ac-b96f-ea6f91ff9a66",
+			"_postman_id": "f8c22151-0e23-4250-b2c9-c61ffe07385b",
+			"name": "create participant BabySmurf",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b500ab34-cf22-475b-bc90-5fc7c58840e3",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							"",
+							"pm.test(\"set participantId variable\", function() {",
+							"        var jsonData = pm.response.json();",
+							"    pm.environment.set(\"participantIdBabysmurf\",jsonData.participantId)",
+							"    ",
+							"})",
+							"/*",
+							"pm.test(\"activity id below 10\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.activityId).to.be.below(10);",
+							"});",
+							"",
+							"*/"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "participantName",
+							"value": "Baby",
+							"sessionValue": "est",
+							"type": "text"
+						},
+						{
+							"key": "participantSurname",
+							"value": "Schlumpf",
+							"sessionValue": "sdf",
+							"type": "text"
+						},
+						{
+							"key": "participantScoutname",
+							"value": "Babysmurf",
+							"sessionValue": "sdf",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/participant",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"participant"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "95b023a3-f3b1-4618-a69b-44445dcd11d0",
+			"name": "create participant SmulSmurf",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "708183c4-a44f-4832-80b3-4bdd2e111dbb",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							"",
+							"pm.test(\"set participantId variable\", function() {",
+							"        var jsonData = pm.response.json();",
+							"    pm.environment.set(\"participantIdSmulsmurf\",jsonData.participantId)",
+							"    ",
+							"})",
+							"/*",
+							"pm.test(\"activity id below 10\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.activityId).to.be.below(10);",
+							"});",
+							"",
+							"*/"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "participantName",
+							"value": "Smul",
+							"sessionValue": "est",
+							"type": "text"
+						},
+						{
+							"key": "participantSurname",
+							"value": "Schlumpf",
+							"sessionValue": "sdf",
+							"type": "text"
+						},
+						{
+							"key": "participantScoutname",
+							"value": "Smulsmurf",
+							"sessionValue": "sdf",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/participant",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"participant"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "110b4f37-a24b-424a-95c8-8d75da49087c",
+			"name": "create participant Brilsmurf",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e1a837f5-76e1-49ab-abf8-7d76699e4774",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							"",
+							"pm.test(\"set participantId variable\", function() {",
+							"        var jsonData = pm.response.json();",
+							"    pm.environment.set(\"participantIdBrilmurf\",jsonData.participantId)",
+							"    ",
+							"})",
+							"/*",
+							"pm.test(\"activity id below 10\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.activityId).to.be.below(10);",
+							"});",
+							"",
+							"*/"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "participantName",
+							"value": "Brillen",
+							"sessionValue": "est",
+							"type": "text"
+						},
+						{
+							"key": "participantSurname",
+							"value": "Schlumpf",
+							"sessionValue": "sdf",
+							"type": "text"
+						},
+						{
+							"key": "participantScoutname",
+							"value": "Brilsmurf",
+							"sessionValue": "sdf",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/participant",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"participant"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "86d0549c-11cb-4fed-9225-b8c59e8a00a2",
+			"name": "create participant Boerensmurf",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1e89617e-3cef-4c2b-a42b-7d1359250c5f",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							"",
+							"pm.test(\"set participantId variable\", function() {",
+							"        var jsonData = pm.response.json();",
+							"    pm.environment.set(\"participantIdBoerensmurf\",jsonData.participantId)",
+							"    ",
+							"})",
+							"/*",
+							"pm.test(\"activity id below 10\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.activityId).to.be.below(10);",
+							"});",
+							"",
+							"*/"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "participantName",
+							"value": "Bauer",
+							"sessionValue": "est",
+							"type": "text"
+						},
+						{
+							"key": "participantSurname",
+							"value": "Schlumpf",
+							"sessionValue": "sdf",
+							"type": "text"
+						},
+						{
+							"key": "participantScoutname",
+							"value": "Boerensmurf",
+							"sessionValue": "sdf",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/participant",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"participant"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "c1d0c184-7388-4567-bf58-603489751954",
+			"name": "create participant Muzieksmurf",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "fcdfa09e-7434-400a-80a6-03c10944a135",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							"",
+							"pm.test(\"set participantId variable\", function() {",
+							"        var jsonData = pm.response.json();",
+							"    pm.environment.set(\"participantIdMuzieksmurf\",jsonData.participantId)",
+							"    ",
+							"})",
+							"/*",
+							"pm.test(\"activity id below 10\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.activityId).to.be.below(10);",
+							"});",
+							"",
+							"*/"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "participantName",
+							"value": "Musik",
+							"sessionValue": "est",
+							"type": "text"
+						},
+						{
+							"key": "participantSurname",
+							"value": "Schlumpf",
+							"sessionValue": "sdf",
+							"type": "text"
+						},
+						{
+							"key": "participantScoutname",
+							"value": "Muzieksmurf",
+							"sessionValue": "sdf",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/participant",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"participant"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "7fb39252-3404-42e4-9e43-0d851d3316db",
 			"name": "create activity swimming",
 			"event": [
 				{
@@ -1139,7 +1798,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "d3cf5923-14d3-47e4-8ba4-8e1a174c0f43",
+			"_postman_id": "4511af12-7e30-4364-b450-2ec0367ab40c",
 			"name": "create activity hiking",
 			"event": [
 				{
@@ -1239,7 +1898,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "57e2c132-f1dd-47b0-aecc-7d2d437daa79",
+			"_postman_id": "4dda059c-fb49-4174-ad2a-3885606a9db8",
 			"name": "create activity running",
 			"event": [
 				{
@@ -1339,7 +1998,107 @@
 			"response": []
 		},
 		{
-			"_postman_id": "aceda722-4ce8-4732-a672-5f3b192eca6f",
+			"_postman_id": "ae7f5439-cef0-41b3-a5e2-f20bf27a947c",
+			"name": "create activity schlumpfen",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8541645b-a898-4fe2-9744-9fab8eacf748",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							"",
+							"pm.test(\"set activityId variable\", function() {",
+							"        var jsonData = pm.response.json();",
+							"    pm.environment.set(\"activityIdSchlumpfen\",jsonData.activityId)",
+							"    ",
+							"})",
+							"",
+							"pm.test(\"activity id below 10\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.activityId).to.be.below(10);",
+							"});",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "activityName",
+							"value": "schlumpfen",
+							"sessionValue": "testmyc",
+							"type": "text"
+						},
+						{
+							"key": "activityNumber",
+							"value": "3.15",
+							"sessionValue": "0",
+							"type": "text"
+						},
+						{
+							"key": "activityDate",
+							"value": "2018-01-02 03:04:05",
+							"sessionValue": "testpwd",
+							"type": "text"
+						},
+						{
+							"key": "language",
+							"value": "DE_CH",
+							"sessionValue": "DE_CH",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/activity",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"activity"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "544aff0c-0929-4b91-b0c7-43fdfd6a1620",
 			"name": "create participantTag green",
 			"event": [
 				{
@@ -1443,7 +2202,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "4cab7fe6-41bd-4bda-be26-a88ef6c57817",
+			"_postman_id": "b67a22ef-8563-4a1c-9a8a-d6b68575e364",
 			"name": "create participantTag blue",
 			"event": [
 				{
@@ -1568,7 +2327,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "fc3d7c30-394b-421d-a90e-d67aa87727ca",
+			"_postman_id": "05dc05ce-86a9-4925-a9a0-29b300c55c9a",
 			"name": "create participantTag red",
 			"event": [
 				{
@@ -1693,7 +2452,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "fbc7eca1-e411-4795-a564-c42eb96bc82a",
+			"_postman_id": "94933cd2-356e-4ec4-91b2-612da4c36729",
 			"name": "create observationTag Swimming",
 			"event": [
 				{
@@ -1824,7 +2583,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "e33a8a99-a243-45d9-a5b7-42f697ea10f9",
+			"_postman_id": "7267ecf5-1949-47c6-accc-4575ccc7a52f",
 			"name": "create observationTag running",
 			"event": [
 				{
@@ -1955,7 +2714,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "69229a0f-1163-47bc-8143-9bbd8898696c",
+			"_postman_id": "92f42fbe-51ca-4c1f-baa4-0f5e45d83a0b",
 			"name": "create observation Tick",
 			"event": [
 				{
@@ -2076,7 +2835,370 @@
 			"response": []
 		},
 		{
-			"_postman_id": "3edf3e0d-6704-4fca-b6a1-22a9cecbd0c3",
+			"_postman_id": "a116844a-9946-41e9-93d4-f119b9f7fbc7",
+			"name": "create observation Trick",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "68940979-d851-40d4-b616-8a96471c68f7",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							"",
+							"pm.test(\"set observationId2 variable\", function() {",
+							"        var jsonData = pm.response.json();",
+							"    pm.environment.set(\"observationIdTrick\",jsonData.observationId)",
+							"    ",
+							"})",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "activityName",
+							"value": "Test activity name1",
+							"sessionValue": "testmyc",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "activityNumber",
+							"value": "12",
+							"sessionValue": "0",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "activityDate",
+							"value": "",
+							"sessionValue": "testpwd",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "language",
+							"value": "DE_CH",
+							"sessionValue": "DE_CH",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "observationText",
+							"value": "Schwimmt nicht in GOLD",
+							"sessionValue": "test",
+							"type": "text"
+						},
+						{
+							"key": "leaderId",
+							"value": "{{leaderIdDagobert}}",
+							"sessionValue": "{{leaderId1}}",
+							"type": "text"
+						},
+						{
+							"key": "participantId",
+							"value": "{{participantIdTrick}}",
+							"sessionValue": "participantId1}}",
+							"type": "text"
+						},
+						{
+							"key": "activityId",
+							"value": "{{activityIdSwimming}}",
+							"sessionValue": "{{activityIdRunning}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/observation",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"observation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "08216b5c-1d46-4586-ada3-bef3ff87e4c5",
+			"name": "create observation Track",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "92e6fc57-1600-45e0-87ed-d049ca20b9fe",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							"",
+							"pm.test(\"set observationId2 variable\", function() {",
+							"        var jsonData = pm.response.json();",
+							"    pm.environment.set(\"observationIdTrack\",jsonData.observationId)",
+							"    ",
+							"})",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "activityName",
+							"value": "Test activity name1",
+							"sessionValue": "testmyc",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "activityNumber",
+							"value": "12",
+							"sessionValue": "0",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "activityDate",
+							"value": "",
+							"sessionValue": "testpwd",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "language",
+							"value": "DE_CH",
+							"sessionValue": "DE_CH",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "observationText",
+							"value": "Toll wie der watschelt",
+							"sessionValue": "test",
+							"type": "text"
+						},
+						{
+							"key": "leaderId",
+							"value": "{{leaderIdDonald}}",
+							"sessionValue": "{{leaderId1}}",
+							"type": "text"
+						},
+						{
+							"key": "participantId",
+							"value": "{{participantIdTick}}",
+							"sessionValue": "participantId1}}",
+							"type": "text"
+						},
+						{
+							"key": "activityId",
+							"value": "{{activityIdHiking}}",
+							"sessionValue": "{{activityIdRunning}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/observation",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"observation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "08d500fc-2931-4af8-888d-b7b4ce9b2fe6",
+			"name": "create observation Babysmurf",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "92e6fc57-1600-45e0-87ed-d049ca20b9fe",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							"",
+							"pm.test(\"set observationId2 variable\", function() {",
+							"        var jsonData = pm.response.json();",
+							"    pm.environment.set(\"observationIdTrack\",jsonData.observationId)",
+							"    ",
+							"})",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "activityName",
+							"value": "Test activity name1",
+							"sessionValue": "testmyc",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "activityNumber",
+							"value": "12",
+							"sessionValue": "0",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "activityDate",
+							"value": "",
+							"sessionValue": "testpwd",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "language",
+							"value": "DE_CH",
+							"sessionValue": "DE_CH",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "observationText",
+							"value": "schlumpft noch nicht",
+							"sessionValue": "test",
+							"type": "text"
+						},
+						{
+							"key": "leaderId",
+							"value": "{{leaderIdPapaSchlumpf}}",
+							"sessionValue": "{{leaderId1}}",
+							"type": "text"
+						},
+						{
+							"key": "participantId",
+							"value": "{{participantIdBabysmurf}}",
+							"sessionValue": "participantId1}}",
+							"type": "text"
+						},
+						{
+							"key": "activityId",
+							"value": "{{activityIdSchlumpfen}}",
+							"sessionValue": "{{activityIdRunning}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/observation",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"observation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "6b9df6db-fb83-4f3a-9d7f-822b825d8f8e",
 			"name": "add observationTag to observation Tick",
 			"event": [
 				{
@@ -2197,7 +3319,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "8471a45b-1e19-46b8-aa76-4235ad40aeea",
+			"_postman_id": "c2a0c01d-7dc0-4d73-991c-affb40401353",
 			"name": "create codeMapping 1 Copy",
 			"event": [
 				{
