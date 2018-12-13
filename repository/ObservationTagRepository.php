@@ -8,7 +8,33 @@ class ObservationTagRepository extends Repository {
     public function getEntityFields() {
         return ['observationTagId', 'parentObservationTagId', 'observationTagName'];
     }
-
+    
+  /*  
+    // for object
+function buildTree($items) {
+    $childs = array();
+    foreach($items as $item)
+        $childs[$item->parent_id][] = $item;
+    foreach($items as $item) if (isset($childs[$item->id]))
+        $item->childs = $childs[$item->id];
+    return $childs[0];
+}
+// or array version
+function buildTree($items) {
+    $childs = array();
+    foreach($items as &$item) $childs[$item['parent_id']][] = &$item;
+    unset($item);
+    foreach($items as &$item) if (isset($childs[$item['id']]))
+            $item['childs'] = $childs[$item['id']];
+    return $childs[0];
+}
+*/
+    
+    public function getTree() {
+    $observationTags = this.getAll();
+    return buildTree($observationTags);
+    }
+    
     public function getObservationTagByKey(array $observationTag) {
         IF (isset($observationTag['parentObservationTagId'])) {
             $parentObservationTagId = $observationTag['parentObservationTagId'];
