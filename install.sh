@@ -134,5 +134,5 @@ fi
 # start webservice
 # php -S localhost:3000
 
-#  cd ~/ecourseSlimApi/; ./install.sh pwd  /var/www/html/eCourseSlimApi ~/composer/composer.phar ; cd /var/www/html/eCourseSlimApi php -S localhost:3000
+#  cd ~/ecourseSlimApi/; ./install.sh pwd  /var/www/html/eCourseSlimApi ~/composer/composer.phar ; cd /var/www/html/eCourseSlimApi ; php -S localhost:3000
 
