@@ -329,6 +329,22 @@ $app->get('/observationTag', function (Request $request, Response $response, arr
     $newResponse = $response->withJson($observationTags);
     return $newResponse;
 });
+// get observationTagTree
+$app->get('/observationTagTree', function (Request $request, Response $response, array $args) {
+    $repository = new ObservationTagRepository($this->db);
+    $observationTagTree = $repository->getTree();
+    $newResponse = $response->withJson($observationTagTree);
+    return $newResponse;
+});
+// update observationTagTree
+$app->post('/observationTagTree', function (Request $request, Response $response, array $args) {
+    $data = $request->getParsedBody();
+    $repository = new ObservationTagRepository($this->db);
+    $insertedObservationTagTree = $repository->setTree($data);
+    $newResponse = $response->withJson($insertedObservationTagTree);
+    return $newResponse;
+
+});
 // get observationTag
 $app->get('/observationTag/{id}', function (Request $request, Response $response, array $args) {
     $observationTagId = (int)$args['id'];

@@ -1,12 +1,11 @@
 {
 	"info": {
-		"_postman_id": "1769fd85-2854-4d2e-be9c-5fc592a69e74",
+		"_postman_id": "d419ae18-0258-4a8b-b186-3abf40a03077",
 		"name": "eCourseSlimApi_testdata",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"_postman_id": "33a5911d-f02a-43fe-af02-8fdd11332079",
 			"name": "get test course Copy",
 			"event": [
 				{
@@ -50,33 +49,8 @@
 					}
 				],
 				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "userName",
-							"value": "Test user name1",
-							"sessionValue": "testmyc",
-							"type": "text"
-						},
-						{
-							"key": "userMail",
-							"value": "test1@test.ch",
-							"sessionValue": "0",
-							"type": "text"
-						},
-						{
-							"key": "password",
-							"value": "testpwd",
-							"sessionValue": "testpwd",
-							"type": "text"
-						},
-						{
-							"key": "language",
-							"value": "DE_CH",
-							"sessionValue": "DE_CH",
-							"type": "text"
-						}
-					]
+					"mode": "raw",
+					"raw": ""
 				},
 				"url": {
 					"raw": "http://localhost:3000/testcourse",
@@ -93,7 +67,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "efc4ded3-923f-4f05-a9a8-e6377e683ef7",
 			"name": "create user Donald",
 			"event": [
 				{
@@ -150,25 +123,21 @@
 						{
 							"key": "userName",
 							"value": "Donald_The_Duck",
-							"sessionValue": "testmyc",
 							"type": "text"
 						},
 						{
 							"key": "userMail",
 							"value": "donald@duck.eh",
-							"sessionValue": "0",
 							"type": "text"
 						},
 						{
 							"key": "password",
 							"value": "quack",
-							"sessionValue": "testpwd",
 							"type": "text"
 						},
 						{
 							"key": "language",
 							"value": "DE_CH",
-							"sessionValue": "DE_CH",
 							"type": "text"
 						}
 					]
@@ -188,7 +157,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "0f91826e-d4b9-4e3c-8f10-69d1a853020f",
 			"name": "create user Daisy",
 			"event": [
 				{
@@ -248,25 +216,21 @@
 						{
 							"key": "userName",
 							"value": "Daisy Duck",
-							"sessionValue": "testmyc",
 							"type": "text"
 						},
 						{
 							"key": "userMail",
 							"value": "daisy@duck.eh",
-							"sessionValue": "0",
 							"type": "text"
 						},
 						{
 							"key": "password",
 							"value": "quack",
-							"sessionValue": "testpwd",
 							"type": "text"
 						},
 						{
 							"key": "language",
 							"value": "DE_CH",
-							"sessionValue": "DE_CH",
 							"type": "text"
 						}
 					]
@@ -286,7 +250,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "d4e85ddb-45ea-47dc-a665-664c777a0bc7",
 			"name": "create user Dagobert",
 			"event": [
 				{
@@ -346,25 +309,21 @@
 						{
 							"key": "userName",
 							"value": "Dagobert Duck",
-							"sessionValue": "testmyc",
 							"type": "text"
 						},
 						{
 							"key": "userMail",
 							"value": "Dagobert@duck.eh",
-							"sessionValue": "0",
 							"type": "text"
 						},
 						{
 							"key": "password",
 							"value": "quack",
-							"sessionValue": "testpwd",
 							"type": "text"
 						},
 						{
 							"key": "language",
 							"value": "DE_CH",
-							"sessionValue": "DE_CH",
 							"type": "text"
 						}
 					]
@@ -384,7 +343,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "7b7a1f02-41b1-4e95-82be-41452bd9b774",
 			"name": "create user Papa Schlumpf",
 			"event": [
 				{
@@ -441,25 +399,21 @@
 						{
 							"key": "userName",
 							"value": "Papa",
-							"sessionValue": "testmyc",
 							"type": "text"
 						},
 						{
 							"key": "userMail",
 							"value": "papa@schlumpf.be",
-							"sessionValue": "0",
 							"type": "text"
 						},
 						{
 							"key": "password",
 							"value": "rot",
-							"sessionValue": "testpwd",
 							"type": "text"
 						},
 						{
 							"key": "language",
 							"value": "DE_CH",
-							"sessionValue": "DE_CH",
 							"type": "text"
 						}
 					]
@@ -479,7 +433,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "29d3604d-11f1-4003-8e6e-829cf499ed43",
 			"name": "add course Sommerlager",
 			"event": [
 				{
@@ -532,13 +485,11 @@
 						{
 							"key": "userId",
 							"value": "{{userIdDonald}}",
-							"sessionValue": "{{userId1}}",
 							"type": "text"
 						},
 						{
 							"key": "courseName",
 							"value": "Sommerlager",
-							"sessionValue": "test course1",
 							"type": "text"
 						}
 					]
@@ -558,7 +509,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "79546be2-2ba0-4c69-8574-b89938bc5f27",
 			"name": "create leader Donald",
 			"event": [
 				{
@@ -619,25 +569,21 @@
 						{
 							"key": "userId",
 							"value": "{{userIdDonald}}",
-							"sessionValue": "testmyc",
 							"type": "text"
 						},
 						{
 							"key": "leaderName",
 							"value": "Donald",
-							"sessionValue": "0",
 							"type": "text"
 						},
 						{
 							"key": "leaderSurname",
 							"value": "Duck",
-							"sessionValue": "testpwd",
 							"type": "text"
 						},
 						{
 							"key": "leaderScoutname",
 							"value": "quäck",
-							"sessionValue": "DE_CH",
 							"type": "text"
 						}
 					]
@@ -657,7 +603,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "a6a785e1-9169-4f05-9844-f2921653e0ff",
 			"name": "create leader Daisy",
 			"event": [
 				{
@@ -718,25 +663,21 @@
 						{
 							"key": "userId",
 							"value": "{{userIdDaisy}}",
-							"sessionValue": "testmyc",
 							"type": "text"
 						},
 						{
 							"key": "leaderName",
 							"value": "Daisy",
-							"sessionValue": "0",
 							"type": "text"
 						},
 						{
 							"key": "leaderSurname",
 							"value": "Duck",
-							"sessionValue": "testpwd",
 							"type": "text"
 						},
 						{
 							"key": "leaderScoutname",
 							"value": "quäck",
-							"sessionValue": "DE_CH",
 							"type": "text"
 						}
 					]
@@ -756,7 +697,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "0a6803a2-a032-44a0-8ae4-73b18dcd309c",
 			"name": "create leader Dagobert",
 			"event": [
 				{
@@ -817,25 +757,21 @@
 						{
 							"key": "userId",
 							"value": "{{userIdDagobert}}",
-							"sessionValue": "testmyc",
 							"type": "text"
 						},
 						{
 							"key": "leaderName",
 							"value": "Dagobert",
-							"sessionValue": "0",
 							"type": "text"
 						},
 						{
 							"key": "leaderSurname",
 							"value": "Duck",
-							"sessionValue": "testpwd",
 							"type": "text"
 						},
 						{
 							"key": "leaderScoutname",
 							"value": "blingbling",
-							"sessionValue": "DE_CH",
 							"type": "text"
 						}
 					]
@@ -855,7 +791,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "a52d5069-c066-4aef-984f-10dfeb992ca9",
 			"name": "create leader Papa Schlumpf",
 			"event": [
 				{
@@ -916,25 +851,21 @@
 						{
 							"key": "userId",
 							"value": "{{userIdPapaSchlumpf}}",
-							"sessionValue": "testmyc",
 							"type": "text"
 						},
 						{
 							"key": "leaderName",
 							"value": "Papa",
-							"sessionValue": "0",
 							"type": "text"
 						},
 						{
 							"key": "leaderSurname",
 							"value": "Schlumpf",
-							"sessionValue": "testpwd",
 							"type": "text"
 						},
 						{
 							"key": "leaderScoutname",
 							"value": "Grote Smurf",
-							"sessionValue": "DE_CH",
 							"type": "text"
 						}
 					]
@@ -954,7 +885,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "d7a5d159-da77-4f6c-9f36-68f02f232778",
 			"name": "create participant Tick",
 			"event": [
 				{
@@ -1015,19 +945,16 @@
 						{
 							"key": "participantName",
 							"value": "Tick",
-							"sessionValue": "est",
 							"type": "text"
 						},
 						{
 							"key": "participantSurname",
 							"value": "Duck",
-							"sessionValue": "sdf",
 							"type": "text"
 						},
 						{
 							"key": "participantScoutname",
 							"value": "Huey",
-							"sessionValue": "sdf",
 							"type": "text"
 						}
 					]
@@ -1047,7 +974,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "22ad08d2-a217-477e-96b7-128645185c61",
 			"name": "create participant Trick",
 			"event": [
 				{
@@ -1108,19 +1034,16 @@
 						{
 							"key": "participantName",
 							"value": "Trick",
-							"sessionValue": "est",
 							"type": "text"
 						},
 						{
 							"key": "participantSurname",
 							"value": "Duck",
-							"sessionValue": "sdf",
 							"type": "text"
 						},
 						{
 							"key": "participantScoutname",
 							"value": "Dewey",
-							"sessionValue": "sdf",
 							"type": "text"
 						}
 					]
@@ -1140,7 +1063,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "dfbf347b-c88c-437b-a9fd-fbe23c782032",
 			"name": "create participant Track",
 			"event": [
 				{
@@ -1201,19 +1123,16 @@
 						{
 							"key": "participantName",
 							"value": "Track",
-							"sessionValue": "est",
 							"type": "text"
 						},
 						{
 							"key": "participantSurname",
 							"value": "Duck",
-							"sessionValue": "sdf",
 							"type": "text"
 						},
 						{
 							"key": "participantScoutname",
 							"value": "Louie",
-							"sessionValue": "sdf",
 							"type": "text"
 						}
 					]
@@ -1233,7 +1152,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "f8c22151-0e23-4250-b2c9-c61ffe07385b",
 			"name": "create participant BabySmurf",
 			"event": [
 				{
@@ -1294,19 +1212,16 @@
 						{
 							"key": "participantName",
 							"value": "Baby",
-							"sessionValue": "est",
 							"type": "text"
 						},
 						{
 							"key": "participantSurname",
 							"value": "Schlumpf",
-							"sessionValue": "sdf",
 							"type": "text"
 						},
 						{
 							"key": "participantScoutname",
 							"value": "Babysmurf",
-							"sessionValue": "sdf",
 							"type": "text"
 						}
 					]
@@ -1326,7 +1241,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "95b023a3-f3b1-4618-a69b-44445dcd11d0",
 			"name": "create participant SmulSmurf",
 			"event": [
 				{
@@ -1387,19 +1301,16 @@
 						{
 							"key": "participantName",
 							"value": "Smul",
-							"sessionValue": "est",
 							"type": "text"
 						},
 						{
 							"key": "participantSurname",
 							"value": "Schlumpf",
-							"sessionValue": "sdf",
 							"type": "text"
 						},
 						{
 							"key": "participantScoutname",
 							"value": "Smulsmurf",
-							"sessionValue": "sdf",
 							"type": "text"
 						}
 					]
@@ -1419,7 +1330,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "110b4f37-a24b-424a-95c8-8d75da49087c",
 			"name": "create participant Brilsmurf",
 			"event": [
 				{
@@ -1480,19 +1390,16 @@
 						{
 							"key": "participantName",
 							"value": "Brillen",
-							"sessionValue": "est",
 							"type": "text"
 						},
 						{
 							"key": "participantSurname",
 							"value": "Schlumpf",
-							"sessionValue": "sdf",
 							"type": "text"
 						},
 						{
 							"key": "participantScoutname",
 							"value": "Brilsmurf",
-							"sessionValue": "sdf",
 							"type": "text"
 						}
 					]
@@ -1512,7 +1419,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "86d0549c-11cb-4fed-9225-b8c59e8a00a2",
 			"name": "create participant Boerensmurf",
 			"event": [
 				{
@@ -1573,19 +1479,16 @@
 						{
 							"key": "participantName",
 							"value": "Bauer",
-							"sessionValue": "est",
 							"type": "text"
 						},
 						{
 							"key": "participantSurname",
 							"value": "Schlumpf",
-							"sessionValue": "sdf",
 							"type": "text"
 						},
 						{
 							"key": "participantScoutname",
 							"value": "Boerensmurf",
-							"sessionValue": "sdf",
 							"type": "text"
 						}
 					]
@@ -1605,7 +1508,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "c1d0c184-7388-4567-bf58-603489751954",
 			"name": "create participant Muzieksmurf",
 			"event": [
 				{
@@ -1666,19 +1568,16 @@
 						{
 							"key": "participantName",
 							"value": "Musik",
-							"sessionValue": "est",
 							"type": "text"
 						},
 						{
 							"key": "participantSurname",
 							"value": "Schlumpf",
-							"sessionValue": "sdf",
 							"type": "text"
 						},
 						{
 							"key": "participantScoutname",
 							"value": "Muzieksmurf",
-							"sessionValue": "sdf",
 							"type": "text"
 						}
 					]
@@ -1698,14 +1597,12 @@
 			"response": []
 		},
 		{
-			"_postman_id": "7fb39252-3404-42e4-9e43-0d851d3316db",
 			"name": "create activity swimming",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
 						"id": "f90b2dec-fbc1-4151-94bb-a4815fa9775a",
-						"type": "text/javascript",
 						"exec": [
 							"pm.test(\"response is ok\", function () {",
 							"    pm.response.to.have.status(200);",
@@ -1731,7 +1628,8 @@
 							"});",
 							"",
 							""
-						]
+						],
+						"type": "text/javascript"
 					}
 				}
 			],
@@ -1759,25 +1657,21 @@
 						{
 							"key": "activityName",
 							"value": "swimming",
-							"sessionValue": "testmyc",
 							"type": "text"
 						},
 						{
 							"key": "activityNumber",
 							"value": "1",
-							"sessionValue": "0",
 							"type": "text"
 						},
 						{
 							"key": "activityDate",
-							"value": "",
-							"sessionValue": "testpwd",
+							"value": "2018-01-01",
 							"type": "text"
 						},
 						{
 							"key": "language",
 							"value": "DE_CH",
-							"sessionValue": "DE_CH",
 							"type": "text",
 							"disabled": true
 						}
@@ -1798,14 +1692,12 @@
 			"response": []
 		},
 		{
-			"_postman_id": "4511af12-7e30-4364-b450-2ec0367ab40c",
 			"name": "create activity hiking",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
 						"id": "8d607a70-1940-467e-87ba-e00d513cffa1",
-						"type": "text/javascript",
 						"exec": [
 							"pm.test(\"response is ok\", function () {",
 							"    pm.response.to.have.status(200);",
@@ -1831,7 +1723,8 @@
 							"});",
 							"",
 							""
-						]
+						],
+						"type": "text/javascript"
 					}
 				}
 			],
@@ -1859,25 +1752,21 @@
 						{
 							"key": "activityName",
 							"value": "hiking",
-							"sessionValue": "testmyc",
 							"type": "text"
 						},
 						{
 							"key": "activityNumber",
 							"value": "2",
-							"sessionValue": "0",
 							"type": "text"
 						},
 						{
 							"key": "activityDate",
-							"value": "",
-							"sessionValue": "testpwd",
+							"value": "2018-01-01",
 							"type": "text"
 						},
 						{
 							"key": "language",
 							"value": "DE_CH",
-							"sessionValue": "DE_CH",
 							"type": "text",
 							"disabled": true
 						}
@@ -1898,14 +1787,12 @@
 			"response": []
 		},
 		{
-			"_postman_id": "4dda059c-fb49-4174-ad2a-3885606a9db8",
 			"name": "create activity running",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
 						"id": "4e296533-a9ae-4f1d-b020-d532b8029795",
-						"type": "text/javascript",
 						"exec": [
 							"pm.test(\"response is ok\", function () {",
 							"    pm.response.to.have.status(200);",
@@ -1931,7 +1818,8 @@
 							"});",
 							"",
 							""
-						]
+						],
+						"type": "text/javascript"
 					}
 				}
 			],
@@ -1959,25 +1847,21 @@
 						{
 							"key": "activityName",
 							"value": "running",
-							"sessionValue": "testmyc",
 							"type": "text"
 						},
 						{
 							"key": "activityNumber",
 							"value": "3.12",
-							"sessionValue": "0",
 							"type": "text"
 						},
 						{
 							"key": "activityDate",
-							"value": "",
-							"sessionValue": "testpwd",
+							"value": "2018-01-01",
 							"type": "text"
 						},
 						{
 							"key": "language",
 							"value": "DE_CH",
-							"sessionValue": "DE_CH",
 							"type": "text",
 							"disabled": true
 						}
@@ -1998,14 +1882,12 @@
 			"response": []
 		},
 		{
-			"_postman_id": "ae7f5439-cef0-41b3-a5e2-f20bf27a947c",
 			"name": "create activity schlumpfen",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
 						"id": "8541645b-a898-4fe2-9744-9fab8eacf748",
-						"type": "text/javascript",
 						"exec": [
 							"pm.test(\"response is ok\", function () {",
 							"    pm.response.to.have.status(200);",
@@ -2031,7 +1913,8 @@
 							"});",
 							"",
 							""
-						]
+						],
+						"type": "text/javascript"
 					}
 				}
 			],
@@ -2059,25 +1942,21 @@
 						{
 							"key": "activityName",
 							"value": "schlumpfen",
-							"sessionValue": "testmyc",
 							"type": "text"
 						},
 						{
 							"key": "activityNumber",
 							"value": "3.15",
-							"sessionValue": "0",
 							"type": "text"
 						},
 						{
 							"key": "activityDate",
 							"value": "2018-01-02 03:04:05",
-							"sessionValue": "testpwd",
 							"type": "text"
 						},
 						{
 							"key": "language",
 							"value": "DE_CH",
-							"sessionValue": "DE_CH",
 							"type": "text",
 							"disabled": true
 						}
@@ -2098,7 +1977,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "544aff0c-0929-4b91-b0c7-43fdfd6a1620",
 			"name": "create participantTag green",
 			"event": [
 				{
@@ -2154,35 +2032,30 @@
 						{
 							"key": "activityName",
 							"value": "Test activity name1",
-							"sessionValue": "testmyc",
 							"type": "text",
 							"disabled": true
 						},
 						{
 							"key": "activityNumber",
 							"value": "12",
-							"sessionValue": "0",
 							"type": "text",
 							"disabled": true
 						},
 						{
 							"key": "activityDate",
 							"value": "",
-							"sessionValue": "testpwd",
 							"type": "text",
 							"disabled": true
 						},
 						{
 							"key": "language",
 							"value": "DE_CH",
-							"sessionValue": "DE_CH",
 							"type": "text",
 							"disabled": true
 						},
 						{
 							"key": "participantTagName",
 							"value": "Troop Green",
-							"sessionValue": "testname",
 							"type": "text"
 						}
 					]
@@ -2202,7 +2075,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "b67a22ef-8563-4a1c-9a8a-d6b68575e364",
 			"name": "create participantTag blue",
 			"event": [
 				{
@@ -2258,56 +2130,48 @@
 						{
 							"key": "activityName",
 							"value": "Test activity name1",
-							"sessionValue": "testmyc",
 							"type": "text",
 							"disabled": true
 						},
 						{
 							"key": "activityNumber",
 							"value": "12",
-							"sessionValue": "0",
 							"type": "text",
 							"disabled": true
 						},
 						{
 							"key": "activityDate",
 							"value": "",
-							"sessionValue": "testpwd",
 							"type": "text",
 							"disabled": true
 						},
 						{
 							"key": "language",
 							"value": "DE_CH",
-							"sessionValue": "DE_CH",
 							"type": "text",
 							"disabled": true
 						},
 						{
 							"key": "observationText",
 							"value": "test",
-							"sessionValue": "test",
 							"type": "text",
 							"disabled": true
 						},
 						{
 							"key": "leaderId",
 							"value": "{{leaderId2}}",
-							"sessionValue": "{{leaderId1}}",
 							"type": "text",
 							"disabled": true
 						},
 						{
 							"key": "participantId",
 							"value": "{{participantId2}}",
-							"sessionValue": "participantId1}}",
 							"type": "text",
 							"disabled": true
 						},
 						{
 							"key": "participantTagName",
 							"value": "Troop Blue",
-							"sessionValue": "testname",
 							"type": "text"
 						}
 					]
@@ -2327,7 +2191,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "05dc05ce-86a9-4925-a9a0-29b300c55c9a",
 			"name": "create participantTag red",
 			"event": [
 				{
@@ -2383,56 +2246,48 @@
 						{
 							"key": "activityName",
 							"value": "Test activity name1",
-							"sessionValue": "testmyc",
 							"type": "text",
 							"disabled": true
 						},
 						{
 							"key": "activityNumber",
 							"value": "12",
-							"sessionValue": "0",
 							"type": "text",
 							"disabled": true
 						},
 						{
 							"key": "activityDate",
 							"value": "",
-							"sessionValue": "testpwd",
 							"type": "text",
 							"disabled": true
 						},
 						{
 							"key": "language",
 							"value": "DE_CH",
-							"sessionValue": "DE_CH",
 							"type": "text",
 							"disabled": true
 						},
 						{
 							"key": "observationText",
 							"value": "test",
-							"sessionValue": "test",
 							"type": "text",
 							"disabled": true
 						},
 						{
 							"key": "leaderId",
 							"value": "{{leaderId2}}",
-							"sessionValue": "{{leaderId1}}",
 							"type": "text",
 							"disabled": true
 						},
 						{
 							"key": "participantId",
 							"value": "{{participantId2}}",
-							"sessionValue": "participantId1}}",
 							"type": "text",
 							"disabled": true
 						},
 						{
 							"key": "participantTagName",
 							"value": "Troop Red",
-							"sessionValue": "testname",
 							"type": "text"
 						}
 					]
@@ -2452,14 +2307,12 @@
 			"response": []
 		},
 		{
-			"_postman_id": "94933cd2-356e-4ec4-91b2-612da4c36729",
 			"name": "create observationTag Swimming",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
 						"id": "eb0309ef-600d-4e17-b544-575b1c2308d1",
-						"type": "text/javascript",
 						"exec": [
 							"pm.test(\"response is ok\", function () {",
 							"    pm.response.to.have.status(200);",
@@ -2479,7 +2332,8 @@
 							"    ",
 							"})",
 							""
-						]
+						],
+						"type": "text/javascript"
 					}
 				}
 			],
@@ -2507,62 +2361,53 @@
 						{
 							"key": "activityName",
 							"value": "Test activity name1",
-							"sessionValue": "testmyc",
 							"type": "text",
 							"disabled": true
 						},
 						{
 							"key": "activityNumber",
 							"value": "12",
-							"sessionValue": "0",
 							"type": "text",
 							"disabled": true
 						},
 						{
 							"key": "activityDate",
 							"value": "",
-							"sessionValue": "testpwd",
 							"type": "text",
 							"disabled": true
 						},
 						{
 							"key": "language",
 							"value": "DE_CH",
-							"sessionValue": "DE_CH",
 							"type": "text",
 							"disabled": true
 						},
 						{
 							"key": "observationText",
 							"value": "test",
-							"sessionValue": "test",
 							"type": "text",
 							"disabled": true
 						},
 						{
 							"key": "leaderId",
 							"value": "{{leaderId2}}",
-							"sessionValue": "{{leaderId1}}",
 							"type": "text",
 							"disabled": true
 						},
 						{
 							"key": "participantId",
 							"value": "{{participantId2}}",
-							"sessionValue": "participantId1}}",
 							"type": "text",
 							"disabled": true
 						},
 						{
 							"key": "observationTagName",
-							"value": "Swimming in Gold",
-							"sessionValue": "testname",
+							"value": "Swimming in ...",
 							"type": "text"
 						},
 						{
 							"key": "parentObservationTagId",
 							"value": "1",
-							"sessionValue": "1",
 							"type": "text",
 							"disabled": true
 						}
@@ -2583,14 +2428,12 @@
 			"response": []
 		},
 		{
-			"_postman_id": "7267ecf5-1949-47c6-accc-4575ccc7a52f",
-			"name": "create observationTag running",
+			"name": "create observationTag Swimming river",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
-						"id": "c0d63cef-07b6-4120-96dd-26aa2fe36619",
-						"type": "text/javascript",
+						"id": "eb0309ef-600d-4e17-b544-575b1c2308d1",
 						"exec": [
 							"pm.test(\"response is ok\", function () {",
 							"    pm.response.to.have.status(200);",
@@ -2606,11 +2449,12 @@
 							"",
 							"pm.test(\"set observationId variable\", function() {",
 							"        var jsonData = pm.response.json();",
-							"    pm.environment.set(\"observationTagIdrunning\",jsonData.observationTagId)",
+							"    pm.environment.set(\"observationTagIdSwimmingRiver\",jsonData.observationTagId)",
 							"    ",
 							"})",
 							""
-						]
+						],
+						"type": "text/javascript"
 					}
 				}
 			],
@@ -2638,62 +2482,533 @@
 						{
 							"key": "activityName",
 							"value": "Test activity name1",
-							"sessionValue": "testmyc",
 							"type": "text",
 							"disabled": true
 						},
 						{
 							"key": "activityNumber",
 							"value": "12",
-							"sessionValue": "0",
 							"type": "text",
 							"disabled": true
 						},
 						{
 							"key": "activityDate",
 							"value": "",
-							"sessionValue": "testpwd",
 							"type": "text",
 							"disabled": true
 						},
 						{
 							"key": "language",
 							"value": "DE_CH",
-							"sessionValue": "DE_CH",
 							"type": "text",
 							"disabled": true
 						},
 						{
 							"key": "observationText",
 							"value": "test",
-							"sessionValue": "test",
 							"type": "text",
 							"disabled": true
 						},
 						{
 							"key": "leaderId",
 							"value": "{{leaderId2}}",
-							"sessionValue": "{{leaderId1}}",
 							"type": "text",
 							"disabled": true
 						},
 						{
 							"key": "participantId",
 							"value": "{{participantId2}}",
-							"sessionValue": "participantId1}}",
 							"type": "text",
 							"disabled": true
 						},
 						{
 							"key": "observationTagName",
-							"value": "Race up the hill",
-							"sessionValue": "testname",
+							"value": "Swimming in river",
+							"type": "text"
+						},
+						{
+							"key": "parentObservationTagId",
+							"value": "{{observationTagIdSwimming}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/observationTag",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"observationTag"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create observationTag Swimming lake",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "eb0309ef-600d-4e17-b544-575b1c2308d1",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							"",
+							"pm.test(\"set observationId variable\", function() {",
+							"        var jsonData = pm.response.json();",
+							"    pm.environment.set(\"observationTagIdSwimmingLake\",jsonData.observationTagId)",
+							"    ",
+							"})",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "activityName",
+							"value": "Test activity name1",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "activityNumber",
+							"value": "12",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "activityDate",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "language",
+							"value": "DE_CH",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "observationText",
+							"value": "test",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "leaderId",
+							"value": "{{leaderId2}}",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "participantId",
+							"value": "{{participantId2}}",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "observationTagName",
+							"value": "Swimming in lake",
+							"type": "text"
+						},
+						{
+							"key": "parentObservationTagId",
+							"value": "{{observationTagIdSwimming}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/observationTag",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"observationTag"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create observationTag Swimming pool",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "eb0309ef-600d-4e17-b544-575b1c2308d1",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							"",
+							"pm.test(\"set observationId variable\", function() {",
+							"        var jsonData = pm.response.json();",
+							"    pm.environment.set(\"observationTagIdSwimmingPool\",jsonData.observationTagId)",
+							"    ",
+							"})",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "activityName",
+							"value": "Test activity name1",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "activityNumber",
+							"value": "12",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "activityDate",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "language",
+							"value": "DE_CH",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "observationText",
+							"value": "test",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "leaderId",
+							"value": "{{leaderId2}}",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "participantId",
+							"value": "{{participantId2}}",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "observationTagName",
+							"value": "Swimming in pool",
+							"type": "text"
+						},
+						{
+							"key": "parentObservationTagId",
+							"value": "{{observationTagIdSwimming}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/observationTag",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"observationTag"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create observationTag Swimming gold",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "eb0309ef-600d-4e17-b544-575b1c2308d1",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							"",
+							"pm.test(\"set observationId variable\", function() {",
+							"        var jsonData = pm.response.json();",
+							"    pm.environment.set(\"observationTagIdSwimmingGold\",jsonData.observationTagId)",
+							"    ",
+							"})",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "activityName",
+							"value": "Test activity name1",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "activityNumber",
+							"value": "12",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "activityDate",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "language",
+							"value": "DE_CH",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "observationText",
+							"value": "test",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "leaderId",
+							"value": "{{leaderId2}}",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "participantId",
+							"value": "{{participantId2}}",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "observationTagName",
+							"value": "Swimming in gold",
+							"type": "text"
+						},
+						{
+							"key": "parentObservationTagId",
+							"value": "{{observationTagIdSwimming}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/observationTag",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"observationTag"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create observationTag running",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c0d63cef-07b6-4120-96dd-26aa2fe36619",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							"",
+							"pm.test(\"set observationId variable\", function() {",
+							"        var jsonData = pm.response.json();",
+							"    pm.environment.set(\"observationTagIdRunning\",jsonData.observationTagId)",
+							"    ",
+							"})",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "activityName",
+							"value": "Test activity name1",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "activityNumber",
+							"value": "12",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "activityDate",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "language",
+							"value": "DE_CH",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "observationText",
+							"value": "test",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "leaderId",
+							"value": "{{leaderId2}}",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "participantId",
+							"value": "{{participantId2}}",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "observationTagName",
+							"value": "running in ...",
 							"type": "text"
 						},
 						{
 							"key": "parentObservationTagId",
 							"value": "1",
-							"sessionValue": "1",
 							"type": "text",
 							"disabled": true
 						}
@@ -2714,7 +3029,246 @@
 			"response": []
 		},
 		{
-			"_postman_id": "92f42fbe-51ca-4c1f-baa4-0f5e45d83a0b",
+			"name": "create observationTag running hill",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c0d63cef-07b6-4120-96dd-26aa2fe36619",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							"",
+							"pm.test(\"set observationId variable\", function() {",
+							"        var jsonData = pm.response.json();",
+							"    pm.environment.set(\"observationTagIdRunningHill\",jsonData.observationTagId)",
+							"    ",
+							"})",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "activityName",
+							"value": "Test activity name1",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "activityNumber",
+							"value": "12",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "activityDate",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "language",
+							"value": "DE_CH",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "observationText",
+							"value": "test",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "leaderId",
+							"value": "{{leaderId2}}",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "participantId",
+							"value": "{{participantId2}}",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "observationTagName",
+							"value": "Race up the hill",
+							"type": "text"
+						},
+						{
+							"key": "parentObservationTagId",
+							"value": "{{observationTagIdRunning}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/observationTag",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"observationTag"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create observationTag running hill top",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c0d63cef-07b6-4120-96dd-26aa2fe36619",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// example using response assertions",
+							"pm.test(\"response should be okay to process\", function () { ",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});",
+							"",
+							"",
+							"pm.test(\"set observationId variable\", function() {",
+							"        var jsonData = pm.response.json();",
+							"    pm.environment.set(\"observationTagIdRunningHillTop\",jsonData.observationTagId)",
+							"    ",
+							"})",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "courseName",
+						"value": "testmyc",
+						"disabled": true
+					},
+					{
+						"key": "ownerUserId",
+						"value": "0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "activityName",
+							"value": "Test activity name1",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "activityNumber",
+							"value": "12",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "activityDate",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "language",
+							"value": "DE_CH",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "observationText",
+							"value": "test",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "leaderId",
+							"value": "{{leaderId2}}",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "participantId",
+							"value": "{{participantId2}}",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "observationTagName",
+							"value": "Race up the hill top",
+							"type": "text"
+						},
+						{
+							"key": "parentObservationTagId",
+							"value": "{{observationTagIdRunningHill}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/observationTag",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"observationTag"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "create observation Tick",
 			"event": [
 				{
@@ -2769,53 +3323,45 @@
 						{
 							"key": "activityName",
 							"value": "Test activity name1",
-							"sessionValue": "testmyc",
 							"type": "text",
 							"disabled": true
 						},
 						{
 							"key": "activityNumber",
 							"value": "12",
-							"sessionValue": "0",
 							"type": "text",
 							"disabled": true
 						},
 						{
 							"key": "activityDate",
 							"value": "",
-							"sessionValue": "testpwd",
 							"type": "text",
 							"disabled": true
 						},
 						{
 							"key": "language",
 							"value": "DE_CH",
-							"sessionValue": "DE_CH",
 							"type": "text",
 							"disabled": true
 						},
 						{
 							"key": "observationText",
 							"value": "Er watschelt nur und schnüt",
-							"sessionValue": "test",
 							"type": "text"
 						},
 						{
 							"key": "leaderId",
 							"value": "{{leaderIdDonald}}",
-							"sessionValue": "{{leaderId1}}",
 							"type": "text"
 						},
 						{
 							"key": "participantId",
 							"value": "{{participantIdTick}}",
-							"sessionValue": "participantId1}}",
 							"type": "text"
 						},
 						{
 							"key": "activityId",
 							"value": "{{activityIdRunning}}",
-							"sessionValue": "{{activityIdRunning}}",
 							"type": "text"
 						}
 					]
@@ -2835,7 +3381,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "a116844a-9946-41e9-93d4-f119b9f7fbc7",
 			"name": "create observation Trick",
 			"event": [
 				{
@@ -2890,53 +3435,45 @@
 						{
 							"key": "activityName",
 							"value": "Test activity name1",
-							"sessionValue": "testmyc",
 							"type": "text",
 							"disabled": true
 						},
 						{
 							"key": "activityNumber",
 							"value": "12",
-							"sessionValue": "0",
 							"type": "text",
 							"disabled": true
 						},
 						{
 							"key": "activityDate",
 							"value": "",
-							"sessionValue": "testpwd",
 							"type": "text",
 							"disabled": true
 						},
 						{
 							"key": "language",
 							"value": "DE_CH",
-							"sessionValue": "DE_CH",
 							"type": "text",
 							"disabled": true
 						},
 						{
 							"key": "observationText",
 							"value": "Schwimmt nicht in GOLD",
-							"sessionValue": "test",
 							"type": "text"
 						},
 						{
 							"key": "leaderId",
 							"value": "{{leaderIdDagobert}}",
-							"sessionValue": "{{leaderId1}}",
 							"type": "text"
 						},
 						{
 							"key": "participantId",
 							"value": "{{participantIdTrick}}",
-							"sessionValue": "participantId1}}",
 							"type": "text"
 						},
 						{
 							"key": "activityId",
 							"value": "{{activityIdSwimming}}",
-							"sessionValue": "{{activityIdRunning}}",
 							"type": "text"
 						}
 					]
@@ -2956,7 +3493,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "08216b5c-1d46-4586-ada3-bef3ff87e4c5",
 			"name": "create observation Track",
 			"event": [
 				{
@@ -3011,53 +3547,45 @@
 						{
 							"key": "activityName",
 							"value": "Test activity name1",
-							"sessionValue": "testmyc",
 							"type": "text",
 							"disabled": true
 						},
 						{
 							"key": "activityNumber",
 							"value": "12",
-							"sessionValue": "0",
 							"type": "text",
 							"disabled": true
 						},
 						{
 							"key": "activityDate",
 							"value": "",
-							"sessionValue": "testpwd",
 							"type": "text",
 							"disabled": true
 						},
 						{
 							"key": "language",
 							"value": "DE_CH",
-							"sessionValue": "DE_CH",
 							"type": "text",
 							"disabled": true
 						},
 						{
 							"key": "observationText",
 							"value": "Toll wie der watschelt",
-							"sessionValue": "test",
 							"type": "text"
 						},
 						{
 							"key": "leaderId",
 							"value": "{{leaderIdDonald}}",
-							"sessionValue": "{{leaderId1}}",
 							"type": "text"
 						},
 						{
 							"key": "participantId",
 							"value": "{{participantIdTick}}",
-							"sessionValue": "participantId1}}",
 							"type": "text"
 						},
 						{
 							"key": "activityId",
 							"value": "{{activityIdHiking}}",
-							"sessionValue": "{{activityIdRunning}}",
 							"type": "text"
 						}
 					]
@@ -3077,7 +3605,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "08d500fc-2931-4af8-888d-b7b4ce9b2fe6",
 			"name": "create observation Babysmurf",
 			"event": [
 				{
@@ -3132,53 +3659,45 @@
 						{
 							"key": "activityName",
 							"value": "Test activity name1",
-							"sessionValue": "testmyc",
 							"type": "text",
 							"disabled": true
 						},
 						{
 							"key": "activityNumber",
 							"value": "12",
-							"sessionValue": "0",
 							"type": "text",
 							"disabled": true
 						},
 						{
 							"key": "activityDate",
 							"value": "",
-							"sessionValue": "testpwd",
 							"type": "text",
 							"disabled": true
 						},
 						{
 							"key": "language",
 							"value": "DE_CH",
-							"sessionValue": "DE_CH",
 							"type": "text",
 							"disabled": true
 						},
 						{
 							"key": "observationText",
 							"value": "schlumpft noch nicht",
-							"sessionValue": "test",
 							"type": "text"
 						},
 						{
 							"key": "leaderId",
 							"value": "{{leaderIdPapaSchlumpf}}",
-							"sessionValue": "{{leaderId1}}",
 							"type": "text"
 						},
 						{
 							"key": "participantId",
 							"value": "{{participantIdBabysmurf}}",
-							"sessionValue": "participantId1}}",
 							"type": "text"
 						},
 						{
 							"key": "activityId",
 							"value": "{{activityIdSchlumpfen}}",
-							"sessionValue": "{{activityIdRunning}}",
 							"type": "text"
 						}
 					]
@@ -3198,7 +3717,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "6b9df6db-fb83-4f3a-9d7f-822b825d8f8e",
 			"name": "add observationTag to observation Tick",
 			"event": [
 				{
@@ -3248,56 +3766,48 @@
 						{
 							"key": "activityName",
 							"value": "Test activity name1",
-							"sessionValue": "testmyc",
 							"type": "text",
 							"disabled": true
 						},
 						{
 							"key": "activityNumber",
 							"value": "12",
-							"sessionValue": "0",
 							"type": "text",
 							"disabled": true
 						},
 						{
 							"key": "activityDate",
 							"value": "",
-							"sessionValue": "testpwd",
 							"type": "text",
 							"disabled": true
 						},
 						{
 							"key": "language",
 							"value": "DE_CH",
-							"sessionValue": "DE_CH",
 							"type": "text",
 							"disabled": true
 						},
 						{
 							"key": "observationText",
 							"value": "test observation",
-							"sessionValue": "test",
 							"type": "text",
 							"disabled": true
 						},
 						{
 							"key": "leaderId",
 							"value": "{{leaderId2}}",
-							"sessionValue": "{{leaderId1}}",
 							"type": "text",
 							"disabled": true
 						},
 						{
 							"key": "participantId",
 							"value": "{{participantId2}}",
-							"sessionValue": "participantId1}}",
 							"type": "text",
 							"disabled": true
 						},
 						{
 							"key": "observationTagId",
 							"value": "{{observationTagIdRunning}}",
-							"sessionValue": "{{observationTagId2}}",
 							"type": "text"
 						}
 					]
@@ -3319,7 +3829,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "c2a0c01d-7dc0-4d73-991c-affb40401353",
 			"name": "create codeMapping 1 Copy",
 			"event": [
 				{
@@ -3374,74 +3883,63 @@
 						{
 							"key": "activityName",
 							"value": "Test activity name1",
-							"sessionValue": "testmyc",
 							"type": "text",
 							"disabled": true
 						},
 						{
 							"key": "activityNumber",
 							"value": "12",
-							"sessionValue": "0",
 							"type": "text",
 							"disabled": true
 						},
 						{
 							"key": "activityDate",
 							"value": "",
-							"sessionValue": "testpwd",
 							"type": "text",
 							"disabled": true
 						},
 						{
 							"key": "language",
 							"value": "DE_CH",
-							"sessionValue": "DE_CH",
 							"type": "text",
 							"disabled": true
 						},
 						{
 							"key": "observationText",
 							"value": "test",
-							"sessionValue": "test",
 							"type": "text",
 							"disabled": true
 						},
 						{
 							"key": "leaderId",
 							"value": "{{leaderId2}}",
-							"sessionValue": "{{leaderId1}}",
 							"type": "text",
 							"disabled": true
 						},
 						{
 							"key": "participantId",
 							"value": "{{participantId2}}",
-							"sessionValue": "participantId1}}",
 							"type": "text",
 							"disabled": true
 						},
 						{
 							"key": "codeMappingName",
 							"value": "testmapping",
-							"sessionValue": "testmapping",
 							"type": "text"
 						},
 						{
 							"key": "Key1_alpha",
 							"value": "keytest1",
-							"sessionValue": "key",
 							"type": "text"
 						},
 						{
 							"key": "Value1",
 							"value": "value",
-							"sessionValue": "value",
 							"type": "text"
 						},
 						{
 							"key": "Key1_num",
 							"value": "3",
-							"sessionValue": "3",
 							"type": "text"
 						}
 					]
