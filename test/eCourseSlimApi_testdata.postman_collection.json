@@ -891,7 +891,6 @@
 					"listen": "test",
 					"script": {
 						"id": "f1c4efe8-3dbf-4cc9-aecb-5e36f96523ce",
-						"type": "text/javascript",
 						"exec": [
 							"pm.test(\"response is ok\", function () {",
 							"    pm.response.to.have.status(200);",
@@ -917,7 +916,8 @@
 							"});",
 							"",
 							"*/"
-						]
+						],
+						"type": "text/javascript"
 					}
 				}
 			],
@@ -956,6 +956,26 @@
 							"key": "participantScoutname",
 							"value": "Huey",
 							"type": "text"
+						},
+						{
+							"key": "participantBirthday",
+							"value": "2001-01-25",
+							"type": "text"
+						},
+						{
+							"key": "participantScoutUnit",
+							"value": "Fähnlein Fieselschweif",
+							"type": "text"
+						},
+						{
+							"key": "participantRecommendationRemark",
+							"value": "Är esch eifach de bescht!",
+							"type": "text"
+						},
+						{
+							"key": "participantUrl",
+							"value": "assets/images/tick.jpg",
+							"type": "text"
 						}
 					]
 				},
@@ -980,7 +1000,6 @@
 					"listen": "test",
 					"script": {
 						"id": "8ded45f8-5fcc-495f-9ca4-7fdb84f68905",
-						"type": "text/javascript",
 						"exec": [
 							"pm.test(\"response is ok\", function () {",
 							"    pm.response.to.have.status(200);",
@@ -1006,7 +1025,8 @@
 							"});",
 							"",
 							"*/"
-						]
+						],
+						"type": "text/javascript"
 					}
 				}
 			],
@@ -1045,6 +1065,11 @@
 							"key": "participantScoutname",
 							"value": "Dewey",
 							"type": "text"
+						},
+						{
+							"key": "participantUrl",
+							"value": "assets/images/trick.png",
+							"type": "text"
 						}
 					]
 				},
@@ -1069,7 +1094,6 @@
 					"listen": "test",
 					"script": {
 						"id": "35b2b544-99d6-4597-a27d-e881f4790c3b",
-						"type": "text/javascript",
 						"exec": [
 							"pm.test(\"response is ok\", function () {",
 							"    pm.response.to.have.status(200);",
@@ -1095,7 +1119,8 @@
 							"});",
 							"",
 							"*/"
-						]
+						],
+						"type": "text/javascript"
 					}
 				}
 			],
@@ -1134,6 +1159,11 @@
 							"key": "participantScoutname",
 							"value": "Louie",
 							"type": "text"
+						},
+						{
+							"key": "participantUrl",
+							"value": "assets/images/track.png",
+							"type": "text"
 						}
 					]
 				},
@@ -1158,7 +1188,6 @@
 					"listen": "test",
 					"script": {
 						"id": "b500ab34-cf22-475b-bc90-5fc7c58840e3",
-						"type": "text/javascript",
 						"exec": [
 							"pm.test(\"response is ok\", function () {",
 							"    pm.response.to.have.status(200);",
@@ -1184,7 +1213,8 @@
 							"});",
 							"",
 							"*/"
-						]
+						],
+						"type": "text/javascript"
 					}
 				}
 			],
@@ -1223,6 +1253,11 @@
 							"key": "participantScoutname",
 							"value": "Babysmurf",
 							"type": "text"
+						},
+						{
+							"key": "participantUrl",
+							"value": "assets/images/babysmurf.png",
+							"type": "text"
 						}
 					]
 				},
@@ -1247,7 +1282,6 @@
 					"listen": "test",
 					"script": {
 						"id": "708183c4-a44f-4832-80b3-4bdd2e111dbb",
-						"type": "text/javascript",
 						"exec": [
 							"pm.test(\"response is ok\", function () {",
 							"    pm.response.to.have.status(200);",
@@ -1273,7 +1307,8 @@
 							"});",
 							"",
 							"*/"
-						]
+						],
+						"type": "text/javascript"
 					}
 				}
 			],
@@ -1312,6 +1347,11 @@
 							"key": "participantScoutname",
 							"value": "Smulsmurf",
 							"type": "text"
+						},
+						{
+							"key": "participantUrl",
+							"value": "assets/images/bakersmurf.jpg",
+							"type": "text"
 						}
 					]
 				},
@@ -1336,7 +1376,6 @@
 					"listen": "test",
 					"script": {
 						"id": "e1a837f5-76e1-49ab-abf8-7d76699e4774",
-						"type": "text/javascript",
 						"exec": [
 							"pm.test(\"response is ok\", function () {",
 							"    pm.response.to.have.status(200);",
@@ -1362,7 +1401,8 @@
 							"});",
 							"",
 							"*/"
-						]
+						],
+						"type": "text/javascript"
 					}
 				}
 			],
@@ -1401,6 +1441,11 @@
 							"key": "participantScoutname",
 							"value": "Brilsmurf",
 							"type": "text"
+						},
+						{
+							"key": "participantUrl",
+							"value": "assets/images/brilsmurf.png",
+							"type": "text"
 						}
 					]
 				},
@@ -1425,7 +1470,6 @@
 					"listen": "test",
 					"script": {
 						"id": "1e89617e-3cef-4c2b-a42b-7d1359250c5f",
-						"type": "text/javascript",
 						"exec": [
 							"pm.test(\"response is ok\", function () {",
 							"    pm.response.to.have.status(200);",
@@ -1451,7 +1495,8 @@
 							"});",
 							"",
 							"*/"
-						]
+						],
+						"type": "text/javascript"
 					}
 				}
 			],
@@ -1490,6 +1535,11 @@
 							"key": "participantScoutname",
 							"value": "Boerensmurf",
 							"type": "text"
+						},
+						{
+							"key": "participantUrl",
+							"value": "assets/images/boerensmurf.jpeg",
+							"type": "text"
 						}
 					]
 				},
@@ -1514,7 +1564,6 @@
 					"listen": "test",
 					"script": {
 						"id": "fcdfa09e-7434-400a-80a6-03c10944a135",
-						"type": "text/javascript",
 						"exec": [
 							"pm.test(\"response is ok\", function () {",
 							"    pm.response.to.have.status(200);",
@@ -1540,7 +1589,8 @@
 							"});",
 							"",
 							"*/"
-						]
+						],
+						"type": "text/javascript"
 					}
 				}
 			],
@@ -1578,6 +1628,11 @@
 						{
 							"key": "participantScoutname",
 							"value": "Muzieksmurf",
+							"type": "text"
+						},
+						{
+							"key": "participantUrl",
+							"value": "assets/images/muzieksmurf.jpeg",
 							"type": "text"
 						}
 					]

@@ -240,7 +240,8 @@ class ObservationTagRepository extends Repository {
 	public function setTree($tree) {
 		$fromTree = $this->buildArrayFromTree($tree, 'parentObservationTagId', 'observationTagId', 'children', 0);
 		//  print_r ( " list " . json_encode($observationTags) . " end list");
-		$existingObservationTags = array_diff($this->getAll(), $this->getById(0));
+		$existingObservationTags = array_diff($this->getAll(), $this->getById(0)); //TODO [Sun Jan  6 02:00:52 2019] PHP Notice:  Array to string conversion in /var/www/html/eCourseSlimApi/repository/ObservationTagRepository.php on line 243
+
 		var_dump($fromTree);
 		var_dump($existingObservationTags);
 		$updated = false;

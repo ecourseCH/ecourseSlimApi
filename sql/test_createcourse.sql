@@ -34,12 +34,12 @@ CREATE TABLE IF NOT EXISTS `leader` (
 CREATE TABLE IF NOT EXISTS `participant` (
 `participantId` int(11) NOT NULL AUTO_INCREMENT,
   `participantName` varchar(255) COLLATE utf8_bin NOT NULL,
-    `participantSurname` varchar(255) COLLATE utf8_bin NOT NULL,
-    `participantScoutname` varchar(255) COLLATE utf8_bin NOT NULL,
--- age
--- Unit
--- Group
--- information from Recommender
+  `participantSurname` varchar(255) COLLATE utf8_bin NOT NULL,
+  `participantScoutname` varchar(255) COLLATE utf8_bin NOT NULL,
+  `participantBirthday` DATETIME NULL,
+  `participantScoutUnit` varchar(255) COLLATE utf8_bin NULL,
+  `participantUrl` varchar(1000) COLLATE utf8_bin NULL,
+  `participantRecommendationRemark` varchar(4000) COLLATE utf8_bin NULL,
      PRIMARY KEY (`participantId`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
