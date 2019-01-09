@@ -131,11 +131,13 @@ abstract class Repository {
 		unset($entity[$idFieldName]);
 
 		$sql = "UPDATE $entityName SET $entityFieldAssignments WHERE $idFieldCondition";
-
+		$myNull = null;
 		$stmt = $this->db->prepare($sql);
 		foreach ($entityFields as $field) {
 			if (isset($entity[$field])) {
 				$stmt->bindParam($field, $entity[$field]);
+			} else {
+				$stmt->bindParam($field, $myNull);
 			}
 		}
 		$stmt->bindParam($idFieldName, $id);
