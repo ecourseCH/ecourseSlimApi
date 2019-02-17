@@ -129,6 +129,9 @@ fi
     exit 1;
   fi
 
+# Dependency to php-gmp, php-xml
+./composer.phar require web-token/jwt-framework
+
 #echo "composer installed, including depenencies"
 
 # start webservice
